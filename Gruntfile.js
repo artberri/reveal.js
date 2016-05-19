@@ -126,7 +126,12 @@ module.exports = function(grunt) {
 				tasks: 'css-core'
 			},
 			html: {
-				files: [ '*.html']
+				files: [
+					'*.html',
+					'automation/index.html',
+					'code-kids/index.html',
+					'wordpress-deployment/index.html'
+				]
 			},
 			markdown: {
 				files: [ '*.md' ]

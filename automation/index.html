@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Automation: Infrastruture, Software & Deploy</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans|Oswald' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="../css/reveal.css">
+		<link rel="stylesheet" href="../css/theme/black.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="../lib/css/zenburn.css">
+
+		<style>
+			.reveal .slides > section.left {
+				text-align: left;
+			}
+
+			.reveal .slides > section.half {
+				width: 60%;
+			}
+			.underline {
+				text-decoration: underline;
+			}
+
+			.reveal section img {
+				box-shadow: none;
+				border: 0;
+				background: transparent;
+			}
+
+			.reveal h1,
+			.reveal h2,
+			.reveal h3,
+			.reveal h4,
+			.reveal h5,
+			.reveal h6 {
+				margin: 0 0 20px 0;
+				color: #fff;
+				font-family: "Oswald", sans-serif;
+				font-weight: 600;
+				line-height: 1.2;
+				letter-spacing: normal;
+				text-transform: uppercase;
+				text-shadow: 0px 0px 16px rgba(0, 0, 0, 0.7);
+				word-wrap: break-word;
+			}
+		</style>
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../css/print/pdf.css' : '../css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section data-markdown="slides/01-home.md" class="left half"  data-background="images/automation.jpg">
+
+				</section>
+
+				<section data-background="#4d7e65">
+					<section data-markdown="slides/02-what.md"></section>
+					<!-- <section data-markdown="slides/03-simple.md"></section> -->
+
+					<section data-transition="fade">
+						<h2>Splitting Automation</h2>
+						<img src="images/pixel.png" style="height:393px" src="">
+					</section>
+					<section data-transition="fade">
+						<h2>Infrastruture provisioning</h2>
+						<img src="images/schema1.svg">
+					</section>
+					<section data-transition="fade">
+						<h2>Software provisioning</h2>
+						<img src="images/schema2.svg">
+					</section>
+					<section data-transition="fade">
+						<h2>Application deployment</h2>
+						<img src="images/schema3.svg">
+					</section>
+					<section data-transition="fade">
+						<h2>Monitoring</h2>
+						<img src="images/schema4.svg">
+					</section>
+					<section data-transition="fade">
+						<h2>Application Monitoring</h2>
+						<img src="images/schema5.svg">
+					</section>
+					<section data-transition="fade">
+						<h2>Functional Testing</h2>
+						<img src="images/schema6.svg">
+					</section>
+					<section data-transition="fade">
+						<h2>Job Scheduler</h2>
+						<img src="images/schema.svg">
+					</section>
+
+				</section>
+
+				<section data-background="#b5533c">
+					<section>
+						<h2>Why should I automate?</h2>
+					</section>
+					<section>
+						<blockquote>
+							&ldquo;Part of the inhumanity of the computer is that, once it is competently programmed and working smoothly, it is completely honest.&rdquo;<br>
+						</blockquote>
+						<img src="images/foundation.jpg">
+						<p><small>Isaac Asimov</small></p>
+					</section>
+					<section>
+						<h2>Why?</h2>
+						<ul>
+							<li>
+								<strong>Reliability</strong>: Fewer errors from manual processes
+							</li>
+							<li class="fragment">
+								<strong>Efficiency</strong>: SysAdmins/Ops will have time to do what they should do (improve processes, performance,...)
+							</li>
+							<li class="fragment">
+								<strong>Agility</strong>: Increased speed of product deliverability
+							</li>
+
+							<li class="fragment">
+								<strong>Repeatability</strong>: Don't waste time on doing what you already do
+							</li>
+							<li class="fragment">
+								<strong>Flexibilty</strong>: Ability to scale (Black Friday!!)
+							</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Before / After</h2>
+						<table>
+							<thead>
+								<tr>
+									<th>&nbsp;</th>
+									<th>Before</th>
+									<th>After</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="fragment">
+									<td>New server request</td>
+									<td>4 days</td>
+									<td>1h</td>
+								</tr>
+								<tr class="fragment">
+									<td>Soft provisioning</td>
+									<td>1 day</td>
+									<td>1h</td>
+								</tr>
+								<tr class="fragment">
+									<td>Server Documentation</td>
+									<td><strike>75%</strike> 0%</td>
+									<td>100%</td>
+								</tr>
+								<tr class="fragment">
+									<td>Deploy frequency</td>
+									<td>2/3 per day</td>
+									<td>5/15 day</td>
+								</tr>
+								<tr class="fragment">
+									<td>Time to deploy</td>
+									<td>1-3 hour</td>
+									<td>5 min</td>
+								</tr>
+								<tr class="fragment">
+									<td>Avg. Rejected deploys</td>
+									<td>50%</td>
+									<td>0%</td>
+								</tr>
+
+							</tbody>
+						</table>
+					</section>
+				</section>
+
+				<section>
+					<h2>Look your best!</h2>
+					<h1>It's Selfie time</h1>
+				</section>
+
+				<section data-background="#3C91B5">
+					<section>
+						<h2>How?</h2>
+					</section>
+
+					<section>
+						<h2>People</h2>
+
+						<img src="images/devops.jpg">
+					</section>
+
+					<section>
+						<h2>Tools</h2>
+
+						<img src="images/tools.png">
+					</section>
+
+					<section>
+						<h2>Our Tools</h2>
+
+						<img src="images/schema.png">
+					</section>
+
+					<section>
+						<h2>Migration</h2>
+
+						<h4>Our experience</h4>
+						<ul>
+							<li class="fragment">3 Data Centers: Europe, USA, Asia</li>
+							<li class="fragment">Before: 75 server per datacenter</li>
+							<li class="fragment">After: 170 server per datacenter
+								<ul class="fragment">
+									<li>High Availabilty</li>
+									<li>Split of shared servers</li>
+									<li>New products</li>
+									<li class="fragment">PaaS
+										<ul>
+											<li>Redis => Redis as a Service</li>
+											<li>MSMQ => ServiceBus</li>
+											<li>IIS => Web App</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Migration</h2>
+						<img class="fragment" src="images/everythingok.png">
+					</section>
+				</section>
+
+				<section>
+					<h1>Sci-Fi or Reality?</h1>
+				</section>
+
+				<section>
+					<h2>It's real!</h2>
+					<img src="images/final.jpg">
+				</section>
+
+				<section>
+					<h2>Thanks !</h2>
+					<p><small>Source: <a href="https://github.com/artberri/automation-talk-example">https://github.com/artberri/automation-talk-example</a></small></p>
+					<br><br><br><br>
+					<p><small style="color: #aaa;">Thanks to you too, Ian Murdock, none of this would be possible without you</small></p>
+					<br>
+
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="../lib/js/head.min.js"></script>
+		<script src="../js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: '../lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: '../plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: '../plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '../plugin/zoom-js/zoom.js', async: true },
+					{ src: '../plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
