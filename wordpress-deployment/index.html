@@ -146,359 +146,240 @@ define( 'AUTOMATIC_UPDATER_DISABLED', true );
 						<p><small><a href="https://wp-cli.org/">WP-CLI</a> could be another option to manage dependencies.</small></p>
 					</section>
 					<section>
-						<h2 class="mini">Themes, Child Themes &amp; Plugins</h2>
+						<h2 class="mini">Your code: Themes &amp; Plugins</h2>
 						<ul>
-							<li>Old your code should be organized in Themes, Child Themes &amp; Plugins, and it's the only code that
+							<li>All your code should be organized in Themes &amp; Plugins, and it's the only code that
 							should be in the source control.</li>
-							<li>Only your Themes &amp; Plugins</li>
-							<li>Use plugins/widgets for feature toggling</li>
-							<li>Agreement</li>
-							<li>Agreement (QA)</li>
+							<li>Don't modify any dependency. Not plugins, neither themes. Use hooks, actions and child themes to override them.</li>
 						</ul>
 					</section>
+					<section>
+						<h2 class="mini">Branching and pull requests</h2>
+						<ul>
+							<li><a href="https://www.atlassian.com/git/tutorials/comparing-workflows">Git workflows</a>: Centralized, Feature Branch, Gitflow, Forking Workflow...</li>
+							<li>A <a href="http://tech.veinteractive.com/the-code-review-process.html">list of rules</a> to apply to enhance your code review process.</li>
+						</ul>
+					</section>
+					<section data-background="images/minions5.jpg">
+						<h1>Let's<br> make a<br> Pull<br> Request!</h1>
+					</section>
+
 				</section>
 
 				<section>
 					<section>
-						<h2>Definition of done</h2>
-						<p>
-							<img width="550" height="412" data-src="images/done.jpg" alt="Done stamp" style="border: 0; box-shadow:none;" >
-						</p>
+						<h2>The second 'Dogma'</h2>
+						<h3>There is not any manual step in the deployment process</h3>
 					</section>
 					<section>
-						<h2>Basement Level 1</h2>
-						<p>Nested slides are useful for adding additional detail underneath a high level horizontal slide.</p>
+						<h2 class="mini">No more "Works on my machine"</h2>
+						<ul>
+							<li class="fragment">Make clear you definition of done.</li>
+							<li class="fragment">Replicate your production environment: <a href="https://www.vagrantup.com/">Vagrant</a>, <a href="https://www.docker.com/">Docker</a>, <a href="https://puppet.com/">Puppet</a>, <a href="https://www.chef.io/">Chef</a>,...</li>
+							<li class="fragment">Create staging environments</li>
+						</ul>
 					</section>
 					<section>
-						<h2>Basement Level 2</h2>
-						<p>That's it, time to go back up.</p>
-						<br>
-						<a href="#/2">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="transform: rotate(180deg); -webkit-transform: rotate(180deg);">
-						</a>
-					</section>
-				</section>
-
-				<section>
-					<h2>Dogmas</h2>
-					<ol>
-						<li>The developers are the only responsibles of the code (git, deactivate updates/installation)</li>
-						<li>There are no manual steps (automation)</li>
-						<li>Agreement</li>
-						<li>Agreement (QA)</li>
-					</ol>
-				</section>
-
-				<section>
-					<h2>Dogmas</h2>
-					<ol>
-						<li>The developers are the only responsibles of the code (git, deactivate updates/installation)</li>
-						<li>There are no manual steps (automation)</li>
-						<li>Agreement</li>
-						<li>Agreement (QA)</li>
-					</ol>
-				</section>
-
-				<section>
-					<h2>The second 'Dogma'</h2>
-					<h3>No Manual Steps</h3>
-				</section>
-
-				<section>
-					<h2>Slides</h2>
-					<p>
-						Not a coder? Not a problem. There's a fully-featured visual editor for authoring these, try it out at <a href="http://slides.com" target="_blank">http://slides.com</a>.
-					</p>
-				</section>
-
-				<section>
-					<h2>Point of View</h2>
-					<p>
-						Press <strong>ESC</strong> to enter the slide overview.
-					</p>
-					<p>
-						Hold down alt and click on any element to zoom in on it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.
-					</p>
-				</section>
-
-				<section>
-					<h2>Touch Optimized</h2>
-					<p>
-						Presentations look great on touch devices, like mobile phones and tablets. Simply swipe through your slides.
-					</p>
-				</section>
-
-				<section data-markdown>
-					<script type="text/template">
-						## Markdown support
-
-						Write content using inline or external Markdown.
-						Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
-
-						```
-						<section data-markdown>
-						  ## Markdown support
-
-						  Write content using inline or external Markdown.
-						  Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
-						</section>
-						```
-					</script>
-				</section>
-
-				<section>
-					<section id="fragments">
-						<h2>Fragments</h2>
-						<p>Hit the next arrow...</p>
-						<p class="fragment">... to step through ...</p>
-						<p><span class="fragment">... a</span> <span class="fragment">fragmented</span> <span class="fragment">slide.</span></p>
-
-						<aside class="notes">
-							This slide has fragments which are also stepped through in the notes window.
-						</aside>
+						<h2 class="mini">Deployment Tools / Task Runners</h2>
+						<ul>
+							<li>PHP tools: <a href="http://deployer.org/">Deployer</a>, <a href="http://magephp.com/">Magallanes</a>, <a href="https://www.phing.info/">Phing</a>, ...</li>
+							<li>Other tools: <a href="http://gruntjs.com/">Grunt</a>, <a href="http://gulpjs.com/">Gulp</a>, <a href="http://ant.apache.org/">Ant</a>, ...</li>
+						</ul>
 					</section>
 					<section>
-						<h2>Fragment Styles</h2>
-						<p>There's different types of fragments, like:</p>
-						<p class="fragment grow">grow</p>
-						<p class="fragment shrink">shrink</p>
-						<p class="fragment fade-out">fade-out</p>
-						<p class="fragment fade-up">fade-up (also down, left and right!)</p>
-						<p class="fragment current-visible">current-visible</p>
-						<p>Highlight <span class="fragment highlight-red">red</span> <span class="fragment highlight-blue">blue</span> <span class="fragment highlight-green">green</span></p>
-					</section>
-				</section>
+						<h2 class="mini">Example with Deployer</h2>
 
-				<section id="transitions">
-					<h2>Transition Styles</h2>
-					<p>
-						You can select from different transitions, like: <br>
-						<a href="?transition=none#/transitions">None</a> -
-						<a href="?transition=fade#/transitions">Fade</a> -
-						<a href="?transition=slide#/transitions">Slide</a> -
-						<a href="?transition=convex#/transitions">Convex</a> -
-						<a href="?transition=concave#/transitions">Concave</a> -
-						<a href="?transition=zoom#/transitions">Zoom</a>
-					</p>
-				</section>
+						<p>Install it with <em>composer</em>:</p>
 
-				<section id="themes">
-					<h2>Themes</h2>
-					<p>
-						reveal.js comes with a few themes built in: <br>
-						<!-- Hacks to swap themes after the page has loaded. Not flexible and only intended for the reveal.js demo deck. -->
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/black.css'); return false;">Black (default)</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/white.css'); return false;">White</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/league.css'); return false;">League</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/sky.css'); return false;">Sky</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/beige.css'); return false;">Beige</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/simple.css'); return false;">Simple</a> <br>
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/serif.css'); return false;">Serif</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/blood.css'); return false;">Blood</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/night.css'); return false;">Night</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/moon.css'); return false;">Moon</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/solarized.css'); return false;">Solarized</a>
-					</p>
-				</section>
+						<pre><code class="hljs" data-trim contenteditable>
+composer require --dev deployer/deployer
+composer require --dev "deployphp/recipes
+						</code></pre>
 
-				<section>
-					<section data-background="#dddddd">
-						<h2>Slide Backgrounds</h2>
-						<p>
-							Set <code>data-background="#dddddd"</code> on a slide to change the background color. All CSS color formats are supported.
-						</p>
-						<a href="#" class="navigate-down">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
+						<p>Your <em>composer.json</em> should include now a reference to the dependencies:</p>
+
+						<pre><code class="hljs" data-trim contenteditable>
+# composer.json
+# ...
+    "require-dev": {
+        "deployer/deployer": "^3.2",
+        "deployphp/recipes": "^3.1",
+    },
+# ...
+						</code></pre>
 					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png">
-						<h2>Image Backgrounds</h2>
-						<pre><code class="hljs">&lt;section data-background="image.png"&gt;</code></pre>
+					<section>
+						<h2 class="mini">Example with Deployer</h2>
+
+						<p>Configure your deploy steps in the <em>deploy.php</em> file:</p>
+
+						<pre><code class="hljs" data-trim contenteditable>
+&lt;?php
+// deploy.php
+require 'recipe/common.php';
+require 'vendor/deployphp/recipes/recipes/configure.php';
+require 'vendor/deployphp/recipes/recipes/rsync.php';
+
+set('shared_dirs', [
+    'wp-content/uploads',
+    'wp-content/cache',
+]);
+set('shared_files', [
+    'wp-config.php',
+]);
+set('writable_use_sudo', false);
+set('http_user', 'deploy');
+env('rsync_src', __DIR__ . '/src');
+set('rsync', [
+    'exclude' => [
+        'wp-content/upgrade',
+        'wp-content/cache',
+        'wp-config.php',
+        'wp-content/uploads',
+    ],
+]);
+set('keep_releases', 5);
+
+task('deploy', [
+  'deploy:prepare',
+  'deploy:release',
+  'deploy:configure',
+  'rsync',
+  'deploy:shared',
+  'deploy:symlink',
+  'cleanup',
+])->desc('Deploy project');
+after('deploy', 'success');
+
+serverList(__DIR__ . '/servers.yml');
+						</code></pre>
 					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png" data-background-repeat="repeat" data-background-size="100px">
-						<h2>Tiled Backgrounds</h2>
-						<pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
+					<section>
+						<h2 class="mini">Example with Deployer</h2>
+
+						<p>Configure your deployment credentials and servers in the <em>servers.yml</em> file:</p>
+
+						<pre><code class="hljs" data-trim contenteditable>
+# servers.yml
+staging:
+  host: staging.sinrumbofijo.com
+  user: deploy
+  identity_file:
+    public_key:  deploy_rsa.pub
+    private_key: deploy_rsa
+    password:    ''
+  stage: staging
+  deploy_path: /home/www/staging.sinrumbofijo.com
+  app:
+    url: http://staging.sinrumbofijo.com
+    root: /home/www/staging.sinrumbofijo.com/current
+    db:
+      name: 'staging_database_name'
+      user: 'staging_database_user'
+      pass: 'staging_database_pass'
+      host: 'staging_database_host'
+    secret:
+      auth_key: 'write a better secret here'
+      secure_auth_key: 'write a better secret here'
+      logged_in_key: 'write a better secret here'
+      nonce_key: 'write a better secret here'
+      auth_salt: 'write a better secret here'
+      secure_auth_salt: 'write a better secret here'
+      logged_in_salt: 'write a better secret here'
+      nonce_salt: 'write a better secret here'
+
+production:
+  host: www.sinrumbofijo.com
+  user: deploy
+  identity_file:
+    public_key:  deploy_rsa.pub
+    private_key: deploy_rsa
+    password:    ''
+  stage: staging
+  deploy_path: /home/www/www.sinrumbofijo.com
+  app:
+    url: http://www.sinrumbofijo.com
+    root: /home/www/www.sinrumbofijo.com/current
+    db:
+      name: 'production_database_name'
+      user: 'production_database_user'
+      pass: 'production_database_pass'
+      host: 'production_database_host'
+    secret:
+      auth_key: 'write a better secret here'
+      secure_auth_key: 'write a better secret here'
+      logged_in_key: 'write a better secret here'
+      nonce_key: 'write a better secret here'
+      auth_salt: 'write a better secret here'
+      secure_auth_salt: 'write a better secret here'
+      logged_in_salt: 'write a better secret here'
+      nonce_salt: 'write a better secret here'
+
+						</code></pre>
 					</section>
-					<section data-background-video="https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.mp4,https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.webm" data-background-color="#000000">
-						<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
-							<h2>Video Backgrounds</h2>
-							<pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background-video="video.mp4,video.webm"&gt;</code></pre>
+					<section>
+						<h2 class="mini">Example with Deployer</h2>
+
+						<p>And now, deploy is as simple as:</p>
+
+						<pre><code class="hljs" data-trim contenteditable>
+./vendor/bin/dep deploy staging
+						</code></pre>
+						<pre><code class="hljs" data-trim contenteditable>
+./vendor/bin/dep deploy production
+						</code></pre>
+					</section>
+					<section>
+						<h2 class="mini">Continous Integration Tools</h2>
+						<div class="fragment">
+							<img data-src="images/ci.png" >
+
+							<p><small>You can see a detailed comparison in <a href="http://stackshare.io/continuous-integration">Stackshare</a>.</small></p>
 						</div>
 					</section>
-					<section data-background="http://i.giphy.com/90F8aUepslB84.gif">
-						<h2>... and GIFs!</h2>
+					<section>
+						<h2 class="mini">Example with Snap.CI</h2>
+						<p><small>Sin Rumbo Fijo.</small></p>
+					</section>
+
+					<section data-background="images/minions6.jpg">
+						<h1>So...<br> Would you<br> dare to<br> make a deploy<br> right now?</h1>
+					</section>
+
+				</section>
+
+				<section>
+					<section>
+						<h2>An step further</h2>
+						<h3>There is not any manual step in the QA / Test process</h3>
+					</section>
+					<section>
+						<h2>Linting</h2>
+					</section>
+					<section>
+						<h2>Unit Testing</h2>
+					</section>
+					<section>
+						<h2>Functional Testing</h2>
 					</section>
 				</section>
 
-				<section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
-					<h2>Background Transitions</h2>
-					<p>
-						Different background transitions are available via the backgroundTransition option. This one's called "zoom".
-					</p>
-					<pre><code class="hljs">Reveal.configure({ backgroundTransition: 'zoom' })</code></pre>
-				</section>
+				<section>
+					<h2 class="mini">Continous Delivery <br><span>VS</span><br> Continous deployment</h2>
+					<img data-src="images/continuous-delivery-deployment-sm.jpg" >
 
-				<section data-transition="slide" data-background="#b5533c" data-background-transition="zoom">
-					<h2>Background Transitions</h2>
-					<p>
-						You can override background transitions per-slide.
-					</p>
-					<pre><code class="hljs" style="word-wrap: break-word;">&lt;section data-background-transition="zoom"&gt;</code></pre>
+					<p><small>Take a look to <a href="https://puppet.com/blog/continuous-delivery-vs-continuous-deployment-what-s-diff">this post</a> for more info.</small></p>
 				</section>
 
 				<section>
-					<h2>Pretty Code</h2>
-					<pre><code class="hljs" data-trim contenteditable>
-function linkify( selector ) {
-  if( supports3DTransforms ) {
-
-    var nodes = document.querySelectorAll( selector );
-
-    for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
-      var node = nodes[i];
-
-      if( !node.className ) {
-        node.className += ' roll';
-      }
-    }
-  }
-}
-					</code></pre>
-					<p>Code syntax highlighting courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
+					<h2 class="mini">Full Sample</h2>
+					<p>Sin Rumbo Fijo</p>
 				</section>
 
 				<section>
-					<h2>Marvelous List</h2>
-					<ul>
-						<li>No order here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-					</ul>
+					<h2 class="mini">Thank you</h2>
+					<p>Sin Rumbo Fijo</p>
 				</section>
-
-				<section>
-					<h2>Fantastic Ordered List</h2>
-					<ol>
-						<li>One is smaller than...</li>
-						<li>Two is smaller than...</li>
-						<li>Three!</li>
-					</ol>
-				</section>
-
-				<section>
-					<h2>Tabular Tables</h2>
-					<table>
-						<thead>
-							<tr>
-								<th>Item</th>
-								<th>Value</th>
-								<th>Quantity</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>Apples</td>
-								<td>$1</td>
-								<td>7</td>
-							</tr>
-							<tr>
-								<td>Lemonade</td>
-								<td>$2</td>
-								<td>18</td>
-							</tr>
-							<tr>
-								<td>Bread</td>
-								<td>$3</td>
-								<td>2</td>
-							</tr>
-						</tbody>
-					</table>
-				</section>
-
-				<section>
-					<h2>Clever Quotes</h2>
-					<p>
-						These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;The nice thing about standards is that there are so many to choose from&rdquo;</q> and block:
-					</p>
-					<blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;For years there has been a theory that millions of monkeys typing at random on millions of typewriters would
-						reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo;
-					</blockquote>
-				</section>
-
-				<section>
-					<h2>Intergalactic Interconnections</h2>
-					<p>
-						You can link between slides internally,
-						<a href="#/2/3">like this</a>.
-					</p>
-				</section>
-
-				<section>
-					<h2>Speaker View</h2>
-					<p>There's a <a href="https://github.com/hakimel/reveal.js#speaker-notes">speaker view</a>. It includes a timer, preview of the upcoming slide as well as your speaker notes.</p>
-					<p>Press the <em>S</em> key to try it out.</p>
-
-					<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-					</aside>
-				</section>
-
-				<section>
-					<h2>Export to PDF</h2>
-					<p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, here's an example:</p>
-					<iframe data-src="https://www.slideshare.net/slideshow/embed_code/42840540" width="445" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:3px solid #666; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
-				</section>
-
-				<section>
-					<h2>Global State</h2>
-					<p>
-						Set <code>data-state="something"</code> on a slide and <code>"something"</code>
-						will be added as a class to the document element when the slide is open. This lets you
-						apply broader style changes, like switching the page background.
-					</p>
-				</section>
-
-				<section data-state="customevent">
-					<h2>State Events</h2>
-					<p>
-						Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
-					</p>
-					<pre><code class="javascript" data-trim contenteditable style="font-size: 18px;">
-Reveal.addEventListener( 'customevent', function() {
-	console.log( '"customevent" has fired' );
-} );
-					</code></pre>
-				</section>
-
-				<section>
-					<h2>Take a Moment</h2>
-					<p>
-						Press B or . on your keyboard to pause the presentation. This is helpful when you're on stage and want to take distracting slides off the screen.
-					</p>
-				</section>
-
-				<section>
-					<h2>Much more</h2>
-					<ul>
-						<li>Right-to-left support</li>
-						<li><a href="https://github.com/hakimel/reveal.js#api">Extensive JavaScript API</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#auto-sliding">Auto-progression</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#parallax-background">Parallax backgrounds</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#keyboard-bindings">Custom keyboard bindings</a></li>
-					</ul>
-				</section>
-
-				<section style="text-align: left;">
-					<h1>THE END</h1>
-					<p>
-						- <a href="http://slides.com">Try the online editor</a> <br>
-						- <a href="https://github.com/hakimel/reveal.js">Source code &amp; documentation</a>
-					</p>
-				</section>
-
 			</div>
 
 		</div>
