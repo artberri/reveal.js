@@ -193,7 +193,7 @@ define( 'AUTOMATIC_UPDATER_DISABLED', true );
 
 						<pre><code class="hljs" data-trim contenteditable>
 composer require --dev deployer/deployer
-composer require --dev "deployphp/recipes
+composer require --dev deployphp/recipes
 						</code></pre>
 
 						<p>Your <em>composer.json</em> should include now a reference to the dependencies:</p>
@@ -354,14 +354,383 @@ production:
 						<h3>There is not any manual step in the QA / Test process</h3>
 					</section>
 					<section>
-						<h2>Linting</h2>
+						<h2>Before Deployment</h2>
 					</section>
 					<section>
-						<h2>Unit Testing</h2>
+						<h2 class="mini">Linting</h2>
+
+						<p>Ensure all the team use the same (and the proper) coding conventions with <a href="https://github.com/squizlabs/PHP_CodeSniffer">PHP_CodeSniffer</a>, it will also help you avoiding some errors.</p>
+
+						<div class="fragment">
+							<p>Install <a href="https://github.com/squizlabs/PHP_CodeSniffer">PHP_CodeSniffer</a> with <em>composer</em>:</p>
+
+							<pre><code class="hljs" data-trim contenteditable>
+composer require --dev squizlabs/php_codesniffer
+composer require --dev wp-coding-standards/wpcs:dev-master
+							</code></pre>
+
+
+							<pre><code class="hljs" data-trim contenteditable>
+# composer.json
+# ...
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^2.6",
+        "wp-coding-standards/wpcs": "dev-master",
+    },
+# ...
+							</code></pre>
+						</div>
 					</section>
 					<section>
-						<h2>Functional Testing</h2>
+						<h2 class="mini">Linting</h2>
+
+						<p>Configure your rules in the <em>phpcs.xml</em> file.</p>
+
+						<div class="">
+
+							<pre><code class="hljs" data-trim contenteditable>
+&lt;!-- phpcs.xml --&gt;
+
+&lt;?xml version="1.0"?&gt;
+&lt;ruleset name="PHP_CodeSniffer"&gt;
+  &lt;description&gt;The coding standard for PHP_CodeSniffer itself.&lt;/description&gt;
+
+  &lt;file&gt;src/wp-content/themes/your-theme&lt;/file&gt;
+  &lt;file&gt;src/wp-content/plugins/your-plugin1&lt;/file&gt;
+  &lt;file&gt;src/wp-content/plugins/your-plugin2&lt;/file&gt;
+
+  &lt;arg name="report" value="summary"/&gt;
+  &lt;arg value="np"/&gt;
+
+  &lt;rule ref="PEAR.WhiteSpace.ScopeIndent"&gt;
+    &lt;properties&gt;
+      &lt;property name="indent" value="2"/&gt;
+    &lt;/properties&gt;
+  &lt;/rule&gt;
+
+  &lt;rule ref="vendor/wp-coding-standards/wpcs"/&gt;
+&lt;/ruleset&gt;
+							</code></pre>
+
+						</div>
 					</section>
+					<section>
+						<h2 class="mini">Linting</h2>
+
+						<p>Add the task to your task runner.</p>
+
+						<div class="">
+							<pre><code class="hljs" data-trim contenteditable>
+&lt;?php
+// deploy.php
+
+require 'recipes/qa.php';
+
+							</code></pre>
+							<pre><code class="hljs" data-trim contenteditable>
+&lt;?php
+// recipes/qa.php
+
+task('qa:phpcs', function () {
+  $output = runLocally('./vendor/bin/phpcs');
+  writeln('<info>' . $output . '</info>');
+})->desc('Run PHPCS');
+
+task('qa', [
+  'qa:phpcs',
+])->desc('Code quality checks');
+
+							</code></pre>
+
+						</div>
+					</section>
+					<section>
+						<h2 class="mini">Linting</h2>
+						<p>Other linting tools:</p>
+						<ul>
+							<li>PHP: <a href="https://phpmd.org/">PHPMD</a> (Mess Detector), <a href="https://github.com/sebastianbergmann/phpdcd">PHPDCD</a> (Dead Code Detector), <a href="https://github.com/sebastianbergmann/phpcpd">PHPCPD</a> (Copy/Paste Detector),...</li>
+							<li>Javascript: <a href="http://eslint.org/">Eslint</a>, <a href="http://jshint.com/">JSHint</a>, <a href="http://www.jslint.com/">JSLint</a>,...</li>
+							<li>CSS: <a href="https://github.com/CSSLint/csslint">CSSLint</a>, <a href="https://github.com/brigade/scss-lint">SASS Lint</a>,...</li>
+						</ul>
+					</section>
+					<section>
+						<h2 class="mini">Unit Testing</h2>
+						<blockquote>Do the things right</blockquote>
+						<p>Yes, you can (should) unit test your themes and plugins.</p>
+						<p class="fragment">Use <a href="https://phpunit.de/">PHPUnit</a> and <a href="https://github.com/10up/wp_mock">WP_Mock</a>.</p>
+						<p class="fragment"><small>WP_Mock is built and maintained by 10up where Lucy Tomas works, she is giving a talk after lunch</small></p>
+					</section>
+					<section>
+						<h2 class="mini">Unit Testing</h2>
+
+						<div class="">
+							<p>Install them with <em>composer</em>:</p>
+
+							<pre><code class="hljs" data-trim contenteditable>
+composer require --dev phpunit/phpunit
+composer require --dev 10up/wp_mock:dev-master
+							</code></pre>
+
+
+							<pre><code class="hljs" data-trim contenteditable>
+# composer.json
+# ...
+    "require-dev": {
+        "phpunit/phpunit": "^4.8",
+        "10up/wp_mock": "dev-master",
+    },
+# ...
+							</code></pre>
+						</div>
+					</section>
+					<section>
+						<h2 class="mini">Unit Testing</h2>
+
+						<p>Configure phpunit in the <em>phpunit.xml</em> file.</p>
+
+						<div class="">
+
+							<pre><code class="hljs" data-trim contenteditable>
+&lt;!-- phpunit.xml --&gt;
+
+&lt;phpunit bootstrap="tests/bootstrap.php"&gt;
+
+  &lt;testsuites&gt;
+    &lt;testsuite name="projectname"&gt;
+      &lt;directory&gt;tests&lt;/directory&gt;
+    &lt;/testsuite&gt;
+  &lt;/testsuites&gt;
+
+  &lt;filter&gt;
+    &lt;whitelist processUncoveredFilesFromWhitelist="true"&gt;
+      &lt;directory suffix=".php"&gt;src/wp-content/themes/your-theme&lt;/directory&gt;
+    &lt;/whitelist&gt;
+  &lt;/filter&gt;
+
+  &lt;logging&gt;
+    &lt;log type="coverage-html" target="reports/html/phpunit/coverage" lowUpperBound="35"
+        highLowerBound="70"/&gt;
+    &lt;log type="coverage-text" target="php://stdout" showUncoveredFiles="false"/&gt;
+    &lt;log type="junit" target="reports/phpunit.results.xml" logIncompleteSkipped="false"/&gt;
+  &lt;/logging&gt;
+
+&lt;/phpunit&gt;
+							</code></pre>
+
+						</div>
+					</section>
+					<section>
+						<h2 class="mini">Unit Testing</h2>
+
+						<p>Add the task to your task runner.</p>
+
+						<div class="">
+
+							<pre><code class="hljs" data-trim contenteditable>
+&lt;?php
+// recipes/qa.php
+
+task('qa:phpunit', function () {
+  $output = runLocally('./vendor/bin/phpunit');
+  writeln('<info>' . $output . '</info>');
+})->desc('Run PHPUnit');
+task('qa:phpcs', function () {
+  $output = runLocally('./vendor/bin/phpcs');
+  writeln('<info>' . $output . '</info>');
+})->desc('Run PHPCS');
+task('qa', [
+  'qa:phpcs',
+  'qa:phpunit',
+])->desc('Code quality checks');
+
+							</code></pre>
+							<p>Execute:</p>
+							<pre><code class="hljs" data-trim contenteditable>
+./vendor/bin/dep qa
+							</code></pre>
+
+
+						</div>
+					</section>
+					<section>
+						<h2 class="mini">Add them to your building pipeline</h2>
+						<p>Example with SnapCI:</p>
+					</section>
+					<section>
+						<h2>After Deployment</h2>
+					</section>
+					<section>
+						<h2 class="mini">Functional Testing</h2>
+						<blockquote>Do the right things</blockquote>
+						<p>Yes, you can (should) do functional testing on your Wordpress website.</p>
+						<p class="fragment">Use <a href="http://docs.behat.org/">Behat</a>, <a href="http://mink.behat.org/">Mink</a>, <a href="https://github.com/FriendsOfPHP/Goutte">Goutte</a> and <a href="http://www.seleniumhq.org/	">Selenium</a>.</p>
+					</section>
+					<section>
+						<h2 class="mini">Functional Testing</h2>
+
+						<div class="">
+							<p>Install them with <em>composer</em>:</p>
+
+							<pre><code class="hljs" data-trim contenteditable>
+composer require --dev behat/behat
+composer require --dev behat/mink-extension
+composer require --dev behat/mink-goutte-driver
+composer require --dev behat/mink-selenium2-driver
+composer require --dev se/selenium-server-standalone
+							</code></pre>
+
+
+							<pre><code class="hljs" data-trim contenteditable>
+# composer.json
+# ...
+    "require-dev": {
+        "behat/behat": "~3.0.6",
+        "behat/mink-extension": "^2.2",
+        "behat/mink-goutte-driver": "^1.2",
+        "behat/mink-selenium2-driver": "^1.3",
+        "se/selenium-server-standalone": "^2.53"
+    },
+# ...
+							</code></pre>
+						</div>
+					</section>
+					<section>
+						<h2 class="mini">Functional Testing</h2>
+
+						<p>Configure Behat in the <em>behat.yml</em> file.</p>
+
+						<div class="">
+
+							<pre><code class="hljs" data-trim contenteditable>
+# behat.yml
+default:
+  extensions:
+    Behat\MinkExtension:
+      base_url: 'http://yoursite.local'
+      browser_name: 'firefox'
+      sessions:
+        default:
+          goutte: ~
+        browser:
+          selenium2: ~
+      javascript_session: 'browser'
+    emuse\BehatHTMLFormatter\BehatHTMLFormatterExtension:
+      name: html
+      renderer: Twig,Behat2
+      file_name: index
+      print_args: true
+      print_outp: true
+      loop_break: true
+  formatters:
+    pretty: true
+    html:
+      output_path: %paths.base%/reports/html/behat
+staging:
+  extensions:
+    Behat\MinkExtension:
+      base_url: 'http://staging.yoursite.com'
+production:
+  extensions:
+    Behat\MinkExtension:
+      base_url: 'http://www.yoursite.com'
+							</code></pre>
+
+						</div>
+					</section>
+					<section>
+						<h2 class="mini">Functional Testing</h2>
+
+						<p>Define some tests (and implement them of course)</p>
+
+						<div class="">
+
+							<pre><code class="hljs" data-trim contenteditable>
+@mink:browser
+Feature: Article
+    In order to interact with the author
+    As a user
+    I need to be able to read and comment articles or navigate to related info
+
+    Background:
+        Given I am on the homepage
+        And I hover over the element ".smartlib-grid-list article.post .wp-post-image"
+        And I click on ".smartlib-grid-list article.post .smartlib-caption-link"
+
+    @smoke
+    Scenario: See sections
+        Then I should see "Deja un comentario"
+        And I should see "Entradas relacionadas"
+        And I should see "Entradas recientes"
+
+    Scenario: Make a comment
+        When I fill in the following:
+        | author | Testuser |
+        | email | test@example.com |
+        | url | http://example.com |
+        And I fill in "comment" with 15 random words
+        And I press "Publicar comentario"
+        Then I should see "Testuser"
+							</code></pre>
+
+						</div>
+					</section>
+					<section>
+						<h2 class="mini">Functional Testing</h2>
+
+						<p>Add the task to your task runner.</p>
+
+						<div class="">
+
+							<pre><code class="hljs" data-trim contenteditable>
+&lt;?php
+// recipes/at.php
+
+task('at', function () {
+  $stage = env('app.stage');
+  $testCommand = './vendor/bin/behat';
+  if ('dev' != $stage) {
+    $testCommand .= ' --profile=' . $stage;
+  }
+
+  $seleniumPid = runLocally('nohup ./vendor/bin/selenium-server-standalone > /dev/null 2> /dev/null & echo $!');
+  writeln('<info>Selenium running with pid: ' . $seleniumPid . '</info>');
+
+  writeln('<info>Waiting until selenium is started</info>');
+  $output = runLocally('sleep 7');
+  writeln('<info>Selenium started</info>');
+
+  $output = runLocally($testCommand, 600);
+  writeln('<info>' . $output . '</info>');
+
+  $output = runLocally('kill ' . $seleniumPid);
+  writeln('<info>Selenium stopped</info>');
+})->desc('Run Acceptance Tests');
+
+							</code></pre>
+							<p>Execute:</p>
+							<pre><code class="hljs" data-trim contenteditable>
+./vendor/bin/dep at staging
+							</code></pre>
+
+
+						</div>
+					</section>
+					<section>
+						<h2 class="mini">Add them to your building pipeline</h2>
+						<p>Example with SnapCI:</p>
+					</section>
+				</section>
+
+				<section data-transition="fade-in">
+					<h3 class="mini">Finally, we have implemented...</h3>
+
+					<h2 class="mini fragment">Continous Delivery</h2>
+				</section>
+
+				<section data-transition-speed="fast" data-transition="fade-in ">
+					<h3 class="mini">Finally, we have implemented...</h3>
+
+					<h2 class="mini ">Continous Deployment</h2>
 				</section>
 
 				<section>
@@ -371,14 +740,24 @@ production:
 					<p><small>Take a look to <a href="https://puppet.com/blog/continuous-delivery-vs-continuous-deployment-what-s-diff">this post</a> for more info.</small></p>
 				</section>
 
+				<section data-background="images/minions7.jpg">
+					<h1>Yes,<br> I remember <br> the deployment.<br>Let's see<br> if it sucess!</h1>
+				</section>
+
+				<section data-background="images/everythinkok.gif">
+
+				</section>
+
 				<section>
-					<h2 class="mini">Full Sample</h2>
-					<p>Sin Rumbo Fijo</p>
+					<h2 class="mini">Links and WPBilbao</h2>
 				</section>
 
 				<section>
 					<h2 class="mini">Thank you</h2>
-					<p>Sin Rumbo Fijo</p>
+					<div>
+						<img  data-src="images/thanks.gif" alt="Thank you" >
+					</div>
+					<p>Any Question?</p>
 				</section>
 			</div>
 
