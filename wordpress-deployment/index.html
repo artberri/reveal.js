@@ -54,8 +54,8 @@
                     <h2 class="mini">Who is speaking?</h2>
                     <div class=" fragment">
                         <img style="border:0;box-shadow:none;margin:0;width:600px;" data-src="images/travioor.jpg" alt="Travioor" >
-                        <p><a href="http://www.berriart.com">Alberto Varela</a>, currently working at <a href="http://www.travioor.com">Travioor</a><br>
-                        <small style="color:#666;">alberto@berriart.com | <a style="color:#666;" href="http://twitter.com/artberri">@artberri</a></small>
+                        <p><a href="http://www.berriart.com">Alberto Varela</a>, currently working at <a href="http://www.travioor.com">Travioor</a></p>
+                        <p class=" fragment"><small style="color:#666;"><a style="color:#666;" href="http://www.berriart.com">www.berriart.com</a> | alberto@berriart.com | <a style="color:#666;" href="http://twitter.com/artberri">@artberri</a></small>
                         </p>
                     </div>
                 </section>
@@ -142,8 +142,8 @@ define( 'AUTOMATIC_UPDATER_DISABLED', true );
     "name": "mycompany/brilliant-wordpress-site",
     "repositories":[
         {
-            "type":"composer",
-            "url":"https://wpackagist.org"
+            "type": "composer",
+            "url": "https://wpackagist.org"
         }
     ],
     "require": {
@@ -152,11 +152,6 @@ define( 'AUTOMATIC_UPDATER_DISABLED', true );
         "wpackagist-plugin/wordpress-seo": "^3.2",
         "wpackagist-plugin/mailchimp-for-wp": "^3.1",
         "wpackagist-theme/yourparenttheme": "^1.3",
-    },
-    "autoload": {
-        "psr-0": {
-            "Acme": "src/"
-        }
     }
 }
                         </code></pre>
@@ -167,14 +162,14 @@ define( 'AUTOMATIC_UPDATER_DISABLED', true );
                         <ul>
                             <li>All your code should be organized in Themes &amp; Plugins, and it's the only code that
                             should be in the source control.</li>
-                            <li>Don't modify any dependency. Not plugins, neither themes. Use hooks, actions and child themes to override them.</li>
+                            <li>Don't modify any dependency. Not plugins, neither themes. Use <strong>hooks</strong>, <strong>actions</strong> and <strong>child themes</strong> to override them.</li>
                         </ul>
                     </section>
                     <section>
                         <h2 class="mini">Branching and pull requests</h2>
                         <ul>
                             <li><a href="https://www.atlassian.com/git/tutorials/comparing-workflows">Git workflows</a>: Centralized, Feature Branch, Gitflow, Forking Workflow...</li>
-                            <li>A <a href="http://tech.veinteractive.com/the-code-review-process.html">list of rules</a> to apply to enhance your code review process.</li>
+                            <li>Implement code review with pull requests. Check this <a href="http://tech.veinteractive.com/the-code-review-process.html">list of rules</a> to enhance your code review process.</li>
                         </ul>
                     </section>
                     <section data-background="images/minions5.jpg">
@@ -185,7 +180,7 @@ define( 'AUTOMATIC_UPDATER_DISABLED', true );
 
                 <section>
                     <section>
-                        <h2>The 'Hype'</h2>
+                        <h2>The 'Rule'</h2>
                         <h3>There is not any manual step in the deployment process</h3>
                     </section>
                     <section>
@@ -356,7 +351,40 @@ production:
                     </section>
                     <section>
                         <h2 class="mini">Example with Snap.CI</h2>
-                        <p><small>Sin Rumbo Fijo.</small></p>
+                        <img data-src="images/snap.png" >
+                        <ul>
+                            <li>I like <a href="https://snap-ci.com/">Snap</a> because of its implementation of the 'Deployment Pipeline' concept.</li>
+                            <li>Software as a Service.</li>
+                            <li>Free for Open Source projects.</li>
+                            <li><a href="https://jenkins.io/">Jenkins</a> (free) or <a href="https://www.jetbrains.com/teamcity/">TeamCity</a> (freemium) are probably the best options for a self-hosted tool.</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2 class="mini">Example with Snap.CI</h2>
+                        <p>
+                            <img data-src="images/snapci1.png" >
+                        </p>
+                        <p>
+                            <small><a href="https://snap-ci.com/artberri/sinrumbofijo/branch/master">https://snap-ci.com/artberri/sinrumbofijo/branch/master</a></small>
+                        </p>
+                    </section>
+                    <section>
+                        <h2 class="mini">Example with Snap.CI</h2>
+                        <p>
+                            <img data-src="images/deps-snap.png" >
+                        </p>
+                    </section>
+                    <section>
+                        <h2 class="mini">Example with Snap.CI</h2>
+                        <p>
+                            <img data-src="images/staging-snap.png" >
+                        </p>
+                    </section>
+                    <section>
+                        <h2 class="mini">Example with Snap.CI</h2>
+                        <p>
+                            <img data-src="images/prod-snap.png" >
+                        </p>
                     </section>
 
                     <section data-background="images/minions6.jpg">
@@ -367,7 +395,7 @@ production:
 
                 <section>
                     <section>
-                        <h2>An step further</h2>
+                        <h2>The 'Better'</h2>
                         <h3>There is not any manual step in the QA / Test process</h3>
                     </section>
                     <section>
@@ -571,7 +599,9 @@ task('qa', [
                     </section>
                     <section>
                         <h2 class="mini">Add them to your building pipeline</h2>
-                        <p>Example with SnapCI:</p>
+                        <p>
+                            <img data-src="images/snapci2.png" >
+                        </p>
                     </section>
                     <section>
                         <h2>After Deployment</h2>
@@ -734,7 +764,15 @@ task('at', function () {
                     </section>
                     <section>
                         <h2 class="mini">Add them to your building pipeline</h2>
-                        <p>Example with SnapCI:</p>
+                        <p>
+                            <img data-src="images/snap-acceptance.png" >
+                        </p>
+                    </section>
+                    <section>
+                        <h2 class="mini">Add them to your building pipeline</h2>
+                        <p>
+                            <img data-src="images/snap-smoke.png" >
+                        </p>
                     </section>
                 </section>
 
@@ -766,7 +804,17 @@ task('at', function () {
                 </section>
 
                 <section>
-                    <h2 class="mini">Links and WPBilbao</h2>
+                    <div>
+                        <h2 class="mini">Links of a full example</h2>
+                        <ul>
+                            <li><a href="https://github.com/artberri/sinrumbofijo">https://github.com/artberri/sinrumbofijo</a></li>
+                            <li><a href="https://snap-ci.com/artberri/sinrumbofijo/branch/master">https://snap-ci.com/artberri/sinrumbofijo/branch/master</a></li>
+                        </ul>
+                    </div><br>
+                    <div class="fragment">
+                        <h2 class="mini">Good job!</h2>
+                        <img src="images/wordpress-bilbao.jpg">
+                    </div>
                 </section>
 
                 <section>
