@@ -1,102 +1,119 @@
 <!doctype html>
 <html lang="en">
 
-	<head>
-		<meta charset="utf-8">
+    <head>
+        <meta charset="utf-8">
 
-		<title>reveal.js – The HTML Presentation Framework</title>
+        <title>reveal.js – The HTML Presentation Framework</title>
 
-		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-		<meta name="author" content="Hakim El Hattab">
+        <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+        <meta name="author" content="Hakim El Hattab">
 
-		<meta name="apple-mobile-web-app-capable" content="yes">
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 
-		<link href='https://fonts.googleapis.com/css?family=Oswald:400,700|Libre+Baskerville' rel='stylesheet' type='text/css'>
-		<link rel="stylesheet" href="../css/reveal.css">
-		<link rel="stylesheet" href="../css/theme/black.css" id="theme">
+        <link href='https://fonts.googleapis.com/css?family=Oswald:400,700|Libre+Baskerville' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="../css/reveal.css">
+        <link rel="stylesheet" href="../css/theme/black.css" id="theme">
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="../lib/css/zenburn.css">
-		<link rel="stylesheet" href="style.css">
+        <!-- Theme used for syntax highlighting of code -->
+        <link rel="stylesheet" href="../lib/css/zenburn.css">
+        <link rel="stylesheet" href="style.css">
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? '../css/print/pdf.css' : '../css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
+        <!-- Printing and PDF exports -->
+        <script>
+            var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match( /print-pdf/gi ) ? '../css/print/pdf.css' : '../css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+        </script>
 
-		<!--[if lt IE 9]>
-		<script src="lib/js/html5shiv.js"></script>
-		<![endif]-->
-	</head>
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
 
-	<body>
+    <body>
 
-		<div class="reveal">
+        <div class="reveal">
 
-			<!-- Any section element inside of this container is displayed as a slide -->
-			<div class="slides">
-				<section id="home" data-background="images/home.jpg">
-					<h1><span id="deploying">Deploying</span> <br><span class="wordpress"><span class="word">Word</span><span class="press">Press</span></span> <br><span id="likeapro">Like&nbsp;a&nbsp;Pro</span></h1>
-					<p id="byauthor">
-						By <a href="http://www.berriart.com/">Alberto Varela</a>
-					</p>
-				</section>
+            <!-- Any section element inside of this container is displayed as a slide -->
+            <div class="slides">
+                <section id="home" data-background="images/home.jpg">
+                    <h1><span id="deploying">Deploying</span> <br><span class="wordpress"><span class="word">Word</span><span class="press">Press</span></span> <br><span id="likeapro">Like&nbsp;a&nbsp;Pro</span></h1>
+                    <p id="byauthor">
+                        By <a href="http://www.berriart.com/">Alberto Varela</a>
+                    </p>
+                </section>
 
-				<section>
-					<h2>Who I am?</h2>
-					<p>
-						ToDo.
-					</p>
-				</section>
+                <section>
+                    <h2 class="mini">Who is speaking?</h2>
+                    <div class=" fragment">
+                        <img style="border:0;box-shadow:none;margin:0;width:600px;" data-src="images/travioor.jpg" alt="Travioor" >
+                        <p><a href="http://www.berriart.com">Alberto Varela</a>, currently working at <a href="http://www.travioor.com">Travioor</a><br>
+                        <small style="color:#666;">alberto@berriart.com | <a style="color:#666;" href="http://twitter.com/artberri">@artberri</a></small>
+                        </p>
+                    </div>
+                </section>
 
-				<section>
-					<h2 class="mini">Websites <span>VS</span> Professional Websites</h2>
-					<br>
-					<div>
-						<img class=" fragment" width="440" data-src="images/suzanne.png" alt="Done stamp" >
-						<img class=" fragment" width="440" data-src="images/10up.png" alt="Done stamp" >
-					</div>
-				</section>
+                <section data-transition="fade-in">
+                    <h2 class="mini">Websites <span>VS</span> Professional Websites</h2>
+                    <br>
+                    <div class="fragment">
+                        <img width="440" data-src="images/suzanne.png" alt="Done stamp" >
+                    </div>
+                </section>
 
-				<section>
-					<h2 class="mini">Deployments <span>VS</span> Professional Deployments</h2>
-					<br>
-					<div >
-						<img class=" fragment" width="440" data-src="images/minion2.gif" alt="Done stamp" >
-						<img class=" fragment" width="440" data-src="images/minion3.gif">
-					</div>
-				</section>
+                <section data-transition-speed="fast" data-transition="fade-in ">
+                    <h2 class="mini">Websites <span>VS</span> Professional Websites</h2>
+                    <br>
+                    <div>
+                        <img width="440" data-src="images/10up.png" alt="Done stamp" >
+                    </div>
+                </section>
 
-				<section>
-					<h2>How?</h2>
-				</section>
+                <section  data-transition="fade-in ">
+                    <h2 class="mini">Deployments <span>VS</span> Professional Deployments</h2>
+                    <br>
+                    <div  class=" fragment">
+                        <img width="440" data-src="images/minion2.gif" alt="Done stamp" >
+                    </div>
+                </section>
 
-				<section>
-					<section>
-						<h2>The first 'Dogma'</h2>
-						<h3>The developers are the only responsibles of the code</h3>
-					</section>
-					<section>
-						<h2 class="mini">People that should not upload code:</h2>
-						<ul>
-							<li class="fragment">The client</li>
-							<li class="fragment">The marketing department</li>
-							<li class="fragment">The CEO / The boss</li>
-							<li class="fragment">Matt Mullenweg</li>
-						</ul>
-					</section>
-					<section>
-						<h2 class="mini">wp-config.php</h2>
-						<p>You should disallow modifications from the admin panel.</p>
-						<pre><code class="hljs" data-trim contenteditable>
+                <section data-transition-speed="fast" data-transition="fade-in">
+                    <h2 class="mini">Deployments <span>VS</span> Professional Deployments</h2>
+                    <br>
+                    <div >
+                        <img width="440" data-src="images/minion3.gif">
+                    </div>
+                </section>
+
+                <section>
+                    <h2>How?</h2>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>The 'Dogma'</h2>
+                        <h3>The developers are the only responsibles of the code</h3>
+                    </section>
+                    <section>
+                        <h2 class="mini">People that should not upload code:</h2>
+                        <ul>
+                            <li class="fragment">The client</li>
+                            <li class="fragment">The marketing department</li>
+                            <li class="fragment">The CEO / The boss</li>
+                            <li class="fragment">Matt Mullenweg</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2 class="mini">wp-config.php</h2>
+                        <p>You should disallow modifications from the admin panel.</p>
+                        <pre><code class="hljs" data-trim contenteditable>
 &lt;?php
 
 // Disable the Plugin and Theme Editor
@@ -106,20 +123,20 @@ define( 'DISALLOW_FILE_MODS', true );
 // Disable All Automatic Updates
 define( 'AUTOMATIC_UPDATER_DISABLED', true );
 
-						</code></pre>
-						<p><small>You can find more info about configuration constants in the <a href="https://codex.wordpress.org/Editing_wp-config.php">Wordpress Codex</a>.</small></p>
-					</section>
-					<section>
-						<h2 class="mini">Version Control System</h2>
-						<h3>Git</h3>
-						<p>Self hosted, Github, Bitbucket, Gitlab, VSO...</p>
-						<h3>Subversion</h3>
-						<p>No Pull Requests :(</p>
-					</section>
-					<section>
-						<h2 class="mini">Managing dependencies</h2>
-						<h3><a href="https://getcomposer.org/">Composer</a> + <a href="https://wpackagist.org/">WPackagist</a></h3>
-						<pre><code class="hljs" data-trim contenteditable>
+                        </code></pre>
+                        <p><small>You can find more info about configuration constants in the <a href="https://codex.wordpress.org/Editing_wp-config.php">Wordpress Codex</a>.</small></p>
+                    </section>
+                    <section>
+                        <h2 class="mini">Version Control System</h2>
+                        <h3>Git</h3>
+                        <p>Self hosted, Github, Bitbucket, Gitlab, VSO...</p>
+                        <h3>Subversion</h3>
+                        <p>No Pull Requests :(</p>
+                    </section>
+                    <section>
+                        <h2 class="mini">Managing dependencies</h2>
+                        <h3><a href="https://getcomposer.org/">Composer</a> + <a href="https://wpackagist.org/">WPackagist</a></h3>
+                        <pre><code class="hljs" data-trim contenteditable>
 # composer.json
 {
     "name": "mycompany/brilliant-wordpress-site",
@@ -142,63 +159,63 @@ define( 'AUTOMATIC_UPDATER_DISABLED', true );
         }
     }
 }
-						</code></pre>
-						<p><small><a href="https://wp-cli.org/">WP-CLI</a> could be another option to manage dependencies.</small></p>
-					</section>
-					<section>
-						<h2 class="mini">Your code: Themes &amp; Plugins</h2>
-						<ul>
-							<li>All your code should be organized in Themes &amp; Plugins, and it's the only code that
-							should be in the source control.</li>
-							<li>Don't modify any dependency. Not plugins, neither themes. Use hooks, actions and child themes to override them.</li>
-						</ul>
-					</section>
-					<section>
-						<h2 class="mini">Branching and pull requests</h2>
-						<ul>
-							<li><a href="https://www.atlassian.com/git/tutorials/comparing-workflows">Git workflows</a>: Centralized, Feature Branch, Gitflow, Forking Workflow...</li>
-							<li>A <a href="http://tech.veinteractive.com/the-code-review-process.html">list of rules</a> to apply to enhance your code review process.</li>
-						</ul>
-					</section>
-					<section data-background="images/minions5.jpg">
-						<h1>Let's<br> make a<br> Pull<br> Request!</h1>
-					</section>
+                        </code></pre>
+                        <p><small><a href="https://wp-cli.org/">WP-CLI</a> could be another option to manage dependencies.</small></p>
+                    </section>
+                    <section>
+                        <h2 class="mini">Your code: Themes &amp; Plugins</h2>
+                        <ul>
+                            <li>All your code should be organized in Themes &amp; Plugins, and it's the only code that
+                            should be in the source control.</li>
+                            <li>Don't modify any dependency. Not plugins, neither themes. Use hooks, actions and child themes to override them.</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2 class="mini">Branching and pull requests</h2>
+                        <ul>
+                            <li><a href="https://www.atlassian.com/git/tutorials/comparing-workflows">Git workflows</a>: Centralized, Feature Branch, Gitflow, Forking Workflow...</li>
+                            <li>A <a href="http://tech.veinteractive.com/the-code-review-process.html">list of rules</a> to apply to enhance your code review process.</li>
+                        </ul>
+                    </section>
+                    <section data-background="images/minions5.jpg">
+                        <h1>Let's<br> make a<br> Pull<br> Request!</h1>
+                    </section>
 
-				</section>
+                </section>
 
-				<section>
-					<section>
-						<h2>The second 'Dogma'</h2>
-						<h3>There is not any manual step in the deployment process</h3>
-					</section>
-					<section>
-						<h2 class="mini">No more "Works on my machine"</h2>
-						<ul>
-							<li class="fragment">Make clear you definition of done.</li>
-							<li class="fragment">Replicate your production environment: <a href="https://www.vagrantup.com/">Vagrant</a>, <a href="https://www.docker.com/">Docker</a>, <a href="https://puppet.com/">Puppet</a>, <a href="https://www.chef.io/">Chef</a>,...</li>
-							<li class="fragment">Create staging environments</li>
-						</ul>
-					</section>
-					<section>
-						<h2 class="mini">Deployment Tools / Task Runners</h2>
-						<ul>
-							<li>PHP tools: <a href="http://deployer.org/">Deployer</a>, <a href="http://magephp.com/">Magallanes</a>, <a href="https://www.phing.info/">Phing</a>, ...</li>
-							<li>Other tools: <a href="http://gruntjs.com/">Grunt</a>, <a href="http://gulpjs.com/">Gulp</a>, <a href="http://ant.apache.org/">Ant</a>, ...</li>
-						</ul>
-					</section>
-					<section>
-						<h2 class="mini">Example with Deployer</h2>
+                <section>
+                    <section>
+                        <h2>The 'Hype'</h2>
+                        <h3>There is not any manual step in the deployment process</h3>
+                    </section>
+                    <section>
+                        <h2 class="mini">No more "Works on my machine"</h2>
+                        <ul>
+                            <li class="fragment">Make clear you definition of done.</li>
+                            <li class="fragment">Replicate your production environment: <a href="https://www.vagrantup.com/">Vagrant</a>, <a href="https://www.docker.com/">Docker</a>, <a href="https://puppet.com/">Puppet</a>, <a href="https://www.chef.io/">Chef</a>,...</li>
+                            <li class="fragment">Create staging environments</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2 class="mini">Deployment Tools / Task Runners</h2>
+                        <ul>
+                            <li>PHP tools: <a href="http://deployer.org/">Deployer</a>, <a href="http://magephp.com/">Magallanes</a>, <a href="https://www.phing.info/">Phing</a>, ...</li>
+                            <li>Other tools: <a href="http://gruntjs.com/">Grunt</a>, <a href="http://gulpjs.com/">Gulp</a>, <a href="http://ant.apache.org/">Ant</a>, ...</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2 class="mini">Example with Deployer</h2>
 
-						<p>Install it with <em>composer</em>:</p>
+                        <p>Install it with <em>composer</em>:</p>
 
-						<pre><code class="hljs" data-trim contenteditable>
+                        <pre><code class="hljs" data-trim contenteditable>
 composer require --dev deployer/deployer
 composer require --dev deployphp/recipes
-						</code></pre>
+                        </code></pre>
 
-						<p>Your <em>composer.json</em> should include now a reference to the dependencies:</p>
+                        <p>Your <em>composer.json</em> should include now a reference to the dependencies:</p>
 
-						<pre><code class="hljs" data-trim contenteditable>
+                        <pre><code class="hljs" data-trim contenteditable>
 # composer.json
 # ...
     "require-dev": {
@@ -206,14 +223,14 @@ composer require --dev deployphp/recipes
         "deployphp/recipes": "^3.1",
     },
 # ...
-						</code></pre>
-					</section>
-					<section>
-						<h2 class="mini">Example with Deployer</h2>
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2 class="mini">Example with Deployer</h2>
 
-						<p>Configure your deploy steps in the <em>deploy.php</em> file:</p>
+                        <p>Configure your deploy steps in the <em>deploy.php</em> file:</p>
 
-						<pre><code class="hljs" data-trim contenteditable>
+                        <pre><code class="hljs" data-trim contenteditable>
 &lt;?php
 // deploy.php
 require 'recipe/common.php';
@@ -252,14 +269,14 @@ task('deploy', [
 after('deploy', 'success');
 
 serverList(__DIR__ . '/servers.yml');
-						</code></pre>
-					</section>
-					<section>
-						<h2 class="mini">Example with Deployer</h2>
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2 class="mini">Example with Deployer</h2>
 
-						<p>Configure your deployment credentials and servers in the <em>servers.yml</em> file:</p>
+                        <p>Configure your deployment credentials and servers in the <em>servers.yml</em> file:</p>
 
-						<pre><code class="hljs" data-trim contenteditable>
+                        <pre><code class="hljs" data-trim contenteditable>
 # servers.yml
 staging:
   host: staging.sinrumbofijo.com
@@ -315,62 +332,62 @@ production:
       logged_in_salt: 'write a better secret here'
       nonce_salt: 'write a better secret here'
 
-						</code></pre>
-					</section>
-					<section>
-						<h2 class="mini">Example with Deployer</h2>
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2 class="mini">Example with Deployer</h2>
 
-						<p>And now, deploy is as simple as:</p>
+                        <p>And now, deploy is as simple as:</p>
 
-						<pre><code class="hljs" data-trim contenteditable>
+                        <pre><code class="hljs" data-trim contenteditable>
 ./vendor/bin/dep deploy staging
-						</code></pre>
-						<pre><code class="hljs" data-trim contenteditable>
+                        </code></pre>
+                        <pre><code class="hljs" data-trim contenteditable>
 ./vendor/bin/dep deploy production
-						</code></pre>
-					</section>
-					<section>
-						<h2 class="mini">Continous Integration Tools</h2>
-						<div class="fragment">
-							<img data-src="images/ci.png" >
+                        </code></pre>
+                    </section>
+                    <section>
+                        <h2 class="mini">Continous Integration Tools</h2>
+                        <div class="fragment">
+                            <img data-src="images/ci.png" >
 
-							<p><small>You can see a detailed comparison in <a href="http://stackshare.io/continuous-integration">Stackshare</a>.</small></p>
-						</div>
-					</section>
-					<section>
-						<h2 class="mini">Example with Snap.CI</h2>
-						<p><small>Sin Rumbo Fijo.</small></p>
-					</section>
+                            <p><small>You can see a detailed comparison in <a href="http://stackshare.io/continuous-integration">Stackshare</a>.</small></p>
+                        </div>
+                    </section>
+                    <section>
+                        <h2 class="mini">Example with Snap.CI</h2>
+                        <p><small>Sin Rumbo Fijo.</small></p>
+                    </section>
 
-					<section data-background="images/minions6.jpg">
-						<h1>So...<br> Would you<br> dare to<br> make a deploy<br> right now?</h1>
-					</section>
+                    <section data-background="images/minions6.jpg">
+                        <h1>So...<br> Would you<br> dare to<br> make a deploy<br> right now?</h1>
+                    </section>
 
-				</section>
+                </section>
 
-				<section>
-					<section>
-						<h2>An step further</h2>
-						<h3>There is not any manual step in the QA / Test process</h3>
-					</section>
-					<section>
-						<h2>Before Deployment</h2>
-					</section>
-					<section>
-						<h2 class="mini">Linting</h2>
+                <section>
+                    <section>
+                        <h2>An step further</h2>
+                        <h3>There is not any manual step in the QA / Test process</h3>
+                    </section>
+                    <section>
+                        <h2>Before Deployment</h2>
+                    </section>
+                    <section>
+                        <h2 class="mini">Linting</h2>
 
-						<p>Ensure all the team use the same (and the proper) coding conventions with <a href="https://github.com/squizlabs/PHP_CodeSniffer">PHP_CodeSniffer</a>, it will also help you avoiding some errors.</p>
+                        <p>Ensure all the team use the same (and the proper) coding conventions with <a href="https://github.com/squizlabs/PHP_CodeSniffer">PHP_CodeSniffer</a>, it will also help you avoiding some errors.</p>
 
-						<div class="fragment">
-							<p>Install <a href="https://github.com/squizlabs/PHP_CodeSniffer">PHP_CodeSniffer</a> with <em>composer</em>:</p>
+                        <div class="fragment">
+                            <p>Install <a href="https://github.com/squizlabs/PHP_CodeSniffer">PHP_CodeSniffer</a> with <em>composer</em>:</p>
 
-							<pre><code class="hljs" data-trim contenteditable>
+                            <pre><code class="hljs" data-trim contenteditable>
 composer require --dev squizlabs/php_codesniffer
 composer require --dev wp-coding-standards/wpcs:dev-master
-							</code></pre>
+                            </code></pre>
 
 
-							<pre><code class="hljs" data-trim contenteditable>
+                            <pre><code class="hljs" data-trim contenteditable>
 # composer.json
 # ...
     "require-dev": {
@@ -378,17 +395,17 @@ composer require --dev wp-coding-standards/wpcs:dev-master
         "wp-coding-standards/wpcs": "dev-master",
     },
 # ...
-							</code></pre>
-						</div>
-					</section>
-					<section>
-						<h2 class="mini">Linting</h2>
+                            </code></pre>
+                        </div>
+                    </section>
+                    <section>
+                        <h2 class="mini">Linting</h2>
 
-						<p>Configure your rules in the <em>phpcs.xml</em> file.</p>
+                        <p>Configure your rules in the <em>phpcs.xml</em> file.</p>
 
-						<div class="">
+                        <div class="">
 
-							<pre><code class="hljs" data-trim contenteditable>
+                            <pre><code class="hljs" data-trim contenteditable>
 &lt;!-- phpcs.xml --&gt;
 
 &lt;?xml version="1.0"?&gt;
@@ -410,24 +427,24 @@ composer require --dev wp-coding-standards/wpcs:dev-master
 
   &lt;rule ref="vendor/wp-coding-standards/wpcs"/&gt;
 &lt;/ruleset&gt;
-							</code></pre>
+                            </code></pre>
 
-						</div>
-					</section>
-					<section>
-						<h2 class="mini">Linting</h2>
+                        </div>
+                    </section>
+                    <section>
+                        <h2 class="mini">Linting</h2>
 
-						<p>Add the task to your task runner.</p>
+                        <p>Add the task to your task runner.</p>
 
-						<div class="">
-							<pre><code class="hljs" data-trim contenteditable>
+                        <div class="">
+                            <pre><code class="hljs" data-trim contenteditable>
 &lt;?php
 // deploy.php
 
 require 'recipes/qa.php';
 
-							</code></pre>
-							<pre><code class="hljs" data-trim contenteditable>
+                            </code></pre>
+                            <pre><code class="hljs" data-trim contenteditable>
 &lt;?php
 // recipes/qa.php
 
@@ -440,39 +457,39 @@ task('qa', [
   'qa:phpcs',
 ])->desc('Code quality checks');
 
-							</code></pre>
+                            </code></pre>
 
-						</div>
-					</section>
-					<section>
-						<h2 class="mini">Linting</h2>
-						<p>Other linting tools:</p>
-						<ul>
-							<li>PHP: <a href="https://phpmd.org/">PHPMD</a> (Mess Detector), <a href="https://github.com/sebastianbergmann/phpdcd">PHPDCD</a> (Dead Code Detector), <a href="https://github.com/sebastianbergmann/phpcpd">PHPCPD</a> (Copy/Paste Detector),...</li>
-							<li>Javascript: <a href="http://eslint.org/">Eslint</a>, <a href="http://jshint.com/">JSHint</a>, <a href="http://www.jslint.com/">JSLint</a>,...</li>
-							<li>CSS: <a href="https://github.com/CSSLint/csslint">CSSLint</a>, <a href="https://github.com/brigade/scss-lint">SASS Lint</a>,...</li>
-						</ul>
-					</section>
-					<section>
-						<h2 class="mini">Unit Testing</h2>
-						<blockquote>Do the things right</blockquote>
-						<p>Yes, you can (should) unit test your themes and plugins.</p>
-						<p class="fragment">Use <a href="https://phpunit.de/">PHPUnit</a> and <a href="https://github.com/10up/wp_mock">WP_Mock</a>.</p>
-						<p class="fragment"><small>WP_Mock is built and maintained by 10up where Lucy Tomas works, she is giving a talk after lunch</small></p>
-					</section>
-					<section>
-						<h2 class="mini">Unit Testing</h2>
+                        </div>
+                    </section>
+                    <section>
+                        <h2 class="mini">Linting</h2>
+                        <p>Other linting tools:</p>
+                        <ul>
+                            <li>PHP: <a href="https://phpmd.org/">PHPMD</a> (Mess Detector), <a href="https://github.com/sebastianbergmann/phpdcd">PHPDCD</a> (Dead Code Detector), <a href="https://github.com/sebastianbergmann/phpcpd">PHPCPD</a> (Copy/Paste Detector),...</li>
+                            <li>Javascript: <a href="http://eslint.org/">Eslint</a>, <a href="http://jshint.com/">JSHint</a>, <a href="http://www.jslint.com/">JSLint</a>,...</li>
+                            <li>CSS: <a href="https://github.com/CSSLint/csslint">CSSLint</a>, <a href="https://github.com/brigade/scss-lint">SASS Lint</a>,...</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h2 class="mini">Unit Testing</h2>
+                        <blockquote>Do the things right</blockquote>
+                        <p>Yes, you can (should) unit test your themes and plugins.</p>
+                        <p class="fragment">Use <a href="https://phpunit.de/">PHPUnit</a> and <a href="https://github.com/10up/wp_mock">WP_Mock</a>.</p>
+                        <p class="fragment"><small>WP_Mock is built and maintained by 10up where Lucy Tomas works, she is giving a talk after lunch</small></p>
+                    </section>
+                    <section>
+                        <h2 class="mini">Unit Testing</h2>
 
-						<div class="">
-							<p>Install them with <em>composer</em>:</p>
+                        <div class="">
+                            <p>Install them with <em>composer</em>:</p>
 
-							<pre><code class="hljs" data-trim contenteditable>
+                            <pre><code class="hljs" data-trim contenteditable>
 composer require --dev phpunit/phpunit
 composer require --dev 10up/wp_mock:dev-master
-							</code></pre>
+                            </code></pre>
 
 
-							<pre><code class="hljs" data-trim contenteditable>
+                            <pre><code class="hljs" data-trim contenteditable>
 # composer.json
 # ...
     "require-dev": {
@@ -480,17 +497,17 @@ composer require --dev 10up/wp_mock:dev-master
         "10up/wp_mock": "dev-master",
     },
 # ...
-							</code></pre>
-						</div>
-					</section>
-					<section>
-						<h2 class="mini">Unit Testing</h2>
+                            </code></pre>
+                        </div>
+                    </section>
+                    <section>
+                        <h2 class="mini">Unit Testing</h2>
 
-						<p>Configure phpunit in the <em>phpunit.xml</em> file.</p>
+                        <p>Configure phpunit in the <em>phpunit.xml</em> file.</p>
 
-						<div class="">
+                        <div class="">
 
-							<pre><code class="hljs" data-trim contenteditable>
+                            <pre><code class="hljs" data-trim contenteditable>
 &lt;!-- phpunit.xml --&gt;
 
 &lt;phpunit bootstrap="tests/bootstrap.php"&gt;
@@ -515,18 +532,18 @@ composer require --dev 10up/wp_mock:dev-master
   &lt;/logging&gt;
 
 &lt;/phpunit&gt;
-							</code></pre>
+                            </code></pre>
 
-						</div>
-					</section>
-					<section>
-						<h2 class="mini">Unit Testing</h2>
+                        </div>
+                    </section>
+                    <section>
+                        <h2 class="mini">Unit Testing</h2>
 
-						<p>Add the task to your task runner.</p>
+                        <p>Add the task to your task runner.</p>
 
-						<div class="">
+                        <div class="">
 
-							<pre><code class="hljs" data-trim contenteditable>
+                            <pre><code class="hljs" data-trim contenteditable>
 &lt;?php
 // recipes/qa.php
 
@@ -543,44 +560,44 @@ task('qa', [
   'qa:phpunit',
 ])->desc('Code quality checks');
 
-							</code></pre>
-							<p>Execute:</p>
-							<pre><code class="hljs" data-trim contenteditable>
+                            </code></pre>
+                            <p>Execute:</p>
+                            <pre><code class="hljs" data-trim contenteditable>
 ./vendor/bin/dep qa
-							</code></pre>
+                            </code></pre>
 
 
-						</div>
-					</section>
-					<section>
-						<h2 class="mini">Add them to your building pipeline</h2>
-						<p>Example with SnapCI:</p>
-					</section>
-					<section>
-						<h2>After Deployment</h2>
-					</section>
-					<section>
-						<h2 class="mini">Functional Testing</h2>
-						<blockquote>Do the right things</blockquote>
-						<p>Yes, you can (should) do functional testing on your Wordpress website.</p>
-						<p class="fragment">Use <a href="http://docs.behat.org/">Behat</a>, <a href="http://mink.behat.org/">Mink</a>, <a href="https://github.com/FriendsOfPHP/Goutte">Goutte</a> and <a href="http://www.seleniumhq.org/	">Selenium</a>.</p>
-					</section>
-					<section>
-						<h2 class="mini">Functional Testing</h2>
+                        </div>
+                    </section>
+                    <section>
+                        <h2 class="mini">Add them to your building pipeline</h2>
+                        <p>Example with SnapCI:</p>
+                    </section>
+                    <section>
+                        <h2>After Deployment</h2>
+                    </section>
+                    <section>
+                        <h2 class="mini">Functional Testing</h2>
+                        <blockquote>Do the right things</blockquote>
+                        <p>Yes, you can (should) do functional testing on your Wordpress website.</p>
+                        <p class="fragment">Use <a href="http://docs.behat.org/">Behat</a>, <a href="http://mink.behat.org/">Mink</a>, <a href="https://github.com/FriendsOfPHP/Goutte">Goutte</a> and <a href="http://www.seleniumhq.org/    ">Selenium</a>.</p>
+                    </section>
+                    <section>
+                        <h2 class="mini">Functional Testing</h2>
 
-						<div class="">
-							<p>Install them with <em>composer</em>:</p>
+                        <div class="">
+                            <p>Install them with <em>composer</em>:</p>
 
-							<pre><code class="hljs" data-trim contenteditable>
+                            <pre><code class="hljs" data-trim contenteditable>
 composer require --dev behat/behat
 composer require --dev behat/mink-extension
 composer require --dev behat/mink-goutte-driver
 composer require --dev behat/mink-selenium2-driver
 composer require --dev se/selenium-server-standalone
-							</code></pre>
+                            </code></pre>
 
 
-							<pre><code class="hljs" data-trim contenteditable>
+                            <pre><code class="hljs" data-trim contenteditable>
 # composer.json
 # ...
     "require-dev": {
@@ -591,17 +608,17 @@ composer require --dev se/selenium-server-standalone
         "se/selenium-server-standalone": "^2.53"
     },
 # ...
-							</code></pre>
-						</div>
-					</section>
-					<section>
-						<h2 class="mini">Functional Testing</h2>
+                            </code></pre>
+                        </div>
+                    </section>
+                    <section>
+                        <h2 class="mini">Functional Testing</h2>
 
-						<p>Configure Behat in the <em>behat.yml</em> file.</p>
+                        <p>Configure Behat in the <em>behat.yml</em> file.</p>
 
-						<div class="">
+                        <div class="">
 
-							<pre><code class="hljs" data-trim contenteditable>
+                            <pre><code class="hljs" data-trim contenteditable>
 # behat.yml
 default:
   extensions:
@@ -633,18 +650,18 @@ production:
   extensions:
     Behat\MinkExtension:
       base_url: 'http://www.yoursite.com'
-							</code></pre>
+                            </code></pre>
 
-						</div>
-					</section>
-					<section>
-						<h2 class="mini">Functional Testing</h2>
+                        </div>
+                    </section>
+                    <section>
+                        <h2 class="mini">Functional Testing</h2>
 
-						<p>Define some tests (and implement them of course)</p>
+                        <p>Define some tests (and implement them of course)</p>
 
-						<div class="">
+                        <div class="">
 
-							<pre><code class="hljs" data-trim contenteditable>
+                            <pre><code class="hljs" data-trim contenteditable>
 @mink:browser
 Feature: Article
     In order to interact with the author
@@ -670,18 +687,18 @@ Feature: Article
         And I fill in "comment" with 15 random words
         And I press "Publicar comentario"
         Then I should see "Testuser"
-							</code></pre>
+                            </code></pre>
 
-						</div>
-					</section>
-					<section>
-						<h2 class="mini">Functional Testing</h2>
+                        </div>
+                    </section>
+                    <section>
+                        <h2 class="mini">Functional Testing</h2>
 
-						<p>Add the task to your task runner.</p>
+                        <p>Add the task to your task runner.</p>
 
-						<div class="">
+                        <div class="">
 
-							<pre><code class="hljs" data-trim contenteditable>
+                            <pre><code class="hljs" data-trim contenteditable>
 &lt;?php
 // recipes/at.php
 
@@ -706,89 +723,89 @@ task('at', function () {
   writeln('<info>Selenium stopped</info>');
 })->desc('Run Acceptance Tests');
 
-							</code></pre>
-							<p>Execute:</p>
-							<pre><code class="hljs" data-trim contenteditable>
+                            </code></pre>
+                            <p>Execute:</p>
+                            <pre><code class="hljs" data-trim contenteditable>
 ./vendor/bin/dep at staging
-							</code></pre>
+                            </code></pre>
 
 
-						</div>
-					</section>
-					<section>
-						<h2 class="mini">Add them to your building pipeline</h2>
-						<p>Example with SnapCI:</p>
-					</section>
-				</section>
+                        </div>
+                    </section>
+                    <section>
+                        <h2 class="mini">Add them to your building pipeline</h2>
+                        <p>Example with SnapCI:</p>
+                    </section>
+                </section>
 
-				<section data-transition="fade-in">
-					<h3 class="mini">Finally, we have implemented...</h3>
+                <section data-transition="fade-in">
+                    <h3 class="mini">Finally, we have implemented...</h3>
 
-					<h2 class="mini fragment">Continous Delivery</h2>
-				</section>
+                    <h2 class="mini fragment">Continous Delivery</h2>
+                </section>
 
-				<section data-transition-speed="fast" data-transition="fade-in ">
-					<h3 class="mini">Finally, we have implemented...</h3>
+                <section data-transition-speed="fast" data-transition="fade-in ">
+                    <h3 class="mini">Finally, we have implemented...</h3>
 
-					<h2 class="mini ">Continous Deployment</h2>
-				</section>
+                    <h2 class="mini ">Continous Deployment</h2>
+                </section>
 
-				<section>
-					<h2 class="mini">Continous Delivery <br><span>VS</span><br> Continous deployment</h2>
-					<img data-src="images/continuous-delivery-deployment-sm.jpg" >
+                <section>
+                    <h2 class="mini">Continous Delivery <br><span>VS</span><br> Continous deployment</h2>
+                    <img data-src="images/continuous-delivery-deployment-sm.jpg" >
 
-					<p><small>Take a look to <a href="https://puppet.com/blog/continuous-delivery-vs-continuous-deployment-what-s-diff">this post</a> for more info.</small></p>
-				</section>
+                    <p><small>Take a look to <a href="https://puppet.com/blog/continuous-delivery-vs-continuous-deployment-what-s-diff">this post</a> for more info.</small></p>
+                </section>
 
-				<section data-background="images/minions7.jpg">
-					<h1>Yes,<br> I remember <br> the deployment.<br>Let's see<br> if it sucess!</h1>
-				</section>
+                <section data-background="images/minions7.jpg">
+                    <h1>Yes,<br> I remember <br> the deployment.<br>Let's see<br> if it sucess!</h1>
+                </section>
 
-				<section data-background="images/everythinkok.gif">
+                <section data-background="images/everythinkok.gif">
 
-				</section>
+                </section>
 
-				<section>
-					<h2 class="mini">Links and WPBilbao</h2>
-				</section>
+                <section>
+                    <h2 class="mini">Links and WPBilbao</h2>
+                </section>
 
-				<section>
-					<h2 class="mini">Thank you</h2>
-					<div>
-						<img  data-src="images/thanks.gif" alt="Thank you" >
-					</div>
-					<p>Any Question?</p>
-				</section>
-			</div>
+                <section>
+                    <h2 class="mini">Thank you</h2>
+                    <div>
+                        <img  data-src="images/thanks.gif" alt="Thank you" >
+                    </div>
+                    <p>Any Question?</p>
+                </section>
+            </div>
 
-		</div>
+        </div>
 
-		<script src="../lib/js/head.min.js"></script>
-		<script src="../js/reveal.js"></script>
+        <script src="../lib/js/head.min.js"></script>
+        <script src="../js/reveal.js"></script>
 
-		<script>
+        <script>
 
-			// More info https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				controls: true,
-				progress: true,
-				history: true,
-				center: true,
+            // More info https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
 
-				transition: 'slide', // none/fade/slide/convex/concave/zoom
+                transition: 'slide', // none/fade/slide/convex/concave/zoom
 
-				// More info https://github.com/hakimel/reveal.js#dependencies
-				dependencies: [
-					{ src: '../lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: '../plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: '../plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: '../plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: '../plugin/zoom-js/zoom.js', async: true },
-					{ src: '../plugin/notes/notes.js', async: true }
-				]
-			});
+                // More info https://github.com/hakimel/reveal.js#dependencies
+                dependencies: [
+                    { src: '../lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: '../plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: '../plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: '../plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: '../plugin/zoom-js/zoom.js', async: true },
+                    { src: '../plugin/notes/notes.js', async: true }
+                ]
+            });
 
-		</script>
+        </script>
 
-	</body>
+    </body>
 </html>
