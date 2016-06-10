@@ -1,0 +1,97 @@
+html, body, .reveal div, .reveal applet, .reveal object, .reveal iframe, .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6, .reveal p, .reveal blockquote, .reveal pre, .reveal a, .reveal abbr, .reveal acronym, .reveal address, .reveal big, .reveal del, .reveal dfn, .reveal em, .reveal img, .reveal ins, .reveal kbd, .reveal q, .reveal s, .reveal samp, .reveal small, .reveal strike, .reveal strong, .reveal sub, .reveal sup, .reveal tt, .reveal var, .reveal b, .reveal u, .reveal center, .reveal dl, .reveal dt, .reveal dd, .reveal ol, .reveal ul, .reveal li, .reveal fieldset, .reveal form, .reveal label, .reveal legend, .reveal table, .reveal caption, .reveal tbody, .reveal tfoot, .reveal thead, .reveal tr, .reveal th, .reveal td, .reveal article, .reveal aside, .reveal canvas, .reveal details, .reveal embed, .reveal figure, .reveal figcaption, .reveal footer, .reveal header, .reveal hgroup, .reveal menu, .reveal nav, .reveal output, .reveal ruby, .reveal section, .reveal summary, .reveal time, .reveal mark, .reveal audio, .reveal video {
+    color: #555;
+}
+
+body {
+    background: #fff;
+    background-color: #fff;
+}
+
+.reveal h1 {
+    font-size: 2em;
+    color: #5DABAD;
+    text-align: left;
+    font-family: 'Oswald', sans-serif;
+    position: relative;
+}
+
+.reveal h2 {
+    font-size: 2em;
+    color: #5DABAD;
+    font-family: 'Oswald', sans-serif;
+}
+
+.reveal h2 span {
+    color: #555;
+}
+
+.reveal h2.mini {
+    font-size: 1.3em;
+}
+
+.reveal h3,
+.reveal p {
+    color: #555;
+    text-transform: none;
+}
+
+.reveal h3 {
+    font-family: 'Oswald', sans-serif;
+}
+
+.reveal h3 a {
+    color: #555;
+}
+
+.reveal a {
+    color: #feda63;
+}
+
+.reveal h1 .wordpress,
+.wordpress {
+    font-family: 'Libre Baskerville', serif;
+    text-transform: none;
+}
+
+.reveal h1 .wordpress {
+    font-size: 1.2em;
+}
+
+.wordpress .word {
+    color: #21759B;
+}
+
+.wordpress .press {
+    color: #333;
+}
+
+#home {
+    text-align: left;
+}
+
+#home p {
+    padding-left: 5px;
+    font-size: 0.5em;
+    position: relative;
+    top: -60px;
+    left: 262px;
+}
+
+#home p a {
+    color: #555;
+}
+
+#deploying {
+    font-size: 0.603em;
+}
+
+#likeapro {
+    font-size: 0.6em;
+    position: relative;
+    top: -35px;
+    left: 266px;
+}
+
+#byauthor {
+
+}

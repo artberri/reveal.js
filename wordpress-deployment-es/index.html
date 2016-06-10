@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
 
-        <title>Deploying Wordpress Like A Pro</title>
+        <title>Desplegando WordPress como un profesional</title>
 
         <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
         <meta name="author" content="Hakim El Hattab">
@@ -44,24 +44,24 @@
             <!-- Any section element inside of this container is displayed as a slide -->
             <div class="slides">
                 <section id="home" data-background="images/home.jpg">
-                    <h1><span id="deploying">Deploying</span> <br><span class="wordpress"><span class="word">Word</span><span class="press">Press</span></span> <br><span id="likeapro">Like&nbsp;a&nbsp;Pro</span></h1>
+                    <h1><span id="deploying">Desplegando</span> <br><span class="wordpress"><span class="word">Word</span><span class="press">Press</span></span> <br><span id="likeapro">como&nbsp;un&nbsp;profesional</span></h1>
                     <p id="byauthor">
-                        By <a href="http://www.berriart.com/">Alberto Varela</a>
+                        Por <a href="http://www.berriart.com/">Alberto Varela</a>
                     </p>
                 </section>
 
                 <section>
-                    <h2 class="mini">Who is speaking?</h2>
+                    <h2 class="mini">Quién habla?</h2>
                     <div class=" fragment">
                         <img style="border:0;box-shadow:none;margin:0;width:600px;" data-src="images/travioor.jpg" alt="Travioor" >
-                        <p><a href="http://www.berriart.com">Alberto Varela</a>, currently working at <a href="http://www.travioor.com">Travioor</a></p>
+                        <p>Soy <a href="http://www.berriart.com">Alberto Varela</a> y trabajo en <a href="http://www.travioor.com">Travioor</a></p>
                         <p class=" fragment"><small style="color:#666;"><a style="color:#666;" href="http://www.berriart.com">www.berriart.com</a> | alberto@berriart.com | <a style="color:#666;" href="http://twitter.com/artberri">@artberri</a></small>
                         </p>
                     </div>
                 </section>
 
                 <section data-transition="fade-in">
-                    <h2 class="mini">Websites <span>VS</span> Professional Websites</h2>
+                    <h2 class="mini">Webs <span>VS</span> Webs profesionales</h2>
                     <br>
                     <div class="fragment">
                         <img width="440" data-src="images/suzanne.png" alt="Done stamp" >
@@ -69,7 +69,7 @@
                 </section>
 
                 <section data-transition-speed="fast" data-transition="fade-in ">
-                    <h2 class="mini">Websites <span>VS</span> Professional Websites</h2>
+                    <h2 class="mini">Webs <span>VS</span> Webs profesionales</h2>
                     <br>
                     <div>
                         <img width="440" data-src="images/10up.png" alt="Done stamp" >
@@ -77,7 +77,7 @@
                 </section>
 
                 <section  data-transition="fade-in ">
-                    <h2 class="mini">Deployments <span>VS</span> Professional Deployments</h2>
+                    <h2 class="mini">Despliegues <span>VS</span> Despliegues profesionales</h2>
                     <br>
                     <div  class=" fragment">
                         <img width="440" data-src="images/minion2.gif" alt="Done stamp" >
@@ -85,7 +85,7 @@
                 </section>
 
                 <section data-transition-speed="fast" data-transition="fade-in">
-                    <h2 class="mini">Deployments <span>VS</span> Professional Deployments</h2>
+                    <h2 class="mini">Despliegues <span>VS</span> Despliegues profesionales</h2>
                     <br>
                     <div >
                         <img width="440" data-src="images/minion3.gif">
@@ -93,26 +93,26 @@
                 </section>
 
                 <section>
-                    <h2>How?</h2>
+                    <h2>Cómo?</h2>
                 </section>
 
                 <section>
                     <section>
-                        <h2>The 'Dogma'</h2>
-                        <h3>The developers are the only people who are responsible for the code</h3>
+                        <h2>El 'Dogma'</h2>
+                        <h3>Los desarrolladores son los únicos responsables del código</h3>
                     </section>
                     <section>
-                        <h2 class="mini">People that should not upload code:</h2>
+                        <h2 class="mini">Gente que no debería poner código en producción:</h2>
                         <ul>
-                            <li class="fragment">The client</li>
-                            <li class="fragment">The marketing department</li>
-                            <li class="fragment">The CEO / The boss</li>
+                            <li class="fragment">El cliente</li>
+                            <li class="fragment">El departamento de márketing</li>
+                            <li class="fragment">"El jefe"</li>
                             <li class="fragment">Matt Mullenweg</li>
                         </ul>
                     </section>
                     <section>
                         <h2 class="mini">wp-config.php</h2>
-                        <p>You should disallow modifications from the admin panel.</p>
+                        <p>Deshabilita cualquier modificación de código desde el administrador.</p>
                         <pre><code class="hljs" data-trim contenteditable>
 &lt;?php
 
@@ -124,7 +124,7 @@ define( 'DISALLOW_FILE_MODS', true );
 define( 'AUTOMATIC_UPDATER_DISABLED', true );
 
                         </code></pre>
-                        <p><small>You can find more info about configuration constants in the <a href="https://codex.wordpress.org/Editing_wp-config.php">Wordpress Codex</a>.</small></p>
+                        <p><small>Más información sobre constantes: <a href="https://codex.wordpress.org/Editing_wp-config.php">Wordpress Codex</a>.</small></p>
                     </section>
                     <section>
                         <h2 class="mini">Version Control System</h2>
@@ -134,7 +134,7 @@ define( 'AUTOMATIC_UPDATER_DISABLED', true );
                         <p>No Pull Requests :(</p>
                     </section>
                     <section>
-                        <h2 class="mini">Managing dependencies</h2>
+                        <h2 class="mini">Gestionando dependencias</h2>
                         <h3><a href="https://getcomposer.org/">Composer</a> + <a href="https://wpackagist.org/">WPackagist</a></h3>
                         <pre><code class="hljs" data-trim contenteditable>
 # composer.json
@@ -155,60 +155,59 @@ define( 'AUTOMATIC_UPDATER_DISABLED', true );
     }
 }
                         </code></pre>
-                        <p><small><a href="https://wp-cli.org/">WP-CLI</a> could be another option to manage dependencies.</small></p>
+                        <p><small><a href="https://wp-cli.org/">WP-CLI</a> puede ser otra opción para gestionar dependencias.</small></p>
                     </section>
                     <section>
-                        <h2 class="mini">Your code: Themes &amp; Plugins</h2>
+                        <h2 class="mini">Tu código: Themes &amp; Plugins</h2>
                         <ul>
-                            <li>All your code should be organized in Themes &amp; Plugins, and it's the only code that
-                            should be in the source control.</li>
-                            <li>Don't modify any dependency. Not plugins, neither themes. Use <strong>hooks</strong>, <strong>actions</strong> and <strong>child themes</strong> to override them.</li>
+                            <li>Todo tu código debería estar organizado en Themes &amp; Plugins, y es el único código que debería estar en control de versiones.</li>
+                            <li>No modifiques ninguna dependencia. Ni plugins, ni themes. Usa <strong>hooks</strong>, <strong>actions</strong> y <strong>child themes</strong> para sobrescribirlos.</li>
                         </ul>
                     </section>
                     <section>
-                        <h2 class="mini">Branching and pull requests</h2>
+                        <h2 class="mini">Branching y pull requests</h2>
                         <ul>
-                            <li><a href="https://www.atlassian.com/git/tutorials/comparing-workflows">Git workflows</a>: Centralized, Feature Branch, Gitflow, Forking Workflow...</li>
-                            <li>Implement code review with pull requests. Check this <a href="http://tech.veinteractive.com/the-code-review-process.html">list of rules</a> to enhance your code review process.</li>
+                            <li><a href="https://www.atlassian.com/git/tutorials/comparing-workflows">Git workflows</a>: Centralizado, Feature Branch, Gitflow, Forking Workflow...</li>
+                            <li>Haz revisiones de código con pull requests. <a href="http://tech.veinteractive.com/the-code-review-process.html">Aquí</a> puedes ver unos consejos para mejorar tu proceso de revisión de código.</li>
                         </ul>
                     </section>
                     <section data-background="images/minions5.jpg">
-                        <h1>Let's<br> make a<br> Pull<br> Request!</h1>
+                        <h1>Vamos<br> a hacer <br>una Pull<br> Request!</h1>
                     </section>
 
                 </section>
 
                 <section>
                     <section>
-                        <h2>The 'Rule'</h2>
-                        <h3>There is not any manual step in the deployment process</h3>
+                        <h2>La 'Regla'</h2>
+                        <h3>El despliegue debe estar totalmente automatizado</h3>
                     </section>
                     <section>
-                        <h2 class="mini">No more "Works on my machine"</h2>
+                        <h2 class="mini">No más "Works on my machine"</h2>
                         <ul>
-                            <li class="fragment">Make your definition of "done" clear.</li>
-                            <li class="fragment">Replicate your production environment: <a href="https://www.vagrantup.com/">Vagrant</a>, <a href="https://www.docker.com/">Docker</a>, <a href="https://puppet.com/">Puppet</a>, <a href="https://www.chef.io/">Chef</a>,...</li>
-                            <li class="fragment">Create staging environments</li>
+                            <li class="fragment">Tu definición de "hecho" debe estar clara.</li>
+                            <li class="fragment">Replica tu entorno de producción en desarrollo: <a href="https://www.vagrantup.com/">Vagrant</a>, <a href="https://www.docker.com/">Docker</a>, <a href="https://puppet.com/">Puppet</a>, <a href="https://www.chef.io/">Chef</a>,...</li>
+                            <li class="fragment">Crea entornos de integración y pruebas</li>
                         </ul>
                     </section>
                     <section>
-                        <h2 class="mini">Deployment Tools / Task Runners</h2>
+                        <h2 class="mini">Herramientas de despliegue y Task Runners</h2>
                         <ul>
-                            <li>PHP tools: <a href="http://deployer.org/">Deployer</a>, <a href="http://magephp.com/">Magallanes</a>, <a href="https://www.phing.info/">Phing</a>, ...</li>
-                            <li>Other tools: <a href="http://gruntjs.com/">Grunt</a>, <a href="http://gulpjs.com/">Gulp</a>, <a href="http://ant.apache.org/">Ant</a>, ...</li>
+                            <li>PHP: <a href="http://deployer.org/">Deployer</a>, <a href="http://magephp.com/">Magallanes</a>, <a href="https://www.phing.info/">Phing</a>, ...</li>
+                            <li>Otros: <a href="http://gruntjs.com/">Grunt</a>, <a href="http://gulpjs.com/">Gulp</a>, <a href="http://ant.apache.org/">Ant</a>, ...</li>
                         </ul>
                     </section>
                     <section>
-                        <h2 class="mini">Example with Deployer</h2>
+                        <h2 class="mini">Ejemplo con Deployer</h2>
 
-                        <p>Install it with <em>composer</em>:</p>
+                        <p>Instalar con <em>composer</em>:</p>
 
                         <pre><code class="hljs" data-trim contenteditable>
 composer require --dev deployer/deployer
 composer require --dev deployphp/recipes
                         </code></pre>
 
-                        <p>Your <em>composer.json</em> should now include a reference to the dependencies:</p>
+                        <p>Tu <em>composer.json</em> incluirá ahora la referencia a las dependencias:</p>
 
                         <pre><code class="hljs" data-trim contenteditable>
 # composer.json
@@ -221,9 +220,9 @@ composer require --dev deployphp/recipes
                         </code></pre>
                     </section>
                     <section>
-                        <h2 class="mini">Example with Deployer</h2>
+                        <h2 class="mini">Ejemplo con Deployer</h2>
 
-                        <p>Configure your deploy steps in the <em>deploy.php</em> file:</p>
+                        <p>Configurar los pasos de despliegue en el fichero <em>deploy.php</em>:</p>
 
                         <pre><code class="hljs" data-trim contenteditable>
 &lt;?php
@@ -267,9 +266,9 @@ serverList(__DIR__ . '/servers.yml');
                         </code></pre>
                     </section>
                     <section>
-                        <h2 class="mini">Example with Deployer</h2>
+                        <h2 class="mini">Ejemplo con Deployer</h2>
 
-                        <p>Configure your deployment credentials and servers in the <em>servers.yml</em> file:</p>
+                        <p>Configurar las credenciales y los servidores en el fichero <em>servers.yml</em>:</p>
 
                         <pre><code class="hljs" data-trim contenteditable>
 # servers.yml
@@ -330,9 +329,9 @@ production:
                         </code></pre>
                     </section>
                     <section>
-                        <h2 class="mini">Example with Deployer</h2>
+                        <h2 class="mini">Ejemplo con Deployer</h2>
 
-                        <p>And now, deploy is as simple as:</p>
+                        <p>Y ahora, desplegar es tan simple como ejecutar:</p>
 
                         <pre><code class="hljs" data-trim contenteditable>
 ./vendor/bin/dep deploy staging
@@ -342,25 +341,25 @@ production:
                         </code></pre>
                     </section>
                     <section>
-                        <h2 class="mini">Continous Integration Tools</h2>
+                        <h2 class="mini">Herramientas de Integración Continua</h2>
                         <div class="fragment">
                             <img data-src="images/ci.png" >
 
-                            <p><small>You can see a detailed comparison in <a href="http://stackshare.io/continuous-integration">Stackshare</a>.</small></p>
+                            <p><small>Puedes ver una comparación más detallada en <a href="http://stackshare.io/continuous-integration">Stackshare</a>.</small></p>
                         </div>
                     </section>
                     <section>
-                        <h2 class="mini">Example with Snap.CI</h2>
+                        <h2 class="mini">Ejemplo con Snap.CI</h2>
                         <img data-src="images/snap.png" >
                         <ul>
-                            <li>I like <a href="https://snap-ci.com/">Snap</a> because of its implementation of the 'Deployment Pipeline' concept.</li>
+                            <li>He elegido <a href="https://snap-ci.com/">Snap</a> porque me gusta su implementación del concepto 'Deployment Pipeline'.</li>
                             <li>Software as a Service.</li>
-                            <li>Free for Open Source projects.</li>
-                            <li><a href="https://jenkins.io/">Jenkins</a> (free) or <a href="https://www.jetbrains.com/teamcity/">TeamCity</a> (freemium) are probably the best options for a self-hosted tool.</li>
+                            <li>Gratis para proyectos Open Source.</li>
+                            <li><a href="https://jenkins.io/">Jenkins</a> (free) o <a href="https://www.jetbrains.com/teamcity/">TeamCity</a> (freemium) opciones para self-hosted.</li>
                         </ul>
                     </section>
                     <section>
-                        <h2 class="mini">Example with Snap.CI</h2>
+                        <h2 class="mini">Ejemplo con Snap.CI</h2>
                         <p>
                             <img data-src="images/snapci1.png" >
                         </p>
@@ -369,45 +368,45 @@ production:
                         </p>
                     </section>
                     <section>
-                        <h2 class="mini">Example with Snap.CI</h2>
+                        <h2 class="mini">Ejemplo con Snap.CI</h2>
                         <p>
                             <img data-src="images/deps-snap.png" >
                         </p>
                     </section>
                     <section>
-                        <h2 class="mini">Example with Snap.CI</h2>
+                        <h2 class="mini">Ejemplo con Snap.CI</h2>
                         <p>
                             <img data-src="images/staging-snap.png" >
                         </p>
                     </section>
                     <section>
-                        <h2 class="mini">Example with Snap.CI</h2>
+                        <h2 class="mini">Ejemplo con Snap.CI</h2>
                         <p>
                             <img data-src="images/prod-snap.png" >
                         </p>
                     </section>
 
                     <section data-background="images/minions6.jpg">
-                        <h1>So...<br> Would you<br> dare to<br> make a deploy<br> right now?</h1>
+                        <h1>Entonces...<br> Te atreves<br> a desplegar<br> ahora <br>mismo?</h1>
                     </section>
 
                 </section>
 
                 <section>
                     <section>
-                        <h2>The 'Better'</h2>
-                        <h3>There is not any manual step in the QA / Test process</h3>
+                        <h2>El 'máximo'</h2>
+                        <h3>El testeo debe estar totalmente automatizado</h3>
                     </section>
                     <section>
-                        <h2>Before Deployment</h2>
+                        <h2>Antes de subir código</h2>
                     </section>
                     <section>
                         <h2 class="mini">Linting</h2>
 
-                        <p>Ensure all the team use the same (and the proper) coding conventions with <a href="https://github.com/squizlabs/PHP_CodeSniffer">PHP_CodeSniffer</a>, it will also help you avoid some errors.</p>
+                        <p>Todo el equipo debe usar las mismas 'coding conventions' y comprobar que se siguen con <a href="https://github.com/squizlabs/PHP_CodeSniffer">PHP_CodeSniffer</a>, también te ayuda a evitar errores.</p>
 
                         <div class="fragment">
-                            <p>Install <a href="https://github.com/squizlabs/PHP_CodeSniffer">PHP_CodeSniffer</a> with <em>composer</em>:</p>
+                            <p>Instalar <a href="https://github.com/squizlabs/PHP_CodeSniffer">PHP_CodeSniffer</a> con <em>composer</em>:</p>
 
                             <pre><code class="hljs" data-trim contenteditable>
 composer require --dev squizlabs/php_codesniffer
@@ -429,7 +428,7 @@ composer require --dev wp-coding-standards/wpcs:dev-master
                     <section>
                         <h2 class="mini">Linting</h2>
 
-                        <p>Configure your rules in the <em>phpcs.xml</em> file.</p>
+                        <p>Configurar las reglas en el fichero <em>phpcs.xml</em>.</p>
 
                         <div class="">
 
@@ -462,7 +461,7 @@ composer require --dev wp-coding-standards/wpcs:dev-master
                     <section>
                         <h2 class="mini">Linting</h2>
 
-                        <p>Add the task to your task runner.</p>
+                        <p>Y añadir el paso al 'task runner' (Deployer).</p>
 
                         <div class="">
                             <pre><code class="hljs" data-trim contenteditable>
@@ -491,7 +490,7 @@ task('qa', [
                     </section>
                     <section>
                         <h2 class="mini">Linting</h2>
-                        <p>Other linting tools:</p>
+                        <p>Otras herramientas:</p>
                         <ul>
                             <li>PHP: <a href="https://phpmd.org/">PHPMD</a> (Mess Detector), <a href="https://github.com/sebastianbergmann/phpdcd">PHPDCD</a> (Dead Code Detector), <a href="https://github.com/sebastianbergmann/phpcpd">PHPCPD</a> (Copy/Paste Detector),...</li>
                             <li>Javascript: <a href="http://eslint.org/">Eslint</a>, <a href="http://jshint.com/">JSHint</a>, <a href="http://www.jslint.com/">JSLint</a>,...</li>
@@ -501,15 +500,15 @@ task('qa', [
                     <section>
                         <h2 class="mini">Unit Testing</h2>
                         <blockquote>Do the things right</blockquote>
-                        <p>Yes, you can (should) unit test your themes and plugins.</p>
-                        <p class="fragment">Use <a href="https://phpunit.de/">PHPUnit</a> and <a href="https://github.com/10up/wp_mock">WP_Mock</a>.</p>
-                        <p class="fragment"><small>WP_Mock is built and maintained by 10up where Lucy Tomas works, she is giving a talk after lunch</small></p>
+                        <p>Sí, puedes (debes) hacer unit test con tus themes y plugins.</p>
+                        <p class="fragment">Usa <a href="https://phpunit.de/">PHPUnit</a> y <a href="https://github.com/10up/wp_mock">WP_Mock</a>.</p>
+                        <p class="fragment"><small>WP_Mock está desarrollado por '10up' donde trabaja Lucy Tomas (ponencia después de comer).</small></p>
                     </section>
                     <section>
                         <h2 class="mini">Unit Testing</h2>
 
                         <div class="">
-                            <p>Install them with <em>composer</em>:</p>
+                            <p>Instalar con <em>composer</em>:</p>
 
                             <pre><code class="hljs" data-trim contenteditable>
 composer require --dev phpunit/phpunit
@@ -531,7 +530,7 @@ composer require --dev 10up/wp_mock:dev-master
                     <section>
                         <h2 class="mini">Unit Testing</h2>
 
-                        <p>Configure phpunit in the <em>phpunit.xml</em> file.</p>
+                        <p>Configurar en el fichero <em>phpunit.xml</em>.</p>
 
                         <div class="">
 
@@ -567,7 +566,7 @@ composer require --dev 10up/wp_mock:dev-master
                     <section>
                         <h2 class="mini">Unit Testing</h2>
 
-                        <p>Add the task to your task runner.</p>
+                        <p>Y añadir el paso al 'task runner' (Deployer)..</p>
 
                         <div class="">
 
@@ -589,7 +588,7 @@ task('qa', [
 ])->desc('Code quality checks');
 
                             </code></pre>
-                            <p>Execute:</p>
+                            <p>Ejecutar:</p>
                             <pre><code class="hljs" data-trim contenteditable>
 ./vendor/bin/dep qa
                             </code></pre>
@@ -598,25 +597,25 @@ task('qa', [
                         </div>
                     </section>
                     <section>
-                        <h2 class="mini">Add them to your building pipeline</h2>
+                        <h2 class="mini">Añadir al 'deployment pipeline'</h2>
                         <p>
                             <img data-src="images/snapci2.png" >
                         </p>
                     </section>
                     <section>
-                        <h2>After Deployment</h2>
+                        <h2>Después del despliegue</h2>
                     </section>
                     <section>
-                        <h2 class="mini">Functional Testing</h2>
+                        <h2 class="mini">Test funcionales</h2>
                         <blockquote>Do the right things</blockquote>
-                        <p>Yes, you can (should) do functional testing on your Wordpress website.</p>
-                        <p class="fragment">Use <a href="http://docs.behat.org/">Behat</a>, <a href="http://mink.behat.org/">Mink</a>, <a href="https://github.com/FriendsOfPHP/Goutte">Goutte</a> and <a href="http://www.seleniumhq.org/    ">Selenium</a>.</p>
+                        <p>Sí, puedes (debes) hacer test funcionales a tu web WordPress.</p>
+                        <p class="fragment">Usa <a href="http://docs.behat.org/">Behat</a>, <a href="http://mink.behat.org/">Mink</a>, <a href="https://github.com/FriendsOfPHP/Goutte">Goutte</a> y <a href="http://www.seleniumhq.org/    ">Selenium</a>.</p>
                     </section>
                     <section>
-                        <h2 class="mini">Functional Testing</h2>
+                        <h2 class="mini">Test funcionales</h2>
 
                         <div class="">
-                            <p>Install them with <em>composer</em>:</p>
+                            <p>Instalar con <em>composer</em>:</p>
 
                             <pre><code class="hljs" data-trim contenteditable>
 composer require --dev behat/behat
@@ -642,9 +641,9 @@ composer require --dev se/selenium-server-standalone
                         </div>
                     </section>
                     <section>
-                        <h2 class="mini">Functional Testing</h2>
+                        <h2 class="mini">Test funcionales</h2>
 
-                        <p>Configure Behat in the <em>behat.yml</em> file.</p>
+                        <p>Configurar Behat en el fichero <em>behat.yml</em>:</p>
 
                         <div class="">
 
@@ -685,9 +684,9 @@ production:
                         </div>
                     </section>
                     <section>
-                        <h2 class="mini">Functional Testing</h2>
+                        <h2 class="mini">Test funcionales</h2>
 
-                        <p>Define some tests (and implement them of course)</p>
+                        <p>Definir algunos test (e implementarlos, claro)</p>
 
                         <div class="">
 
@@ -722,9 +721,9 @@ Feature: Article
                         </div>
                     </section>
                     <section>
-                        <h2 class="mini">Functional Testing</h2>
+                        <h2 class="mini">Test funcionales</h2>
 
-                        <p>Add the task to your task runner.</p>
+                        <p>Y añadir el paso al 'task runner' (Deployer).</p>
 
                         <div class="">
 
@@ -754,7 +753,7 @@ task('at', function () {
 })->desc('Run Acceptance Tests');
 
                             </code></pre>
-                            <p>Execute:</p>
+                            <p>Ejecutar:</p>
                             <pre><code class="hljs" data-trim contenteditable>
 ./vendor/bin/dep at staging
                             </code></pre>
@@ -763,13 +762,13 @@ task('at', function () {
                         </div>
                     </section>
                     <section>
-                        <h2 class="mini">Add them to your building pipeline</h2>
+                        <h2 class="mini">Añadirlo al 'deployment pipeline'</h2>
                         <p>
                             <img data-src="images/snap-acceptance.png" >
                         </p>
                     </section>
                     <section>
-                        <h2 class="mini">Add them to your building pipeline</h2>
+                        <h2 class="mini">Añadirlo al 'deployment pipeline'</h2>
                         <p>
                             <img data-src="images/snap-smoke.png" >
                         </p>
@@ -777,13 +776,13 @@ task('at', function () {
                 </section>
 
                 <section data-transition="fade-in">
-                    <h3 class="mini">Finally, we have implemented...</h3>
+                    <h3 class="mini">Finalmente, hemos implementado...</h3>
 
                     <h2 class="mini fragment">Continous Delivery</h2>
                 </section>
 
                 <section data-transition-speed="fast" data-transition="fade-in ">
-                    <h3 class="mini">Finally, we have implemented...</h3>
+                    <h3 class="mini">Finalmente, hemos implementado...</h3>
 
                     <h2 class="mini ">Continous Deployment</h2>
                 </section>
@@ -792,11 +791,11 @@ task('at', function () {
                     <h2 class="mini">Continous Delivery <br><span>VS</span><br> Continous deployment</h2>
                     <img data-src="images/continuous-delivery-deployment-sm.jpg" >
 
-                    <p><small>Take a look at <a href="https://puppet.com/blog/continuous-delivery-vs-continuous-deployment-what-s-diff">this post</a> for more info.</small></p>
+                    <p><small>Mira <a href="https://puppet.com/blog/continuous-delivery-vs-continuous-deployment-what-s-diff">este post</a> para más info.</small></p>
                 </section>
 
                 <section data-background="images/minions7.jpg">
-                    <h1>Yes,<br> I remember <br> the deployment.<br>Let's see<br> if it succeeds!</h1>
+                    <h1>Sí,<br> recuerdo <br> el despliegue.<br>Veamos<br> si fue bien!</h1>
                 </section>
 
                 <section data-background="images/everythinkok.gif">
@@ -805,7 +804,7 @@ task('at', function () {
 
                 <section>
                     <div>
-                        <h2 class="mini">Links of a full example</h2>
+                        <h2 class="mini">Links del ejemplo completo</h2>
                         <ul>
                             <li><a href="https://github.com/artberri/sinrumbofijo">https://github.com/artberri/sinrumbofijo</a></li>
                             <li><a href="https://snap-ci.com/artberri/sinrumbofijo/branch/master">https://snap-ci.com/artberri/sinrumbofijo/branch/master</a></li>
@@ -818,12 +817,12 @@ task('at', function () {
                 </section>
 
                 <section>
-                    <h2 class="mini">Thank you</h2>
+                    <h2 class="mini">Gracias</h2>
                     <div>
                         <img  data-src="images/thanks.gif" alt="Thank you" >
                     </div>
-                    <p>Any Questions?</p>
-                    <p><small><a href="https://www.berriart.com/talks/wordpress-deployment/">https://www.berriart.com/talks/wordpress-deployment/</a></small></p>
+                    <p>Preguntas</p>
+                    <p><small><a href="https://www.berriart.com/talks/wordpress-deployment-es/">https://www.berriart.com/talks/wordpress-deployment-es/</a></small></p>
                 </section>
             </div>
 
