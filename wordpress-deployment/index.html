@@ -111,6 +111,21 @@
                         </ul>
                     </section>
                     <section>
+                        <h2 class="mini">But WP is so powerful, why restrict it?</h2>
+                        <ul>
+                            <li class="fragment">Version Control</li>
+                            <li class="fragment">Reproducibility</li>
+                            <li class="fragment">Security</li>
+                            <li class="fragment">
+                                Panama Papers - Mossack Fonseca WP Breach
+                                <br>
+                                <a href="https://www.wordfence.com/blog/2016/04/mossack-fonseca-breach-vulnerable-slider-revolution/">
+                                    https://www.wordfence.com/blog/2016/04/mossack-fonseca-breach-vulnerable-slider-revolution/
+                                </a>
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
                         <h2 class="mini">wp-config.php</h2>
                         <p>You should disallow modifications from the admin panel.</p>
                         <pre><code class="hljs" data-trim contenteditable>
@@ -172,9 +187,9 @@ define( 'AUTOMATIC_UPDATER_DISABLED', true );
                             <li>Implement code review with pull requests. Check this <a href="http://tech.veinteractive.com/the-code-review-process.html">list of rules</a> to enhance your code review process.</li>
                         </ul>
                     </section>
-                    <section data-background="images/minions5.jpg">
+                    <!-- <section data-background="images/minions5.jpg">
                         <h1>Let's<br> make a<br> Pull<br> Request!</h1>
-                    </section>
+                    </section>  -->
 
                 </section>
 
@@ -387,9 +402,9 @@ production:
                         </p>
                     </section>
 
-                    <section data-background="images/minions6.jpg">
+                    <!-- <section data-background="images/minions6.jpg">
                         <h1>So...<br> Would you<br> dare to<br> make a deploy<br> right now?</h1>
-                    </section>
+                    </section>  -->
 
                 </section>
 
@@ -777,6 +792,29 @@ task('at', function () {
                 </section>
 
                 <section data-transition="fade-in">
+                    <h3 class="mini">Uhm... And Database? You didn't talk about it.</h3>
+
+                    <div class=" fragment">
+                        <ul>
+                            <li>
+                                Creating Updating Tables -> dbDelta
+                                <br>
+                                <a href="https://codex.wordpress.org/Creating_Tables_with_Plugins#Creating_or_Updating_the_Table">
+                                    https://codex.wordpress.org/Creating_Tables_with_Plugins#Creating_or_Updating_the_Table
+                                </a>
+                            </li>
+                            <li>
+                                Deleting Tables -> no dbDelta :(
+                                <br>
+                                <a href="http://stackoverflow.com/questions/16864114/wordpress-plugin-development-cant-drop-database-table-after-plugin-deactivati">
+                                    http://stackoverflow.com/questions/16864114/wordpress-plugin-development-cant-drop-database-table-after-plugin-deactivati
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section data-transition="fade-in">
                     <h3 class="mini">Finally, we have implemented...</h3>
 
                     <h2 class="mini fragment">Continous Delivery</h2>
@@ -795,13 +833,13 @@ task('at', function () {
                     <p><small>Take a look at <a href="https://puppet.com/blog/continuous-delivery-vs-continuous-deployment-what-s-diff">this post</a> for more info.</small></p>
                 </section>
 
-                <section data-background="images/minions7.jpg">
+                <!-- <section data-background="images/minions7.jpg">
                     <h1>Yes,<br> I remember <br> the deployment.<br>Let's see<br> if it succeeds!</h1>
                 </section>
 
                 <section data-background="images/everythinkok.gif">
 
-                </section>
+                </section> -->
 
                 <section>
                     <div>
