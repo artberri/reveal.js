@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+
+        <title>HTTP/2 - Are my best practices outdated?</title>
+
+        <meta name="description" content="Code &amp; Kids">
+        <meta name="author" content="Alberto Varela">
+
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans|PT+Sans+Narrow" rel="stylesheet">
+        <link rel="stylesheet" href="../css/reveal.css">
+        <link rel="stylesheet" href="http2.css" id="theme">
+
+        <!-- Code syntax highlighting -->
+        <link rel="stylesheet" href="../lib/css/zenburn.css">
+
+        <!-- Printing and PDF exports -->
+        <script>
+            var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match( /print-pdf/gi ) ? '../css/print/pdf.css' : '../css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+        </script>
+
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="reveal">
+
+            <!-- Any section element inside of this container is displayed as a slide -->
+            <div class="slides">
+                <section id="start" data-background-image="./images/checklist.jpg">
+                    <h1>HTTP/2</h1>
+                    <h2>Are my best practices outdated?</h2>
+                    <p>
+                        <small>Slides by <a href="http://www.berriart.com">Alberto Varela</a> / <a href="http://twitter.com/artberri">@artberri</a></small>
+                    </p>
+                </section>
+
+                <section>
+                    <div style="display: flex;flex-direction: row; align-items: center; justify-content: center;">
+                        <h3>I'm Alberto Varela,&nbsp;</h3>
+                        <h3>
+                            <strike>ninja&nbsp;</strike>
+                            <br>
+                            <strike>rockstar&nbsp;</strike>
+                            <br>
+                            <strike>crafter&nbsp;</strike>
+                            <br>
+                            <strike>guru&nbsp;</strike>
+                            <br>
+                            <strike>wizard&nbsp;</strike>
+                            <br>
+                            developer&nbsp;
+                        </h3>
+                        <h3>at&nbsp;</h3>
+                        <h3><img width="240" src="./images/plainconcepts.png" /></h3>
+                    </div>
+                    <p style="text-align: center;"><small>
+                        Find me at
+                        <a href="https://github.com/artberri">github.com/artberri</a> |
+                        <a href="https://twiter.com/artberri">twiter.com/artberri</a> |
+                        <a href="https://www.berriart.com">berriart.com</a> |
+                        <a href="mailto:alberto@berriart.com">alberto@berriart.com</a></small></p>
+                </section>
+
+                <section data-background-image="./images/speedisafeature.jpg">
+                    <div class="fragment box">
+                        <ul>
+                            <li>
+                                <a href="https://www.nngroup.com/articles/response-times-3-important-limits/">Response Times: The 3 Important Limits</a>. Jakob Nielsen, Nielsen Norman Group, Jan. 1993
+                            </li>
+                            <li>
+                                <a href="http://glinden.blogspot.com.es/2006/11/marissa-mayer-at-web-20.html">Half a second delay caused a 20% drop in traffic</a>. Marissa Mayer, Google. Nov. 2006
+                            </li>
+                            <li>
+                                <a href="https://www.akamai.com/us/en/about/news/press/2009-press/akamai-reveals-2-seconds-as-the-new-threshold-of-acceptability-for-ecommerce-web-page-response-times.jsp">Akamai Reveals 2 Seconds As The New Threshold Of Acceptability For ECommerce Web Page Response Times</a>. Akamai, Sep. 2009
+                            </li>
+                            <li>
+                                <a href="https://www.martinlugton.com/page-load-speed-important-impact-site-speed-conversions-revenue/">Other evidence for the impact of page load speed on business performance</a>. UK Government Digital Service, Martin Lugton, Jun. 2015
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section>
+                    <div style="display: flex;flex-direction: row; align-items: center; justify-content: space-between;">
+                        <div>
+                            <h2>Brief history of HTTP</h2>
+                            <ul>
+                                <li>
+                                    <strong>HTTP/0.9</strong> (1991)
+                                    <br>
+                                    <small> In <strong>1991</strong>, Berners-Lee outlined the motivation for the new protocol and listed several high-level design goals, it unofficially acquired the HTTP 0.9 label.</small>
+                                </li>
+                                <li>
+                                    <strong>HTTP/1.0</strong> (1996)
+                                    <br>
+                                    <small>In 1996 the HTTP Working Group (HTTP-WG) published RFC 1945, which documented the "common usage" of the many HTTP/1.0 implementations found</small>
+                                </li>
+                                <li>
+                                    <strong>HTTP/1.1</strong> (1999)
+                                    <br>
+                                    <small>The first official standard was officially released in 1997, roughly six months after the publication of HTTP/1.0. Then, in 1999, a number of improvements and updates were incorporated into the standard.</small>
+                                </li>
+                                <li class="fragment">
+                                    <strong>HTTP/2</strong> (2015)
+                                    <br>
+                                    <small>The HTTP/2 specification was published as RFC 7540 in May 2015, it was derived from the earlier experimental SPDY protocol, originally developed by Google in 2012</small>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <img width="540" src="./images/notinvented.jpg"><br>
+                            <img width="540" src="./images/invented.jpg"><br>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>The focus on bandwidth</h2>
+                    <img  style="max-height: 400px;" src="./images/bandwidth.svg"><br>
+                </section>
+
+                <section>
+                    <h2>Latency vs Bandwidth</h2>
+                    <img style="max-height: 400px;" src="./images/latency-vs-bandwidth.png"><br>
+                    <small><small><a href="https://docs.google.com/a/chromium.org/viewer?a=v&amp;pid=sites&amp;srcid=Y2hyb21pdW0ub3JnfGRldnxneDoxMzcyOWI1N2I4YzI3NzE2">More Bandwidth Doesn’t Matter (much) </a>Mike Belshe, Google. August 2010</small></small>
+                </section>
+
+                <section>
+                    <h2>Let's take a look to the HTTP/1.1 request</h2>
+                    <h3 class="purple">1. The DNS Lookup</h3>
+                    <img class="fragment" style="max-height: 400px;" src="./images/DNS-lookup.gif">
+                </section>
+
+                <section>
+                        <div>
+                            <h2>Let's take a look to the HTTP/1.1 request</h2>
+                            <h3 class="purple">2.1 The Hand-shaking (TCP)</h3>
+                        </div>
+                        <div style="display: flex;flex-direction: row; align-items: center; justify-content: space-between;">
+                            <pre class="diagram" id="tcp_diagram">
+                                Note left of Client: Hey! I wan't to talk, check my ID
+                                Client-&gt;Server: SYN
+                                Note right of Server: "Look nice! Here's mine!"
+                                Server-&gt;Client: SYN+ACK
+                                Note left of Client: "Look nice too! Let's talk."
+                                Client-&gt;Server: ACK
+                                Note left of Client: "This is what I want (Finally!)"
+                                Client-&gt;Server: GET /page
+                            </pre>
+                        </div>
+                    </section>
+
+                <section>
+                        <div>
+                            <h2>Let's take a look to the HTTP/1.1 request</h2>
+                            <h3 class="purple">2.2 The Hand-shaking (TLS)</h3>
+                        </div>
+                        <div style="display: flex;flex-direction: row; align-items: center; justify-content: space-between;">
+                            <pre class="diagram" id="tls_diagram">
+                                Note over Client, Server: TCP Handshake
+                                Client-&gt;Server: ClientHello
+                                Server-&gt;Client: ServerHello, Certificate, ServerHelloDone
+                                Client-&gt;Server: ClientKeyExchange, ChangeCipherSpec, Finished
+                                Server-&gt;Client: ChangeCipherSpec, Finished
+                                Client-&gt;Server: GET /page
+                            </pre>
+
+                            <pre class="diagram fragment" id="tls_diagram_2">
+                                Note over Client, Server: TCP Handshake
+                                Client-&gt;Server: ClientHello
+                                Server-&gt;Client: ServerHello, ChangeCipherSpec, Finished
+                                Client-&gt;Server: ChangeCipherSpec, Finished
+                                Client-&gt;Server: GET /page
+                            </pre>
+                        </div>
+                    </section>
+
+                <section>
+                        <div>
+                            <h2>Let's take a look to the HTTP/1.1 request</h2>
+                            <h3 class="purple">3. Get HTML and... make a new request, and a new one, and...</h3>
+                        </div>
+                        <div style="display: flex;flex-direction: row; align-items: center; justify-content: space-between;">
+                            <pre class="diagram" id="page_diagram">
+                                Client-&gt;Server: GET /page (with handshakes,...)
+                                Server-&gt;Client: Some HTML
+                                Client-&gt;Server: GET /style.css /script.js (new connections)
+                                Server-&gt;Client: Some CSS and a thousand of JS deps
+                                Client-&gt;Server: GET /image-x.jpg (more connections)
+                                Server-&gt;Client: Some images
+                                Client-&gt;Server: GET /more-images-x.jpg (HOL blocking)
+                                Server-&gt;Client: Some more images...
+                            </pre>
+                        </div>
+                    </section>
+
+                <section class="box">
+                    <div>
+                        <h2>Main problems</h2>
+                        <ul>
+                            <li class="fragment">
+                                <strong>Create connections is expensive </strong>
+                                <br>
+                                There are 1-3 RTT before request data is sent
+                            </li>
+                            <li class="fragment">
+                                <strong>Head-of-line blocking (HOL blocking)</strong>
+                                <br>
+                                Doing a new request has to wait for the ones before to complete.
+                            </li>
+                            <li class="fragment">
+                                <strong>Server knows the dependencies but can't send them</strong>
+                                <br>
+                                Client need to request everything after reading the html
+                            </li>
+                            <li class="fragment">
+                                <strong>Headers size</strong>
+                                <br>
+                                Increase of header size lack of compression
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section>
+                    <h2 style="margin-bottom: 0;">HTTP/1.1: London vs Sidney <button id="demo1-run">Run test</button> <button id="demo1-reset">Reset</button></h2>
+                    <p style="margin-top: 0;"><small>This demo consists of an image made with a 224 tiles grid, inspired by <a href="https://http2.golang.org/gophertiles?latency=1000">Golang's Gophertiles</a></small></p>
+                    <p></p>
+                    <div class="main container vertical">
+                        <div class="test container horizontal">
+                            <div class="test-case">
+                                <h4>London: <span id="demo1-http1-time" style="color:purple;">0.000</span></h4>
+                                <div id="demo1-http1" class="demo-image-container"></div>
+                            </div>
+
+                            <div class="test-case">
+                                <h4>Sidney: <span id="demo1-http2-time" style="color:purple;">0.000</span></h4>
+                                <div id="demo1-http2" class="demo-image-container"></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="box" data-background-image="./images/lightspeed.jpg">
+                    <div>
+                        <h1>HTTP/2 to the rescue!</h1>
+                        <ul class="fragment">
+                            <li>
+                                Single TCP connection​
+                                <ul>
+
+                                </ul>
+                            </li>
+                        </ul>
+
+Request -> Stream​
+
+Streams are multiplexed​
+
+Streams are prioritized​
+
+Binary Framing Layer​
+
+Prioritization, Flow Control, Server Push​
+
+Header Compression (HPACK)
+                    </div>
+                </section>
+
+                <section data-background-image="./images/caniuse.png">
+
+                </section>
+
+                <section>
+                    <h1>That's all folks!</h1>
+                    <h2>
+                        <br>
+                        Q&amp;A
+                    </h2>
+                </section>
+
+            </div>
+
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/js-sequence-diagrams/1.0.6/sequence-diagram-min.js"></script>
+        <script src="../lib/js/head.min.js"></script>
+        <script src="../js/reveal.js"></script>
+        <script src="./demo.js"></script>
+
+        <script>
+            (function() {
+
+            // Full list of configuration options available at:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                touch: true,
+                hideAddressBar: true,
+                overview: false,
+
+                transition: 'slide', // none/fade/slide/convex/concave/zoom
+                transitionSpeed: 'slow',
+
+                // Optional reveal.js plugins
+                dependencies: [
+                    { src: '../lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: '../plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: '../plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: '../plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: '../plugin/zoom-js/zoom.js', async: true },
+                    { src: '../plugin/notes/notes.js', async: true }
+                ]
+            });
+
+            document.querySelectorAll('.diagram').forEach(function (item) {
+                var diagram = Diagram.parse(item.innerText || item.textContent);
+                item.innerHTML = '';
+                diagram.drawSVG(item.id, {theme: 'hand'});
+            });
+
+            createTest('demo1', 'http://localhost:8000/http2-best-practices/images/demo', 'http://127.0.0.1:8000/http2-best-practices/images/demo');
+
+            })();
+
+        </script>
+
+    </body>
+</html>
