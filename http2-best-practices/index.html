@@ -57,13 +57,13 @@
                             <br>
                             <strike>rockstar&nbsp;</strike>
                             <br>
-                            <strike>crafter&nbsp;</strike>
-                            <br>
-                            <strike>guru&nbsp;</strike>
-                            <br>
                             <strike>wizard&nbsp;</strike>
                             <br>
-                            developer&nbsp;
+                            <strike>arquitect&nbsp;</strike>
+                            <br>
+                            <strike>crafter&nbsp;</strike>
+                            <br>
+                            <span style="font-size:48px;">developer&nbsp;</span>
                         </h3>
                         <h3>at&nbsp;</h3>
                         <h3><img width="240" src="./images/plainconcepts.png" /></h3>
@@ -147,67 +147,69 @@
                 </section>
 
                 <section>
-                        <div>
-                            <h2>Let's take a look to the HTTP/1.1 request</h2>
-                            <h3 class="purple">2.1 The Hand-shaking (TCP)</h3>
-                        </div>
-                        <div style="display: flex;flex-direction: row; align-items: center; justify-content: space-between;">
-                            <pre class="diagram" id="tcp_diagram">
-                                Note left of Client: Hey! I wan't to talk, check my ID
-                                Client-&gt;Server: SYN
-                                Note right of Server: "Look nice! Here's mine!"
-                                Server-&gt;Client: SYN+ACK
-                                Note left of Client: "Look nice too! Let's talk."
-                                Client-&gt;Server: ACK
-                                Note left of Client: "This is what I want (Finally!)"
-                                Client-&gt;Server: GET /page
-                            </pre>
-                        </div>
-                    </section>
+                    <div>
+                        <h2>Let's take a look to the HTTP/1.1 request</h2>
+                        <h3><span class="purple">2.1 The Hand-shaking (TCP)</span></h3>
+                    </div>
+                    <div style="display: flex;flex-direction: row; align-items: center; justify-content: space-between;">
+                        <pre class="diagram" id="tcp_diagram">
+                            Note left of Client: Hey! I wan't to talk, check my ID
+                            Client--&gt;Server: SYN
+                            Note right of Server: "Look nice! Here's mine!"
+                            Server--&gt;Client: SYN+ACK
+                            Note left of Client: "Look nice too! Let's talk."
+                            Client--&gt;Server: ACK
+                            Note left of Client: "This is what I want (Finally!)"
+                            Client--&gt;Server: request?
+                        </pre>
+                    </div>
+                </section>
 
                 <section>
                         <div>
                             <h2>Let's take a look to the HTTP/1.1 request</h2>
-                            <h3 class="purple">2.2 The Hand-shaking (TLS)</h3>
+                            <h3><span class="purple">2.2 The Hand-shaking (TLS)</span></h3>
                         </div>
                         <div style="display: flex;flex-direction: row; align-items: center; justify-content: space-between;">
                             <pre class="diagram" id="tls_diagram">
                                 Note over Client, Server: TCP Handshake
-                                Client-&gt;Server: ClientHello
-                                Server-&gt;Client: ServerHello, Certificate, ServerHelloDone
-                                Client-&gt;Server: ClientKeyExchange, ChangeCipherSpec, Finished
-                                Server-&gt;Client: ChangeCipherSpec, Finished
-                                Client-&gt;Server: GET /page
+                                Client--&gt;Server: ClientHello
+                                Server--&gt;Client: ServerHello, Certificate, ServerHelloDone
+                                Client--&gt;Server: ClientKeyExchange, ChangeCipherSpec, Finished
+                                Server--&gt;Client: ChangeCipherSpec, Finished
+                                Client--&gt;Server: ...
                             </pre>
 
                             <pre class="diagram fragment" id="tls_diagram_2">
                                 Note over Client, Server: TCP Handshake
-                                Client-&gt;Server: ClientHello
-                                Server-&gt;Client: ServerHello, ChangeCipherSpec, Finished
-                                Client-&gt;Server: ChangeCipherSpec, Finished
-                                Client-&gt;Server: GET /page
+                                Client--&gt;Server: ClientHello
+                                Server--&gt;Client: ServerHello, ChangeCipherSpec, Finished
+                                Client--&gt;Server: ChangeCipherSpec, Finished
+                                Client--&gt;Server: GET /page
                             </pre>
                         </div>
                     </section>
 
                 <section>
-                        <div>
-                            <h2>Let's take a look to the HTTP/1.1 request</h2>
-                            <h3 class="purple">3. Get HTML and... make a new request, and a new one, and...</h3>
-                        </div>
-                        <div style="display: flex;flex-direction: row; align-items: center; justify-content: space-between;">
-                            <pre class="diagram" id="page_diagram">
-                                Client-&gt;Server: GET /page (with handshakes,...)
-                                Server-&gt;Client: Some HTML
-                                Client-&gt;Server: GET /style.css /script.js (new connections)
-                                Server-&gt;Client: Some CSS and a thousand of JS deps
-                                Client-&gt;Server: GET /image-x.jpg (more connections)
-                                Server-&gt;Client: Some images
-                                Client-&gt;Server: GET /more-images-x.jpg (HOL blocking)
-                                Server-&gt;Client: Some more images...
-                            </pre>
-                        </div>
-                    </section>
+                    <div>
+                        <h2>The Page load</h2>
+                        <h3>
+                            <span class="purple">Get the first HTML and... make a new request, and a new one, and...</span>
+                        </h3>
+                    </div>
+                    <div style="display: flex;flex-direction: row; align-items: center; justify-content: space-between;">
+                        <pre class="diagram" id="page_diagram">
+                            Client-&gt;Server: GET /page (with handshakes,...)
+                            Server-&gt;Client: Some HTML
+                            Client-&gt;Server: GET /style.css /script.js (new connections)
+                            Server-&gt;Client: Some CSS and a ton of JS
+                            Client-&gt;Server: GET /image-x.jpg (more connections)
+                            Server-&gt;Client: Some images
+                            Client-&gt;Server: GET /more-images-x.jpg (HOL blocking)
+                            Server-&gt;Client: Some more images...
+                        </pre>
+                    </div>
+                </section>
 
                 <section class="box">
                     <div>
@@ -219,7 +221,7 @@
                                 There are 1-3 RTT before request data is sent
                             </li>
                             <li class="fragment">
-                                <strong>Head-of-line blocking (HOL blocking)</strong>
+                                <strong>Head-of-line blocking (HoL blocking)</strong>
                                 <br>
                                 Doing a new request has to wait for the ones before to complete.
                             </li>
@@ -231,7 +233,7 @@
                             <li class="fragment">
                                 <strong>Headers size</strong>
                                 <br>
-                                Increase of header size lack of compression
+                                Increase of header size and lack of compression
                             </li>
                         </ul>
                     </div>
@@ -256,29 +258,100 @@
                     </div>
                 </section>
 
-                <section class="box" data-background-image="./images/lightspeed.jpg">
+                <section class="" data-background-image="./images/ww.gif">
                     <div>
-                        <h1>HTTP/2 to the rescue!</h1>
-                        <ul class="fragment">
-                            <li>
-                                Single TCP connection​
-                                <ul>
+                        <h1 style="text-align: center;">HTTP/2 to the rescue!</h1><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                    </div>
+                </section>
 
+                <section class="">
+                    <div>
+                        <h2>HTTP/2 summary</h2>
+                        <ul>
+                            <li class="fragment">Retain the semantics of HTTP/1.1</li>
+                            <li class="fragment">Single TCP connection​
+                                <ul>
+                                    <li>Stream​ -> Request -> Frame
+                                        <ul>
+                                                <li>Streams are multiplexed​</li>
+                                                <li>Streams are prioritized​​</li>
+                                        </ul>
+                                    </li>
                                 </ul>
                             </li>
+                            <li class="fragment">
+                                Binary Framing Layer​
+                                <ul>
+                                    <li>Prioritization, Flow Control, Server Push​</li>
+                                </ul>
+                            </li>
+                            <li class="fragment">
+                                Header Compression (HPACK)
+                            </li>
                         </ul>
+                    </div>
+                </section>
 
-Request -> Stream​
+                <section >
+                    <img src="./images/http2.png">
+                </section>
 
-Streams are multiplexed​
+                <section>
+                    <div>
+                        <h2>The HTTP/2 request</h2>
+                    </div>
+                    <div style="display: flex;flex-direction: row; align-items: center; justify-content: space-between;">
+                        <pre class="diagram" id="page_diagram2">
+                            Client-&gt;Server: GET /page (with handshakes,...)
+                            Note right of Server: Single connection, single handshake
+                            Server-&gt;Client: Some HTML
+                            Note right of Server: The server can push
+                            Server--&gt;Client: PUSH /style.css
+                            Server--&gt;Client: PUSH /script.js
+                            Client-&gt;Server: GET /image-1.jpg /image-2.jpg /image-3.jpg ...
+                            Note right of Server: No HoL blocking
+                            Server-&gt;Client: image1
+                            Server-&gt;Client: image2
+                            Server-&gt;Client: image3
+                        </pre>
+                    </div>
+                </section>
 
-Streams are prioritized​
+                <section>
+                    <h2 style="margin-bottom: 0;">London: HTTP/1.1 vs HTTP/2 <button id="demo2-run">Run test</button> <button id="demo2-reset">Reset</button></h2>
+                    <p style="margin-top: 0;"><small>This demo consists of an image made with a 224 tiles grid, inspired by <a href="https://http2.golang.org/gophertiles?latency=1000">Golang's Gophertiles</a></small></p>
+                    <p></p>
+                    <div class="main container vertical">
+                        <div class="test container horizontal">
+                            <div class="test-case">
+                                <h4>HTTP/1.1 (LONDON): <span id="demo2-http1-time" style="color:purple;">0.000</span></h4>
+                                <div id="demo2-http1" class="demo-image-container"></div>
+                            </div>
 
-Binary Framing Layer​
+                            <div class="test-case">
+                                <h4>HTTP/2 (LONDON): <span id="demo2-http2-time" style="color:purple;">0.000</span></h4>
+                                <div id="demo2-http2" class="demo-image-container"></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
 
-Prioritization, Flow Control, Server Push​
+                <section>
+                    <h2 style="margin-bottom: 0;">Sidney: HTTP/1.1 vs HTTP/2 <button id="demo3-run">Run test</button> <button id="demo3-reset">Reset</button></h2>
+                    <p style="margin-top: 0;"><small>This demo consists of an image made with a 224 tiles grid, inspired by <a href="https://http2.golang.org/gophertiles?latency=1000">Golang's Gophertiles</a></small></p>
+                    <p></p>
+                    <div class="main container vertical">
+                        <div class="test container horizontal">
+                            <div class="test-case">
+                                <h4>HTTP/1.1 (SIDNEY): <span id="demo3-http1-time" style="color:purple;">0.000</span></h4>
+                                <div id="demo3-http1" class="demo-image-container"></div>
+                            </div>
 
-Header Compression (HPACK)
+                            <div class="test-case">
+                                <h4>HTTP/2 (SIDNEY): <span id="demo3-http2-time" style="color:purple;">0.000</span></h4>
+                                <div id="demo3-http2" class="demo-image-container"></div>
+                            </div>
+                        </div>
                     </div>
                 </section>
 
@@ -287,11 +360,198 @@ Header Compression (HPACK)
                 </section>
 
                 <section>
-                    <h1>That's all folks!</h1>
-                    <h2>
-                        <br>
-                        Q&amp;A
-                    </h2>
+                    <p>Finally...</p>
+                    <h1>Best practices <span class="fragment"> or hacks?</span></h1>
+                </section>
+
+                <section>
+                    <h2>Use a content delivery network</h2>
+                    <div class="container horizontal left">
+
+                        <div class="fragment"><img width="300" src="./images/yes.jpg"></div>
+                        <div class="fragment">
+                            <strong>Curiosity:</strong><br>
+                            It takes around 130ms for light to travel around the circumference of the earth.
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Cache resources on the client</h2>
+                    <div class="container horizontal left">
+
+                        <div class="fragment"><img width="300" src="./images/yes.jpg"></div>
+                        <div class="fragment">
+                            <strong>Tips:</strong><br>
+                            <ul>
+                                <li>Etag / Cache-Control​
+                                    <a href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching">
+                                        More info
+                                    </a>
+                                </li>
+                                <li>Take care of CD​</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Concatenate files</h2>
+                    <div class="container horizontal left">
+
+                        <div class="fragment"><img width="300" src="./images/no.jpg"></div>
+                        <div class="fragment">
+                            <strong>Downsides:</strong><br>
+                            <ul>
+                                <li>Expensive cache invalidations​​</li>
+                                <li>Unnecessary resources​</li>
+                                <li>Delays resource processing</li>
+                            </ul><br><br>
+                            <strong>Tips:</strong><br>
+                            <ul>
+                                <li>Focus and improve your caching policy​</li>
+                                <li>Take care of CD​</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Image spriting</h2>
+                    <div class="container horizontal left">
+
+                        <div class="fragment"><img width="300" src="./images/no.jpg"></div>
+                        <div class="fragment">
+                            <strong>Downsides:</strong><br>
+                            <ul>
+                                <li>Expensive cache invalidations​​</li>
+                                <li>Breaks stream prioritization</li>
+                                <li>Unnecessary resources​</li>
+                                <li>Delays resource processing</li>
+                            </ul><br><br>
+                            <strong>Caution:</strong><br>
+                            <ul>
+                                <li>There is still people using HTTP/1.x​</li>
+                                <li>Because of size we can get better compression of images with spriting​</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Minimize the size of HTTP requests &amp; responses</h2>
+                    <div class="container horizontal left">
+
+                        <div class="fragment"><img width="300" src="./images/yes.jpg"></div>
+                        <div class="fragment">
+                            <strong>Tips:</strong><br>
+                            <ul>
+                                <li>Minify HTML/CSS/JS size​</li>
+                                <li>Minimize cookies​</li>
+                                <li>Eliminate unnecessary metadata (e.g. headers)​</li>
+                                <li>Optimize images​​​</li>
+                                <li>Compress with GZip​</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Minimize redirects</h2>
+                    <div class="container horizontal left">
+                        <div class="fragment"><img width="300" src="./images/yes.jpg"></div>
+                        <div class="fragment">
+                            <strong>Tips:</strong><br>
+                            <ul>
+                                <li>Use 301/302 over &lt;meta http-equiv="refresh“ …&gt;​</li>
+                                <li>Remove them after a while/they are need​</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Domain sharding</h2>
+                    <div class="container horizontal left">
+                        <div class="fragment"><img width="300" src="./images/no.jpg"></div>
+                        <div class="fragment">
+                            <strong>Downsides:</strong><br>
+                            <ul>
+                                <li>Unnecessary DNS query, TCP connection, <br>and TLS handshake​</li>
+                                <li>Breaks stream prioritization (can’t prioritize <br>between domains)​</li>
+                            </ul><br><br>
+                            <strong>Tips:</strong><br>
+                            <ul>
+                                <li>You can keep sharding if TLS certificate is <br>valid for both hosts and points to same IP. <br>You will get the best of both worlds.​</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Reduce DNS lookups</h2>
+                    <div class="container horizontal left">
+                        <div class="fragment"><img width="300" src="./images/yes.jpg"></div>
+                        <div class="fragment">
+                            <strong>Tip:</strong><br>
+                            <ul>
+                                <li>&lt;link rel='dns-prefetch' href='...' /&gt;</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Inline assets</h2>
+                    <div class="container horizontal left">
+                        <div class="fragment"><img width="300" src="./images/no.jpg"></div>
+                        <div class="fragment">
+                            <strong>Downsides:</strong><br>
+                            <ul>
+                                <li>Browsers can’t cache individual assets​​</li>
+                                <li>Breaks stream prioritization​​</li>
+                            </ul><br><br>
+                            <strong>Tips:</strong><br>
+                            <ul>
+                                <li>Server Push!! (Another talk here)​</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Do's</h2>
+                    <ul>
+                        <li>Use content delivery network​</li>
+                        <li>Cache resources on the client​​</li>
+                        <li>Minimize the Size of HTTP Requests and response​​</li>
+                        <li>Minimize redirects​​​</li>
+                        <li>Reduce DNS Lookups​</li>
+                    </ul><br><br>
+                    <h2>Don'ts:</h2>
+                    <ul>
+                        <li>Concatenate files​​</li>
+                        <li>Image spriting​</li>
+                        <li>Domain sharding​​​</li>
+                        <li>Inline Assets​</li>
+                    </ul>
+                </section>
+
+                <section data-background-image="./images/end.gif">
+
+                </section>
+
+                <section data-background-color="black" style="color: white;">
+                    <h2>Resources used</h2>
+                    <ul>
+                        <li><a href="https://http2.github.io/">HTTP/2 Specifications &amp; Implementations</a></li>
+                        <li><a href="https://twitter.com/igrigorik">Ilya Grigorik (Web performance engineer at Google)</a></li>
+                        <li><a href="https://hpbn.co/">High Performance Browser Networking (Online Free Book)</a></li>
+                        <li><a href="https://http2.github.io/">HTTP/2 Explained (Online Free Book)</a></li>
+                        <li><a href="https://www.mnot.net/blog/2016/04/22/ideal-http">Ideal HTTP Performance (Mark Nottingham)</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=wR1gF5Lhcq0&amp;feature=youtu.be">Revisiting HTTP2 (real world testimony by Fastly)</a></li>
+                        <li><a href="https://www.youtube.com/playlist?list=PLNYkxOF6rcICUD5nBfRdAR6Fveosnqa5m">Chrome Dev Summit 2017 Videos</a></li>
+                    </ul>
                 </section>
 
             </div>
@@ -338,7 +598,9 @@ Header Compression (HPACK)
                 diagram.drawSVG(item.id, {theme: 'hand'});
             });
 
-            createTest('demo1', 'http://localhost:8000/http2-best-practices/images/demo', 'http://127.0.0.1:8000/http2-best-practices/images/demo');
+            createTest('demo1', 'https://demohttp1.berriart.com/images', 'https://demohttp1au.berriart.com/images');
+            createTest('demo2', 'https://demohttp1.berriart.com/images', 'https://demohttp2.berriart.com/images');
+            createTest('demo3', 'https://demohttp1au.berriart.com/images', 'https://demohttp2au.berriart.com/images');
 
             })();
 
