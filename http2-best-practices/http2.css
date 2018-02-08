@@ -1,8 +1,4 @@
-@import url(../../lib/font/source-sans-pro/source-sans-pro.css);
-@import url(http://fonts.googleapis.com/css?family=Open+Sans);
-@import url(../../lib/font/league-gothic/league-gothic.css);
-
-
+@import url(../lib/font/league-gothic/league-gothic.css);
 
 /**
  * White theme for reveal.js. This is the opposite of the 'black' theme.
