@@ -408,6 +408,7 @@
                             <ul>
                                 <li>Focus and improve your caching policy​</li>
                                 <li>Take care of CD​</li>
+                                <li>'Bundlelize' your assets and measure</li>
                             </ul>
                         </div>
                     </div>
@@ -510,10 +511,109 @@
                             </ul><br><br>
                             <strong>Tips:</strong><br>
                             <ul>
-                                <li>Server Push!! (Another talk here)​</li>
+                                <li>Server Push!!​</li>
                             </ul>
                         </div>
                     </div>
+                </section>
+
+                <section class="">
+                    <div>
+                        <h1>Server push</h1>
+                        <p>Server push, which is defined in the HTTP/2 specification, allows a server to pre‑emptively push resources to a remote client, anticipating that the client may soon request those resources.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Server push</h2>
+                    <img style="max-height: 400px;" src="./images/http2-server-push-testing-results.png"><br>
+                    <p style="text-align: center;"><small><a href="https://www.nginx.com/blog/nginx-1-13-9-http2-server-push/">Source: Nginx</a></small></p>
+                </section>
+
+                <section class="">
+                    <h2>Server push</h2>
+                    <ul>
+                        <li>Not all servers/languages/PaaS implement Server Push, check yours. (E.g. Nginx didn't implent it until Feb 2018 although H2 was implemented since Sep 2015)</li>
+                        <li>Not all servers/languages/PaaS implement it in the same way</li>
+                        <li>Some servers allow to push using <a href="https://www.w3.org/TR/preload/">Preload Headers</a></li>
+                        <li>It is not a silver bullet: <a href="https://jakearchibald.com/2017/h2-push-tougher-than-i-thought/">HTTP/2 push is tougher than I thought</a> (Jake Archibald)</li>
+                    </ul>
+                </section>
+
+                <section class="">
+                    <h2>Server push</h2>
+                    <p>Simple example using Nginx</p>
+                    <pre><code class="hljs" data-trim contenteditable>
+server {
+    # Ensure that HTTP/2 is enabled for the server
+    listen 443 ssl http2;
+
+    ssl_certificate ssl/certificate.pem;
+    ssl_certificate_key ssl/key.pem;
+
+    root /var/www/html;
+
+    # whenever a client requests demo.html, also push
+    # /style.css, /image1.jpg and /image2.jpg
+    location = /demo.html {
+        http2_push /style.css;
+        http2_push /image1.jpg;
+        http2_push /image2.jpg;
+    }
+}
+                    </code></pre>
+                </section>
+
+                <section class="">
+                    <h2>Server push</h2>
+                    <p>Simple example using Nginx and the preload header with PHP</p>
+                    <pre><code class="hljs" data-trim contenteditable>
+server {
+    # Ensure that HTTP/2 is enabled for the server
+    listen 443 ssl http2;
+
+    ssl_certificate ssl/certificate.pem;
+    ssl_certificate_key ssl/key.pem;
+
+    root /var/www/html;
+
+    # Intercept Link header and initiate requested Pushes
+    location = /myapp {
+        proxy_pass http://upstream;
+        http2_push_preload on;
+    }
+}
+                    </code></pre>
+                    <pre><code class="hljs" data-trim contenteditable>
+header("Link: <{$uri}>; rel=preload; as=image", false);
+                    </code></pre>
+                </section>
+
+                <section class="">
+                    <h2>Server push</h2>
+                    <p>Nginx pushing only on the first visit (using cookies)</p>
+                    <pre><code class="hljs" data-trim contenteditable>
+server {
+    listen 443 ssl http2 default_server;
+
+    ssl_certificate ssl/certificate.pem;
+    ssl_certificate_key ssl/key.pem;
+
+    root /var/www/html;
+    http2_push_preload on;
+
+    location = /demo.html {
+        add_header Set-Cookie "session=1";
+        add_header Link $resources;
+    }
+}
+
+map $http_cookie $resources {
+    "~*session=1" "";
+    default "&lt;/style.css&gt;; as=style; rel=preload, &lt;/image1.jpg&gt;; as=image; rel=preload,
+             &lt;/image2.jpg&gt;; as=style; rel=preload";
+}
+                    </code></pre>
                 </section>
 
                 <section>
