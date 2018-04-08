@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Conceptos básicos sobre Wear OS (Android Wear)</title>
+
+    <meta name="description" content="Conceptos básicos sobre Wear OS (Android Wear)">
+    <meta name="author" content="Alberto Varela">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+
+    <link href='https://fonts.googleapis.com/css?family=Abel|Inconsolata' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../css/reveal.min.css">
+    <link rel="stylesheet" href="../css/theme/black.css" id="theme">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="../lib/css/zenburn.css">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? '../css/print/pdf.css' : '../css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+
+    <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+</head>
+
+<body>
+
+    <div class="reveal">
+
+        <!-- Any section element inside of this container is displayed as a slide -->
+        <div class="slides">
+            <section id="home" data-background="images/back-home.jpg">
+                <div id="home-inner">
+                    <h1>Conceptos básicos sobre Wear OS (Android Wear)</nobr>
+                    </h1>
+                    <p id="byauthor">
+                        Por
+                        <a href="http://www.berriart.com/">Alberto Varela</a>
+                    </p>
+                </div>
+            </section>
+
+            <section>
+                <h2 class="mini">¿Quién soy?</h2>
+                <div class=" fragment">
+                    <p>Soy
+                        <a href="http://www.berriart.com">Alberto Varela</a> y trabajo
+                        <br>de desarrollador en </p>
+                    <p>
+                        <a href="http://www.plainconcepts.com">
+                            <img class="noborder" width="240" src="./images/plainconcepts.png" />
+                        </a>
+                    </p>
+                    <p class=" fragment">
+                        <small style="color:#666;">
+                            <a style="color:#666;" href="https://github.com/artberri">github.com/artberri</a> |
+                            <a style="color:#666;" href="https://twiter.com/artberri">twiter.com/artberri</a> |
+                            <a style="color:#666;" href="https://www.berriart.com">berriart.com</a> |
+                            <a style="color:#666;" href="mailto:alberto@berriart.com">alberto@berriart.com</a>
+                        </small>
+                    </p>
+                </div>
+            </section>
+
+
+            <section>
+                <img src="images/android-wear.jpg">
+            </section>
+            <section>
+                <img src="images/wear-os.png" width="600">
+            </section>
+            <section data-background="images/watches.png">
+                <aside class="notes">
+                    <p>https://wearos.google.com/</p>
+                </aside>
+            </section>
+
+            <section>
+                <h2>What can we do?</h2>
+
+                <ul>
+                    <li class="fragment">Add Wearable Features to Notifications</li>
+                    <li class="fragment">Create Watch Faces</li>
+                    <li class="fragment">Create Watch Face Complications (Only v2)</li>
+                    <li class="fragment">Create Wearable Apps</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Notifications</h2>
+            </section>
+
+            <section>
+                <h3>Notifications</h3>
+
+                <div>
+                    <img src="images/notifications1.png">
+                    <a href="https://developer.android.com/training/wearables/notifications/index.html">Official Doc</a>
+                </div>
+
+            </section>
+
+            <section>
+                <h3>Notifications</h3>
+
+                <pre>
+                    <code class="hljs" data-trim>
+                        import android.support.v4.app.NotificationCompat;
+                        import android.support.v4.app.NotificationManagerCompat;
+                        import android.support.v4.app.NotificationCompat.WearableExtender;
+
+                        int notificationId = 001;
+                        // The channel ID of the notification.
+                        String id = "my_channel_01";
+                        // Build intent for notification content
+                        Intent viewIntent = new Intent(this, ViewEventActivity.class);
+                        viewIntent.putExtra(EXTRA_EVENT_ID, eventId);
+                        PendingIntent viewPendingIntent =
+                                PendingIntent.getActivity(this, 0, viewIntent, 0);
+
+                        // Notification channel ID is ignored for Android 7.1.1
+                        // (API level 25) and lower.
+                        NotificationCompat.Builder notificationBuilder =
+                            new NotificationCompat.Builder(this, id)
+                                .setSmallIcon(R.drawable.ic_event)
+                                .setContentTitle(eventTitle)
+                                .setContentText(eventLocation)
+                                .setContentIntent(viewPendingIntent);
+
+                        // Get an instance of the NotificationManager service
+                        NotificationManagerCompat notificationManager =
+                                NotificationManagerCompat.from(this);
+
+                        // Issue the notification with notification manager.
+                        notificationManager.notify(notificationId, notificationBuilder.build());
+                    </code>
+                </pre>
+
+            </section>
+
+            <section>
+                <h3>Expanded Notifications</h3>
+
+                <div style="display: flex">
+                    <img style="margin-right: 20px;" height="400" src="images/expanded_diagram.png">
+                    <pre>
+                        <code class="hljs" data-trim>
+                            Notification notification = new Notification.Builder(mContext)
+                                .setContentTitle("New mail from " + sender.toString())
+                                .setContentText(subject)
+                                .setSmallIcon(R.drawable.new_mail)
+                                .setLargeIcon(aBitmap)
+                                .setStyle(new Notification.BigTextStyle()
+                                    .bigText(aVeryLongString))
+                                .build();
+                        </code>
+                    </pre>
+                </div>
+
+            </section>
+
+            <section>
+                <h3>Notification Actions</h3>
+
+                <div style="display: flex">
+                    <img style="margin-right: 20px;" height="400" src="images/expanded_diagram.png">
+                    <pre>
+                        <code class="hljs" data-trim>
+                            // Build an intent for an action to view a map
+                            Intent mapIntent = new Intent(Intent.ACTION_VIEW);
+                            // The channel ID of the notification.
+                            String id = "my_channel_01";
+                            Uri geoUri = Uri.parse("geo:0,0?q=" + Uri.encode(location));
+                            mapIntent.setData(geoUri);
+                            PendingIntent mapPendingIntent =
+                                    PendingIntent.getActivity(this, 0, mapIntent, 0);
+
+                            NotificationCompat.Builder notificationBuilder =
+                                    new NotificationCompat.Builder(this, id)
+                                    .setSmallIcon(R.drawable.ic_event)
+                                    .setContentTitle(eventTitle)
+                                    .setContentText(eventLocation)
+                                    .setContentIntent(viewPendingIntent)
+                                    .addAction(R.drawable.ic_map,
+                                            getString(R.string.map), mapPendingIntent);
+                        </code>
+                    </pre>
+                </div>
+
+            </section>
+
+            <section>
+                <h3>Pre-defined Responses, Wearable-only Actions</h3>
+
+                <div style="display: flex">
+                    <img style="margin-right: 20px;" height="400" src="images/responses.png">
+                    <div style="flex: 1">
+                        <img style="margin-right: 20px;" src="images/voice_input.png">
+                    </div>
+                </div>
+
+            </section>
+
+            <section>
+                <h2>Watch Faces</h2>
+            </section>
+
+            <section data-background="images/google-watch-faces-android-wear.png">
+
+            </section>
+
+            <section>
+                <h3>Square VS round devices</h3>
+
+                <div style="display: flex;flex-wrap: wrap; justify-content: space-between;">
+                    <img height="150" src="images/plan-01.png">
+                    <img height="150" src="images/plan-02.png">
+                    <img height="150" src="images/plan-03.png">
+                </div>
+
+            </section>
+
+            <section>
+                <h3>Active VS Always-on modes</h3>
+
+                <div style="display: flex;flex-wrap: wrap; justify-content: space-between;">
+                    <img height="250" src="images/pfadm-01.png">
+                    <img height="250" src="images/pfadm-02.png">
+                    <img height="250" src="images/optimize-02.png">
+                </div>
+
+            </section>
+
+            <section>
+                <h3>No code, sorry :(</h3>
+                <p>Check this on Google Code Labs:</p>
+                <a href="https://codelabs.developers.google.com/codelabs/watchface/index.html#0">Build a Watch Face Tutorial (70 min)</a>
+            </section>
+
+            <section>
+                <h2>Complications</h2>
+            </section>
+
+            <section>
+                <h3>Real watch complications</h3>
+                <img style="max-height:400px;" src="images/watch-complications.jpg">
+            </section>
+
+            <section>
+                <h3>Wear OS complications</h3>
+                <img style="max-height:400px;" src="images/complication-type-exs.png">
+            </section>
+
+            <section>
+                <h3>Wear OS complications</h3>
+                <ul>
+                    <li class="fragment">API available only in Wear 2</li>
+                    <li class="fragment">Complication Data Providers</li>
+                    <li class="fragment">Complication Types
+                        <ul>
+                            <li>SHORT_TEXT, LONG_TEXT, RANGED_VALUE, ICON, TYPE_SMALL_IMAGE, ...</li>
+                        </ul>
+                    </li>
+                    <li class="fragment">Set default data providers for each slot</li>
+                    <li class="fragment">Allow users to choose data providers</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>No code, sorry :(</h3>
+                <p>Check this on Google Code Labs:</p>
+                <a href="https://codelabs.developers.google.com/codelabs/data-providers/index.html#0">Add Complications to a Watch Face Tutorial (45 min)</a>
+            </section>
+
+            <section>
+                <h2>Wearable Apps</h2>
+            </section>
+
+            <section>
+                <h3>Wearable Apps</h3>
+                <p>Just the same as a "normal" Android App but...</p>
+                <pre class="fragment">
+                    <code class="hljs" data-trim>
+                dependencies {
+                    compile 'com.android.support:wear:27.0.0'
+                    compile 'com.google.android.support:wearable:2.1.0'
+                    provided 'com.google.android.wearable:wearable:2.1.0'
+                }
+                    </code>
+                </pre>
+                <pre class="fragment">
+                    <code class="hljs" data-trim>
+                        &lt;manifest&gt;
+                        ...
+                            &lt;uses-feature android:name="android.hardware.type.watch" /&gt;
+                        ...
+                        &lt;/manifest&gt;
+                    </code>
+                </pre>
+            </section>
+
+            <section>
+                <h3>Wearable Apps</h3>
+                <p>Just the same as a "normal" Android App but...</p>
+
+                <ul class="fragment">
+                    <li>Use wear emulators or devices</li>
+                    <li>Test in different screen sizes</li>
+                    <li>Should use the Wear UI Library</li>
+                    <li>Distribution: embedded or standalone (or multi-apk) </li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>Wearable Network Access</h3>
+                <p>With Wear OS by Google (Wear 2.0), a watch can communicate with a network directly, without access to an
+                    Android or iOS phone.</p>
+                <p>
+                    <small>With Wear 1.x use of Data Layer is needed</small>
+                </p>
+            </section>
+
+            <section>
+                <h3>Wearable-Handled Communication</h3>
+                <ul style="font-size: 24px;">
+                    <li>Wearable Data Layer API
+                        <ul>
+                            <li>Sending and Receiving Messages
+                                <em>(MessageClient)</em>
+                            </li>
+                            <li>Sync Data Items
+                                <em>(DataItem)</em>
+                            </li>
+                            <li>Transfer an Asset
+                                <em>(Asset)</em>
+                            </li>
+                            <li>Transfer large entities or stream data (ChannelClient)</li>
+                            <li>Listen:
+                                <ul>
+                                    <li>WearableListenerService (for services)</li>
+                                    <li>OnDataChangedListener (for foreground activities)</li>
+                                </ul>
+                        </ul>
+                        </li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Packaging and Distributing</h2>
+                <ul>
+                    <li class="fragment">multi-apk method is recommended (it works for both 1.x and 2.x)</li>
+                    <li class="fragment">Target watches
+                        <pre style="margin: 0;height: 40px;">
+                            <code class="hljs" data-trim>
+                            &lt;uses-feature android:name="android.hardware.type.watch"/&gt;
+                            </code>
+                        </pre>
+                    </li>
+                    <li class="fragment">Standalone? (It can work with an iPhone!!)
+                        <pre style="margin: 0;height: 40px;">
+                            <code class="hljs" data-trim>
+                            &lt;meta-data android:name="com.google.android.wearable.standalone" android:value="true""/&gt;
+                            </code>
+                        </pre>
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>My experience</h2>
+            </section>
+
+            <section>
+                <h3>Bilbon Bizi App</h3>
+                <div style="display: flex">
+                    <img style="margin-right: 20px;" height="400" src="images/handled.png">
+                    <img style="margin-right: 20px;" height="400" src="images/watch.png">
+                </div>
+                <p><a href="https://play.google.com/store/apps/details?id=com.berriart.bilbonbizi">Download</a></p>
+            </section>
+
+            <section>
+                <h2 class="mini">Eskerrik asko!</h2>
+                <div>
+                    <img data-src="images/everythinkok.gif" alt="¡Gracias!">
+                </div>
+                <p>
+                    <small>Slides:
+                        <a href="https://www.berriart.com/talks/wear-os-101/">https://www.berriart.com/talks/wear-os-101/</a>
+                    </small>
+                </p>
+
+            </section>
+        </div>
+
+    </div>
+
+    <script src="../lib/js/head.min.js"></script>
+    <script src="../js/reveal.min.js"></script>
+
+    <script>
+        // More info https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            history: true,
+            center: true,
+            //   showNotes: true,
+
+            transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+            // More info https://github.com/hakimel/reveal.js#dependencies
+            dependencies: [{
+                    src: '../lib/js/classList.js',
+                    condition: function () {
+                        return !document.body.classList;
+                    }
+                },
+                {
+                    src: '../plugin/markdown/marked.js',
+                    condition: function () {
+                        return !!document.querySelector('[data-markdown]');
+                    }
+                },
+                {
+                    src: '../plugin/markdown/markdown.js',
+                    condition: function () {
+                        return !!document.querySelector('[data-markdown]');
+                    }
+                },
+                {
+                    src: '../plugin/highlight/highlight.js',
+                    async: true,
+                    callback: function () {
+                        hljs.initHighlightingOnLoad();
+                    }
+                },
+                {
+                    src: '../plugin/zoom-js/zoom.js',
+                    async: true
+                },
+                {
+                    src: '../plugin/notes/notes.js',
+                    async: true
+                }
+            ]
+        });
+    </script>
+
+</body>
+
+</html>
