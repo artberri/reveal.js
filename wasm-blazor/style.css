@@ -11,7 +11,7 @@ body {
 .reveal h1 {
     font-size: 2em;
     color: #fff;
-    text-align: right;
+    text-align: left;
     font-family: 'Abel', sans-serif;
     text-transform: none;
 }
@@ -52,29 +52,31 @@ body {
 }
 
 .reveal a {
-    color: #fe63af;
+    color: #c57ad6;
 }
 
 .reveal a:hover,
 .reveal a:active {
-    color: #d63080;
+    color: #8a4a98;
 }
 
-.reveal #home p {
-    text-align: right;
+.reveal #home p,
+.reveal #home p small {
+    text-align: left;
     color: #fff;
 }
 
 .reveal #home h2 {
-    text-align: right;
+    text-align: left;
     color: #fff;
     font-size: 48px;
     border: 0;
 }
 
+.reveal #home p,
 .reveal #home h2,
 .reveal #home h1 {
-    text-shadow: 8px 0 10px rgba(0, 0, 0, 0.5), -8px 0 10px rgba(0, 0, 0, 0.5), 0 8px 10px rgba(0, 0, 0, 0.5), 0 -8px 10px rgba(0, 0, 0, 0.5);
+    text-shadow: 8px 0 10px rgba(0, 0, 0, 0.8), -8px 0 10px rgba(0, 0, 0, 0.8), 0 8px 10px rgba(0, 0, 0, 0.8), 0 -8px 10px rgba(0, 0, 0, 0.8);
 }
 
 html.dimbg .slide-background-content {
@@ -107,6 +109,10 @@ html.dimbg .slide-background-content {
     float: left;
     margin: 0;
     padding: 0;
+}
+
+.reveal .left {
+    text-align: left;
 }
 
 .reveal .imageholder p {

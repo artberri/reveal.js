@@ -43,7 +43,7 @@
 
         <!-- Any section element inside of this container is displayed as a slide -->
         <div class="slides">
-            <section id="home" data-background="images/cables.gif" data-background-color="#000000" data-state="dimbg">
+            <section id="home" data-background="images/25bb0f734d0dfcab4dccabd671decba7.gif" data-background-color="#000000" data-state="">
                 <div id="home-inner">
                     <h1>WebAssembly &amp; Blazor</nobr>
                     </h1>
@@ -51,6 +51,9 @@
                     <p id="byauthor">
                         By
                         <a href="http://www.berriart.com/">Alberto Varela</a>
+                        <br>
+                        <small>Background images:
+                                <a href="https://www.deviantart.com/kirokaze/">kirokaze</a></small>
                     </p>
                 </div>
             </section>
@@ -87,7 +90,7 @@
                 </ul>
             </section>
 
-            <section data-background="images/cables.gif" data-background-color="#000000" data-state="dimbg">
+            <section data-background="images/shooting_stars2_by_kirokaze-d9ikcm1.gif" data-background-color="#000000" data-state="dimbg">
                 <h1>Why WebAssembly?</h1>
             </section>
 
@@ -174,7 +177,7 @@
                 <h2 class="mini">Compilers?</h2>
                 <ul class="fragment mini">
                     <li><a href="https://github.com/kripken/emscripten">Emscripten</a> is an LLVM-to-JavaScript compiler</li>
-                    <li><a href="https://www.leaningtech.com/cheerp/">Cheerp</a>is a C++ compiler for the Web</li>
+                    <li><a href="https://www.leaningtech.com/cheerp/">Cheerp</a> is a C++ compiler for the Web</li>
                     <li><a href="https://github.com/WebAssembly/binaryen">Binaryen</a> is a compiler and toolchain infrastructure library for WebAssembly</li>
                     <li><a href="https://github.com/AssemblyScript/assemblyscript">AssemblyScript</a> compiles strictly typed TypeScript to WebAssembly using Binaryen</li>
                     <li><a href="http://teavm.org/">TeaVM</a>  is an ahead-of-time compile of Java bytecode to JavaScript and WebAssembly</li>
@@ -183,7 +186,7 @@
                 </ul>
             </section>
 
-            <section data-background="images/cables.gif" data-background-color="#000000" data-state="dimbg">
+            <section data-background="images/factory_5_by_kirokaze-d9dnodi.gif" data-background-color="#000000" data-state="dimbg">
                 <h1>What is Blazor?</h1>
             </section>
 
@@ -225,7 +228,7 @@
             </section>
 
             <section>
-                <h3 class="mini">How it works?</h2>
+                <h3 class="mini">How it works?</h3>
                 <div style="display: flex;width: 100%;">
                     <div style="flex: 1">
                         <h4>Interpreted<br><small>Present</small> </h4>
@@ -242,11 +245,387 @@
                 </small></p>
             </section>
 
-            <section data-background="images/cables.gif" data-background-color="#000000" data-state="dimbg">
+            <section data-background="images/redlights_by_kirokaze-daiefoq.gif" data-background-color="#000000" data-state="dimbg">
                 <h1>Blazor Basics</h1>
             </section>
 
-            <section data-background="images/cables.gif" data-background-color="#000000" data-state="dimbg">
+            <section>
+                <h3>Based on components</h3>
+                <div style="display: flex;width: 100%;">
+                    <div style="width: 48%;">
+                        <p><small>ParentComponent.cshtml</small></p>
+                        <pre><code class="hljs" data-trim>
+                            @page "/ParentComponent"
+
+                            <h1>Parent-child example</h1>
+
+                            <ChildComponent Title="Panel Title from Parent">
+                                Child content of the child component is supplied by the parent component.
+                            </ChildComponent>
+                        </code></pre>
+                    </div>
+                    <div>&nbsp;</div>
+                    <div style="width: 48%;">
+                        <p><small>ChildComponent.cshtml</small></p>
+                        <pre><code class="hljs" data-trim>
+                            <div class="panel panel-success">
+                                <div class="panel-heading">@Title</div>
+                                <div class="panel-body">@ChildContent</div>
+                            </div>
+
+                            @functions {
+                                [Parameter]
+                                private string Title { get; set; }
+
+                                [Parameter]
+                                private RenderFragment ChildContent { get; set; }
+                            }
+                        </code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h3>Component Lifecycle</h3>
+                <div style="display: flex;width: 100%;">
+                    <div style="width: 48%;">
+                        <p><small>Sync methods</small></p>
+                        <pre><code class="hljs" data-trim>
+                            @using System
+                            @implements IDisposable
+
+                            ...
+
+                            @functions {
+                                protected override void OnInit()
+                                {
+                                    ...
+                                }
+                                protected override void OnParametersSet()
+                                {
+                                    ...
+                                }
+                                protected override void OnAfterRender()
+                                {
+                                    ...
+                                }
+                                public void Dispose()
+                                {
+                                    ...
+                                }
+                            }
+                        </code></pre>
+                    </div>
+                    <div>&nbsp;</div>
+                    <div style="width: 48%;">
+                        <p><small>Async methods</small></p>
+                        <pre><code class="hljs" data-trim>
+                            ...
+
+                            @functions {
+                                protected override async Task OnInitAsync()
+                                {
+                                    await ...
+                                }
+
+                                protected override async Task OnParametersSetAsync()
+                                {
+                                    await ...
+                                }
+                                protected override async Task OnAfterRenderAsync()
+                                {
+                                    await ...
+                                }
+                            }
+                        </code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h3>Layouts</h3>
+                <p>Layouts are just Blazor components</p>
+                <div style="display: flex;width: 100%;">
+                    <div style="width: 48%;">
+                        <p><small>MainLayout.cshtml</small></p>
+                        <pre><code class="hljs" data-trim>
+                            @inherits BlazorLayoutComponent
+                            &lt;html&gt;
+                                <head>...</head>
+                                <body>
+                                    <header>...</header>
+                                    <nav>...</nav>
+                                    @Body
+
+                                    <footer>
+                                        &copy; by @CopyrightMessage
+                                    </footer>
+                                </body>
+                            &lt;/html&gt;
+
+                            @functions {
+                                public string CopyrightMessage { get; set; }
+                                ...
+                            }
+                        </code></pre>
+                    </div>
+                    <div>&nbsp;</div>
+                    <div style="width: 48%;">
+                        <p><small>WhateverPageComponent.cshtml</small></p>
+                        <pre><code class="hljs" data-trim>
+                            @layout MainLayout
+
+                            @page "/whatever"
+
+                            <h1>Whatever</h1>
+                            ...
+                        </code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h3>Built-in Dependency Injection</h3>
+                <div style="display: flex;width: 100%;">
+                    <div style="width: 48%;">
+                        <p><small>Startup.cs</small></p>
+                        <pre><code class="hljs" data-trim>
+                            public void ConfigureServices(IServiceCollection services)
+                            {
+                                services.AddSingleton&lt;IDataAccess, DataAccess&gt;();
+                                services.AddTransient&lt;IOrder, Order&gt;();
+                                services.AddScoped&lt;Whatever&gt;(); // Behavies as singlteon, don't use it
+                            }
+                        </code></pre>
+                    </div>
+                    <div>&nbsp;</div>
+                    <div style="width: 48%;">
+                        <p><small>WhateverPageComponent.cshtml</small></p>
+                        <pre><code class="hljs" data-trim>
+                            @layout MainLayout
+                            @using App.Domain.Entites
+                            @page "/customers"
+                            @inject IDataAccess DataRepository
+
+                            <h1>Customers</h1>
+                            <ul>
+                                @if (Customers != null)
+                                {
+                                    @foreach (var customer in Customers)
+                                    {
+                                        <li>@customer.FirstName @customer.LastName</li>
+                                    }
+                                }
+                            </ul>
+
+                            @functions {
+                                private IReadOnlyList&lt;Customer&gt; Customers;
+
+                                protected override async Task OnInitAsync()
+                                {
+                                    Customers = await DataRepository.GetAllCustomersAsync();
+                                }
+                            }
+                        </code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h3>Built-in Router</h3>
+                <div style="display: flex;width: 100%;">
+                    <div style="width: 48%;">
+                        <p><small>App.cshtml</small></p>
+                        <pre><code class="hljs" data-trim>
+                        ...
+
+                        &lt;Router AppAssembly=typeof(Program).Assembly &gt;
+
+                        ...
+                        </code></pre>
+                        <br>
+                        <p><small>WhateverPageComponent.cshtml</small></p>
+                        <pre><code class="hljs" data-trim>
+                        @page "/BlazorRoute"
+                        @page "/BlazorRoute/{text}"
+
+                        <h1>Blazor is @Text!</h1>
+
+                        @functions {
+                            [Parameter]
+                            private string Text { get; set; } = "fantastic";
+                        }
+                        </code></pre>
+                    </div>
+                    <div>&nbsp;</div>
+                    <div style="width: 48%;">
+                        <p><small>Shared/NavMenu.cshtml</small></p>
+                        <pre><code class="hljs" data-trim>
+                            <div class="navbar-collapse collapse">
+                                <ul class="nav navbar-nav">
+                                    <li>
+                                        <NavLink href="" Match=NavLinkMatch.All>
+                                            <span class="glyphicon glyphicon-home"></span> Home
+                                        </NavLink>
+                                    </li>
+                                    <li>
+                                        <NavLink href="BlazorRoute">
+                                            <span class="glyphicon glyphicon-th-list"></span> Blazor Route
+                                        </NavLink>
+                                    </li>
+                                </ul>
+                            </div>
+                        </code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h3>Magic (Interop)</h3>
+                <p>Invoke JavaScript from .NET</p>
+                <div style="display: flex;width: 100%;">
+                    <div style="width: 48%;">
+                        <p><small>app.js:</small></p>
+                        <pre><code class="hljs" data-trim>
+                        window.formJsFunctions = {
+                            showPrompt: function (message) {
+                                return prompt(message, 'Type anything here');
+                            }
+                        };
+                        </code></pre>
+                        <p><small>FormJsInterop.cs</small></p>
+                        <pre><code class="hljs" data-trim>
+                            public class FormJsInterop
+                            {
+                                public static Task&lt;string&gt; Prompt(string message)
+                                {
+                                    return JSRuntime.Current.InvokeAsync&lt;string&gt;(
+                                        "formJsFunctions.showPrompt",
+                                        message);
+                                }
+                            }
+                        </code></pre>
+                    </div>
+                    <div>&nbsp;</div>
+                    <div style="width: 48%;">
+                        <p><small>form.cshtml</small></p>
+                        <pre><code class="hljs" data-trim>
+                            @using MyLib
+
+                            <input ref="username" />
+                            <button onclick="@SetFocus">Set focus</button>
+                            <button onclick="@Prompt">Prompt</button>
+
+                            @functions {
+                                ElementRef username;
+
+                                void SetFocus()
+                                {
+                                    username.Focus();
+                                }
+                                void Prompt()
+                                {
+                                    FormJsInterop.Prompt("Whatever");
+                                }
+                            }
+                        </code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h3>Magic (Interop)</h3>
+                <p>Invoke .NET from JavaScript</p>
+                <div style="display: flex;width: 100%;">
+                    <div style="width: 48%;">
+                        <p><small>GuidHelper.cs</small></p>
+                        <pre><code class="hljs" data-trim>
+                            using System;
+                            public class GuidHelper
+                            {
+                                [JSInvokable]
+                                public static string GenerateGuid()
+                                {
+                                    return Guid.NewGuid();
+                                }
+                            }
+                        </code></pre>
+                    </div>
+                    <div>&nbsp;</div>
+                    <div style="width: 48%;">
+                        <p><small>app.js</small></p>
+                        <pre><code class="hljs" data-trim>
+                            DotNet.invokeMethodAsync(assemblyName, 'GenerateGuid')
+                                .then(guid => console.log(guid))
+                        </code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h3>Built-in Services</h3>
+                <div style="display: flex;width: 100%;">
+                    <div style="width: 48%;">
+                        <p><small>HttpClient</small></p>
+                        <pre><code class="hljs" data-trim>
+                            @page "/"
+                            @inject HttpClient Http
+
+                            <button onclick="@(async () =&gt; await PrintWebApiResponse())">Print Web API Response</button>
+
+                            @functions {
+                                private async Task PrintWebApiResponse()
+                                {
+                                    var response = await Http.GetStringAsync("/api/Customer");
+                                    Console.WriteLine(response);
+                                }
+                            }
+                        </code></pre>
+                    </div>
+                    <div>&nbsp;</div>
+                    <div style="width: 48%;">
+                        <p><small>IUriHelper</small></p>
+                        <pre><code class="hljs" data-trim>
+                            @page "/hello-world"
+                            @implements IDisposable
+                            @inject Microsoft.AspNetCore.Blazor.Services.IUriHelper UriHelper
+
+                            <h1>This is the query string: @Query</h1>
+
+                            @functions {
+                                private string Query { get; set; }
+
+                                protected override void OnInit()
+                                {
+                                    RefreshQuery();
+                                    UriHelper.OnLocationChanged += OnLocationChanges;
+                                }
+
+                                private void OnLocationChanges(object sender, string location) => RefreshQuery();
+
+                                private void RefreshQuery()
+                                {
+                                    var uri = new Uri(UriHelper.GetAbsoluteUri());
+                                    Query = uri;
+                                    StateHasChanged();
+                                }
+
+                                public void Dispose()
+                                {
+                                    UriHelper.OnLocationChanged -= OnLocationChanges;
+                                }
+                            }
+                        </code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Summary</h2>
+                <p>Blazor is a framework for building SPAs using C#/Razor with built-in router and dependency injection systems.</p>
+            </section>
+
+            <section data-background="images/coffee_in_rain_by_kirokaze-d98qb8z.gif" data-background-color="#000000" data-state="dimbg">
                 <h1>Demo</h1>
             </section>
 
