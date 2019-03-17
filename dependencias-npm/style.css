@@ -1,0 +1,193 @@
+html, body, .reveal div, .reveal applet, .reveal object, .reveal iframe, .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6, .reveal p, .reveal blockquote, .reveal pre, .reveal a, .reveal abbr, .reveal acronym, .reveal address, .reveal big, .reveal del, .reveal dfn, .reveal em, .reveal img, .reveal ins, .reveal kbd, .reveal q, .reveal s, .reveal samp, .reveal small, .reveal strike, .reveal strong, .reveal sub, .reveal sup, .reveal tt, .reveal var, .reveal b, .reveal u, .reveal center, .reveal dl, .reveal dt, .reveal dd, .reveal ol, .reveal ul, .reveal li, .reveal fieldset, .reveal form, .reveal label, .reveal legend, .reveal table, .reveal caption, .reveal tbody, .reveal tfoot, .reveal thead, .reveal tr, .reveal th, .reveal td, .reveal article, .reveal aside, .reveal canvas, .reveal details, .reveal embed, .reveal figure, .reveal figcaption, .reveal footer, .reveal header, .reveal hgroup, .reveal menu, .reveal nav, .reveal output, .reveal ruby, .reveal section, .reveal summary, .reveal time, .reveal mark, .reveal audio, .reveal video {
+    color: #555;
+    font-family: 'Inconsolata', sans-serif;
+}
+
+body {
+    background: #fff;
+    background-color: #fff;
+}
+
+.reveal h1 {
+    font-size: 2em;
+
+    text-align: left;
+    font-family: 'Abel', sans-serif;
+    text-transform: none;
+}
+
+.reveal h2 {
+    font-size: 2em;
+    color: #333;
+    font-family: 'Abel', sans-serif;
+    text-transform: none;
+    border-bottom: 1px solid #aaa;
+    padding-bottom: 30px;
+}
+
+.reveal h2.mini {
+    font-size: 1.4em;
+    padding-bottom: 15px;
+}
+
+.reveal h3,
+.reveal p {
+    color: #555;
+    text-transform: none;
+}
+
+.reveal h3 {
+    font-family: 'Abel', sans-serif;
+}
+
+.reveal ul.mini {
+    font-size: 0.8em;
+}
+
+.reveal h3 a {
+    color: #555;
+}
+
+.reveal a,
+.em {
+    color: #48D0FF;
+}
+
+.em2 {
+    color: #666666;
+}
+
+.reveal li, .reveal dt, .reveal dd, p.mini {
+    font-size: 32px;
+}
+
+p.mini {
+    margin-bottom: 0;
+}
+
+.reveal a:hover,
+.reveal a:active {
+    color: #2C81B7;
+}
+
+.reveal #home p,
+.reveal #home p small {
+    text-align: left;
+    color: #fff;
+}
+
+.reveal #home h2 {
+    text-align: left;
+    color: #fff;
+    font-size: 48px;
+    border: 0;
+}
+
+.reveal #home p,
+.reveal #home h2,
+.reveal #home h1 {
+    color: #fff;
+    text-shadow: 8px 0 10px rgba(0, 0, 0, 0.2), -8px 0 10px rgba(0, 0, 0, 0.2), 0 8px 10px rgba(0, 0, 0, 0.2), 0 -8px 10px rgba(0, 0, 0, 0.2);
+}
+
+.reveal #home a {
+    color: #fff;
+}
+
+html.dimbg .slide-background-content {
+	opacity: 0.8;
+}
+
+.reveal #home .regexp {
+    font-weight: normal;
+    font-family: 'Inconsolata', sans-serif;
+    letter-spacing: -5px;
+    display: inline-block;
+    background: rgba(0, 0, 0, .5);
+    color: #ddd;
+}
+
+.reveal section img {
+    height: auto;
+}
+
+.reveal section img.noborder {
+    border: 0;
+    box-shadow: none;
+}
+
+.reveal .small {
+    font-size: 0.4em;
+}
+
+.reveal .imageholder {
+    height: 130px;
+}
+
+.reveal .imageholder img {
+    float: left;
+    margin: 0;
+    padding: 0;
+}
+
+.reveal .left {
+    text-align: left;
+}
+
+.reveal .imageholder p {
+    text-align: left;
+    font-size: 0.5em;
+    margin: 0 0 0 225px;
+    padding: 0px;
+}
+
+.reveal .strike {
+    text-decoration: line-through;
+}
+
+.reveal blockquote {
+    font-style: normal;
+    box-shadow: none;
+    background: #f9f9f9;
+    border-left: 10px solid #ccc;
+    margin: 1.5em auto;
+    padding: 0.5em 10px;
+    quotes: "\201C""\201D""\2018""\2019";
+    font-size: 0.7em;
+    width: 100%;
+}
+.reveal blockquote:before {
+    color: #ccc;
+    content: open-quote;
+    font-size: 4em;
+    line-height: 0.1em;
+    margin-right: 0.25em;
+    vertical-align: -0.4em;
+}
+.reveal blockquote p {
+    display: inline;
+}
+
+#home-inner {
+    padding-bottom: 300px;
+}
+
+.reveal section img.noborder {
+    box-shadow: none;
+}
+
+.reveal pre {
+    font-size: 14px;
+    box-shadow: none;
+    margin: 0 auto 5px;
+}
+
+.blinkme {
+    animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}
