@@ -20,7 +20,8 @@
     <link rel="stylesheet" href="../css/theme/black.css" id="theme">
 
     <!-- Theme used for syntax highlighting of code -->
-    <link rel="stylesheet" href="../lib/css/zenburn.css">
+    <!--<link rel="stylesheet" href="../lib/css/zenburn.css">-->
+    <link rel="stylesheet" href="highlight-solarized-light.css">
     <link rel="stylesheet" href="style.css">
 
     <!-- Printing and PDF exports -->
@@ -124,7 +125,7 @@
             </section>
 
             <section>
-                <h2 class="mini">Específicos de lenguage</h2>
+                <h2 class="mini">Específicos de lenguaje</h2>
                 <ul>
                     <li class="fragment">1995 - <strong>CPAN</strong>
                         <br>Creado por los miembros de la lista de correo <a href="http://cpan.io/ref/cpan/history.html">perl-packrats</a>
@@ -184,7 +185,7 @@
                         quien sigue como CPO en npm, inc. a día de hoy.</li>
                     <li class="fragment">2016 - <strong>yarn</strong>
                         <br>Suplía ciertas carencias de npm que ya se encontraban en gestores de dependencias de otros
-                        lenguages.</li>
+                        lenguajes.</li>
                 </ul>
             </section>
 
@@ -395,7 +396,7 @@
                             for fsevents@1.0.14</small></dd>
 
                     <dt>bundledDependencies</dt>
-                    <dd>Dependencies bundled with the package when publishing.</dd>
+                    <dd>Se deben empaquetar junto al código propio al hacer publish.</dd>
                 </dl>
             </section>
 
@@ -477,16 +478,15 @@
                 <ul>
                     <li>El lock file no se publica con 'npm publish' porque no se debe publicar</li>
                     <li>Solo tendría sentido publicar el lock file en una herramienta como una CLI. Para eso existe el
-                        fichero 'npm-shrinkwrap.json'.</li>
-                    <li>Si despliegas tu app node desde un NPM Registry también deberías usar el fichero
-                        'npm-shrinkwrap.json'.</li>
+                        fichero 'npm-shrinkwrap.json'. También con cualquier paquete cuya intención sea ser
+                        instalado de forma global.</li>
                 </ul>
             </section>
 
             <section>
                 <h2 class="mini">Clave 7: <span class="em">Actualiza</span> con criterio</h2>
                 <ul class="fragment">
-                    <li>Vigila las vulnerabilidades, las conocidas te las indica el propio npm</li>
+                    <li>Vigila las vulnerabilidades, las conocidas te las indica el propio npm al instalar (más info con 'npm audit').</li>
                     <li>Con 'npm outdated' puedes obtener información</li>
                     <li>¿De verdad necesitas esa nueva funcionalidad?</li>
                     <li>Ojo con la falta de soporte, esto va muy rápido</li>
@@ -565,7 +565,9 @@
                         &lt;script src="bower_components/jquery/dist/jquery.min.js"&gt;&lt;/script&gt;
                     </code>
                 </pre>
-                <p class="mini">Es cambiarlo por ejmplo por</p>
+            </section>
+            <section>
+                <p class="mini">Es cambiarlo por ejemplo por</p>
                 <pre>
                     <code class="hljs" data-trim>
                             // package.json
@@ -633,6 +635,7 @@
                     <li><a href="https://depfu.com/blog/2017/03/22/a-brief-history-of-dependency-management">A brief
                             history of dependency management</a></li>
                     <li><a href="https://en.wikipedia.org">Wikipedia</a></li>
+                    <li><a href="https://docs.npmjs.com/cli-documentation/cli">NPM CLI Documentation</a></li>
                 </ul>
             </section>
         </div>
