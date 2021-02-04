@@ -2,7 +2,7 @@ html, body, .reveal div, .reveal applet, .reveal object, .reveal iframe, .reveal
     color: #555;
 }
 
-body {
+body, .reveal-viewport {
     background: #fff;
     background-color: #fff;
 }

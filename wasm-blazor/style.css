@@ -3,10 +3,13 @@ html, body, .reveal div, .reveal applet, .reveal object, .reveal iframe, .reveal
     font-family: 'Inconsolata', sans-serif;
 }
 
-body {
+body, .reveal-viewport {
     background: #fff;
     background-color: #fff;
 }
+
+:root {
+    --background-color: #fff;}
 
 .reveal h1 {
     font-size: 2em;
