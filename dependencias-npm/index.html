@@ -158,7 +158,7 @@
             <section>
                 <h2 class="mini">Versionado semántico</h2>
                 <ul>
-                    <li class="fragment">2011 - <strong>Semver</strong>
+                    <li class="">2011 - <strong>Semver</strong>
                         <br>
                         A pesar de que no era un método nuevo, fue Tom Preston-Werner, creador de Gravatars y
                         cofundador de GitHub quien redactó la primera especificación de Semver intentando poner algo de
@@ -169,14 +169,14 @@
             <section>
                 <h2 class="mini">Dependencias Javascript</h2>
                 <ul>
-                    <li class="fragment">2012 - <strong>Bower</strong>
+                    <li class="">2012 - <strong>Bower</strong>
                         <br>Twitter presenta y libera su gestor de dependencias para el mundo web. Bower <a href="https://github.com/bower/bower/issues/2298">se
                             declaró obsoleto en 2016</a> recomendando el uso de npm o yarn.</li>
-                    <li class="fragment">2014 - <strong>npm</strong>
+                    <li class="">2014 - <strong>npm</strong>
                         <br>El gestor de dependencias de javascript por excelencia, nació de una idea de Isaac
                         Schlueter <a href="https://groups.google.com/forum/?hl=en#!topic/nodejs/erDWyS4xPw8">de 2009</a>,
                         quien sigue como CPO en npm, inc. a día de hoy.</li>
-                    <li class="fragment">2016 - <strong>yarn</strong>
+                    <li class="">2016 - <strong>yarn</strong>
                         <br>Suplía ciertas carencias de npm que ya se encontraban en gestores de dependencias de otros
                         lenguajes.</li>
                 </ul>
@@ -270,9 +270,9 @@
             <section>
                 <h2 class="mini">Clave 1: Utiliza <span class="em">scoped packages</span></h2>
                 <ul class="">
-                    <li>Te permite usar nombres reconocibles</li>
-                    <li>Nadie más puede publicar bajo ese nombre</li>
-                    <li>Puedes asociar un scope con un registry diferente</li>
+                    <li>🐧 Te permite usar nombres reconocibles</li>
+                    <li>🤚 Nadie más puede publicar bajo ese nombre</li>
+                    <li>🔗 Puedes asociar un scope con un registry diferente</li>
                 </ul>
             </section>
 
@@ -313,10 +313,10 @@
             <section>
                 <h2 class="mini">Clave 2: Haz <span class="em">dependencias explícitas</span></h2>
                 <ul class="">
-                    <li>Hay un 99% de probabilidades de que un paquete no deba ser instalado como global, si lo haces
+                    <li>📊 Hay un 99% de probabilidades de que un paquete no deba ser instalado como global, si lo haces
                         deja de ser una dependencia explícita</li>
-                    <li>No copies y pegues ciegamente de los README</li>
-                    <li>Sí, las herramientas de desarrollo también deben ser dependencias explícitas.</li>
+                    <li>✂️ No copies y 📋 pegues ciegamente de los README</li>
+                    <li>🔧 Sí, las herramientas de desarrollo también deben ser dependencias explícitas.</li>
                 </ul>
             </section>
 
@@ -380,10 +380,10 @@
             <section>
                 <h2 class="mini">Clave 3: Haz <span class="em">explícita tu versión de node</span></h2>
                 <ul class="">
-                    <li>Se debería hacer explícita la compatibilidad con node</li>
-                    <li>Y si fuese necesario la versión de <span class="npm">npm</span> <span class="yarn">yarn</span></li>
-                    <li class="yarn">U otras deps de process.versions</li>
-                    <li>O un sistema operativo o arquitectura concreta</li>
+                    <li>👉 Se debería hacer explícita la compatibilidad con node</li>
+                    <li>⚙  Y si fuese necesario la versión de <pre class="npm inline">npm</pre> <pre class="yarn inline">yarn</pre></li>
+                    <li class="yarn">⚒ U otras deps de <pre class="inline">process.versions</pre></li>
+                    <li>💻 O un sistema operativo o arquitectura concreta</li>
                 </ul>
                 <pre>
                     <code class="hljs npm" data-trim>
@@ -435,25 +435,25 @@
             <section>
                 <h2 class="mini">Clave 4: Elije bien el <span class="em">tipo de dependencia </span></h2>
                 <ul class="">
-                    <li>Es SUPER IMPORTANTE cuando estás haciendo una librería</li>
-                    <li>Es IMPORTANTE cuando estás haciendo una app Node.js</li>
-                    <li>Puede ser IMPORTANTE cuando estás haciendo una web</li>
+                    <li>❗ Es SUPER IMPORTANTE cuando estás haciendo una librería</li>
+                    <li>🟡 Es IMPORTANTE cuando estás haciendo una app Node.js</li>
+                    <li>🟩 Puede ser IMPORTANTE cuando estás haciendo una web</li>
                 </ul>
             </section>
 
             <section>
                 <h2 class="mini">Clave 5: Utiliza <span class="em">rangos de versiones</span></h2>
                 <ul class="">
-                    <li>Hay un 99% de posibilidades de que no necesites una versión concreta de una dependencia</li>
-                    <li>Explicitar versiones concretas en el package.json NO definirá todas tus dependencias de manera
+                    <li>📊 Hay un 99% de posibilidades de que no necesites una versión concreta de una dependencia</li>
+                    <li>🔓 Explicitar versiones concretas en el package.json NO definirá todas tus dependencias de manera
                         determinista</li>
-                    <li>Si haces una librería intenta referenciar desde la versión mínima sin vulnerabilidades que
+                    <li>🔺 Si haces una librería, intenta referenciar desde la versión mínima sin vulnerabilidades que
                         soporte la API que usas</li>
                 </ul>
             </section>
 
             <section>
-                <p class="mini">Por defecto <span class="npm">npm</span> <span class="yarn">yarn</span> usa carets (^) </p>
+                <h2 class="mini">Clave 5: Utiliza <span class="em">rangos de versiones</span></h2>
 
                 <p class="mini">Formatos</p>
                 <pre class="mini">
@@ -474,17 +474,29 @@
                 <p class="mini"><a href="https://semver.npmjs.com/">Calculador Semver</a></p>
             </section>
 
+            <section>
+                <h2 class="mini">Clave 5: Utiliza <span class="em">rangos de versiones</span></h2>
+                <p class="mini"> </p>
+
+                <ul class="">
+                    <li>Por defecto <pre class="inline npm">npm i</pre> <pre class="inline yarn">yarn add</pre> usa carets (^)</li>
+                    <li>Los carets están bien en general</li>
+                    <li><strong>¡OJO! 👇</strong> <br>Los carets son poco recomendables en versiones <pre class="inline">0.X.X</pre>,
+                        mejor tilde (<pre class="inline">~0.2.3</pre>) o fija</li>
+                </ul>
+            </section>
+
 
             <section>
                 <h2 class="mini">Clave 6: Usa <span class="em">Semantic versioning</span></h2>
                 <div class="">
                     <img src="images/semver.png" width="200px">
                     <ul class="">
-                        <li>Hazlo siempre, siempre, siempre que hagas librerías</li>
-                        <li>Tu API define la versión y no el marketing. Si rompes API, subes major.</li>
-                        <li>La responsabilidad de los desarrolladores con esto es lo más importante para la estabilidad
+                        <li>🔴 Hazlo siempre, siempre, siempre que hagas librerías</li>
+                        <li>📛 Tu API define la versión y no el marketing. Si rompes API, subes major.</li>
+                        <li>🧑‍💻 La responsabilidad de los desarrolladores con esto es lo más importante para la estabilidad
                             del sistema.</li>
-                        <li>Empieza en la 1.0.0. Por favor, por favor, por favor...</li>
+                        <li>↗ Empieza en la 1.0.0. Por favor, por favor, por favor...</li>
                     </ul>
                 </div>
             </section>
@@ -492,10 +504,10 @@
             <section>
                 <h2 class="mini">Clave 7: Versiona siempre tu <span class="em">lock file</span></h2>
                 <ul class="">
-                    <li>Este fichero define todas tus dependencias de manera determinista</li>
-                    <li>Haz commit siempre de este fichero.</li>
-                    <li>No se edita el fichero a mano</li>
-                    <li>No se resuelven los conflictos a mano (npm-merge-driver)</li>
+                    <li>🔒 Este fichero define todas tus dependencias de manera determinista</li>
+                    <li>📤 Haz commit siempre de este fichero.</li>
+                    <li>📝 No se edita el fichero a mano</li>
+                    <li>🗯 No se resuelven los conflictos a mano (npm-merge-driver)</li>
                 </ul>
             </section>
 
@@ -512,10 +524,10 @@
             <section>
                 <h2 class="mini">Clave 8: <span class="em">Actualiza</span> con criterio</h2>
                 <ul class="">
-                    <li>Con <pre class="inline npm">npm outdated</pre> <pre class="inline yarn">yarn outdated</pre> puedes obtener información</li>
-                    <li>Vigila las vulnerabilidades (obtén info con <pre class="inline npm">npm audit</pre> <pre class="inline yarn">yarn npm audit</pre>).</li>
-                    <li><em>¿De verdad necesitas esa nueva funcionalidad?</em></li>
-                    <li><em>Ojo con la falta de soporte, esto va muy rápido</em></li>
+                    <li>🕐 Con <pre class="inline npm">npm outdated</pre> <pre class="inline yarn">yarn outdated</pre> puedes obtener información</li>
+                    <li>🦠 Vigila las vulnerabilidades (obtén info con <pre class="inline npm">npm audit</pre> <pre class="inline yarn">yarn npm audit</pre>).</li>
+                    <li>❓ <em>¿De verdad necesitas esa nueva funcionalidad?</em></li>
+                    <li>🏃 <em>Ojo con la falta de soporte, esto va muy rápido</em></li>
                 </ul>
             </section>
 
@@ -555,22 +567,22 @@
             <section>
                 <h2 class="mini">Clave 9: Usa <span class="em npm">npm ci</span> <span class="em yarn">yarn --frozen-lockfile</span></h2>
                 <ul class="">
-                    <li class="npm">A diferencia de <span class="em ">npm install</span>  solo instala proyectos enteros, no dependencias</li>
-                    <li>Solo usa el <pre class="inline npm">package-lock.json</pre> <pre class="inline yarn">yarn.lock</pre>. <span class="npm">Se asegura de que está en control de versiones</span></li>
-                    <li>Da error si el <pre class="inline npm">package-lock.json</pre> <pre class="inline yarn">yarn.lock</pre> no es coherente con el <pre class="inline">package.json</pre></li>
-                    <li>Nunca actualiza los ficheros <pre class="inline">package.json</pre> o <pre class="inline npm">package-lock.json</pre> <pre class="inline yarn">yarn.lock</pre></li>
-                    <li class="npm">Borra el directorio <pre class="inline">node_modules</pre> si ya existe</li>
-                    <li>Imprescindible para CI</li>
+                    <li class="npm">🟫 A diferencia de <span class="em ">npm install</span>  solo instala proyectos enteros, no dependencias</li>
+                    <li>🟨 Solo usa el <pre class="inline npm">package-lock.json</pre> <pre class="inline yarn">yarn.lock</pre>. <span class="npm">Se asegura de que está en control de versiones</span></li>
+                    <li>🟩 Da error si el <pre class="inline npm">package-lock.json</pre> <pre class="inline yarn">yarn.lock</pre> no es coherente con el <pre class="inline">package.json</pre></li>
+                    <li>🟦 Nunca actualiza los ficheros <pre class="inline">package.json</pre> o <pre class="inline npm">package-lock.json</pre> <pre class="inline yarn">yarn.lock</pre></li>
+                    <li>🟪Imprescindible para CI</li>
+                    <li class="npm">⬛ Borra el directorio <pre class="inline">node_modules</pre> si ya existe</li>
                 </ul>
             </section>
 
             <section>
                 <h2 class="mini">Clave 10: <span class="em">No</span> necesitas <span class="em2"><nobr>rm -rf node_modules && <span class="npm">npm i</span> <span class="yarn">yarn</span></nobr></span></h2>
                 <ul class="">
-                    <li>Era una operación habitual hasta que hubo lock file, por ejemplo se usaba para reproducir fallos que sucedían en CI o a compañeros recién llegados al proyecto.</li>
-                    <li> A día de hoy, si necesitas hacerlo puedes tomarlo como un 'smell'. Probablemente hay algo que arreglar.</li>
-                    <li><pre class="inline npm">npm ci</pre> <pre class="inline yarn">yarn --frozen-lockfile --force</pre> debería ser suficiente y además haría comprobaciones.</li>
-                    <li><pre class="inline npm">npm rebuild</pre> <pre class="inline yarn">yarn rebuild</pre> es otra alternativa si por ejemplo has actualizado la verión de Node.js</li>
+                    <li>🔄 Era una operación demasiado habitual hasta que hubo lock file (reproducir fallos que sucedían en CI o a nuevos compis).</li>
+                    <li>👃 A día de hoy, si necesitas hacerlo puedes tomarlo como un 'smell'. Probablemente hay algo que arreglar.</li>
+                    <li>⛄ <pre class="inline npm">npm ci</pre> <pre class="inline yarn">yarn --frozen-lockfile</pre> debería ser suficiente y además haría comprobaciones.</li>
+                    <li>🏗 <pre class="inline npm">npm rebuild</pre> <pre class="inline yarn">yarn rebuild</pre> es otra alternativa si por ejemplo has actualizado la verión de Node.js</li>
                 </ul>
             </section>
 
