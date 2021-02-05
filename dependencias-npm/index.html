@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="npm">
 
 <head>
     <meta charset="utf-8">
@@ -17,7 +17,7 @@
 
     <link href='https://fonts.googleapis.com/css?family=Abel|Inconsolata' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="../dist/reveal.css">
-    <link rel="stylesheet" href="../dist/theme/black.css" id="theme">
+    <link rel="stylesheet" href="../dist/theme/white.css" id="theme">
 
     <!-- Theme used for syntax highlighting of code -->
     <!--<link rel="stylesheet" href="../plugin/highlight/zenburn.css">-->
@@ -40,7 +40,7 @@
                     <h2>10 claves en la gestión de dependencias<br> con Javascript</h2>
                     <p id="byauthor">
                         Por <span style="text-decoration: line-through">Pau Donés</span>
-                        <a href="http://www.berriart.com/">Alberto Varela</a>
+                        <a href="https://www.berriart.com/">Alberto Varela</a>
                     </p>
                 </div>
             </section>
@@ -49,11 +49,11 @@
                 <h2 class="mini">¿Quién soy?</h2>
                 <div class=" fragment">
                     <p>Soy
-                        <a href="http://www.berriart.com">Alberto Varela</a> y trabajo
+                        <a href="https://www.berriart.com">Alberto Varela</a> y trabajo
                         <br>como desarrollador en </p>
                     <p>
-                        <a href="http://www.plainconcepts.com">
-                            <img class="noborder" width="240" src="./images/plainconcepts.png" />
+                        <a href="https://www.genial.ly/">
+                            <img class="noborder" width="240" src="./images/logo-genially-black.svg" />
                         </a>
                     </p>
                     <p class=" fragment">
@@ -74,30 +74,35 @@
             </section>-->
 
             <section>
-                <div style="width:auto; margin:auto;display: inline-block;">
+                <div style="width: 100%; max-width: 600px; margin:auto;display: block;">
                     <blockquote class="twitter-tweet" data-lang="es"><p lang="en" dir="ltr">1/3 of US bandwidth is used by Netflix...<br><br>the rest is used by `rm -rf node_modules &amp;&amp; npm install`</p>&mdash; I Am Devloper (@iamdevloper) <a href="https://twitter.com/iamdevloper/status/908335750797766656?ref_src=twsrc%5Etfw">14 de septiembre de 2017</a></blockquote>
                     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                 </div>
             </section>
 
             <section>
-                <h2>Gestionar dependencias</h2>
-                <div>Nada nuevo</div>
-                <br>
-                <h3 class="fragment">DON'T REPEAT YOURSELF<h3>
-                        <h3 class="fragment">DON'T REINVENT THE WHEEL<h3>
+                <div class="flex">
+
+                    <img src="images/lisa.png" style="max-width: 30%; max-height: 100%; margin-right: 5%;">
+                    <div>
+                        <h3 class="r-fit-text">UN POCO</h3>
+                        <h3 class="r-fit-text">DE HISTORIA</h3>
+                    </div>
+
+                </div>
+
             </section>
 
             <section>
                 <h2 class="mini">Primeros pasos</h2>
                 <ul>
-                    <li class="fragment">Prehistoria - <strong>README (con suerte)</strong>
+                    <li class="">Prehistoria - <strong>README (con suerte)</strong>
                         <br>Servidores FTP, listas de correo,... </li>
-                    <li class="fragment">1984 - <strong>./configure + make</strong>
+                    <li class="">1984 - <strong>./configure + make</strong>
                         <br>El primer programa que se distribuyó con un script 'configure' fue <a href="https://en.wikipedia.org/wiki/Rn_(newsreader)">rn</a>
                         por Larry Wall.</li>
-                    <li class="fragment">1991 - <strong>Autoconf</strong>
-                        <br>Validaba depenencias en base a características no a números de versión, creado por David
+                    <li class="">1991 - <strong>Autoconf</strong>
+                        <br>Validaba dependencias en base a características no a números de versión, creado por David
                         Mackenzie.</li>
                 </ul>
             </section>
@@ -105,9 +110,9 @@
             <section>
                 <h2 class="mini">Introduciendo los repositorios</h2>
                 <ul>
-                    <li class="fragment">1993 - <strong>dpkg</strong>
+                    <li class="">1993 - <strong>dpkg</strong>
                         <br>Aún utilizado por distribuciones Debian, por Ian Jackson.</li>
-                    <li class="fragment">1997 - <strong>rpm</strong>
+                    <li class="">1997 - <strong>rpm</strong>
                         <br>Aún utilizado por distribuciones basadas en Red Hat, por Erik Troan y Marc Ewing.</li>
                 </ul>
             </section>
@@ -115,10 +120,10 @@
             <section>
                 <h2 class="mini">Específicos de lenguaje</h2>
                 <ul>
-                    <li class="fragment">1995 - <strong>CPAN</strong>
+                    <li class="">1995 - <strong>CPAN</strong>
                         <br>Creado por los miembros de la lista de correo <a href="http://cpan.io/ref/cpan/history.html">perl-packrats</a>
                         para gestionar módulos de Perl.</li>
-                    <li class="fragment">1999 - <strong>PEAR</strong>
+                    <li class="">1999 - <strong>PEAR</strong>
                         <br>Primer gestor de paquetes de PHP, por Stig S. Bakken. Activo pero en desuso.</li>
                 </ul>
             </section>
@@ -126,10 +131,10 @@
             <section>
                 <h2 class="mini">Entornos y fichero de requerimientos</h2>
                 <ul>
-                    <li class="fragment">2007 - <strong>Virtualenv</strong>
+                    <li class="">2007 - <strong>Virtualenv</strong>
                         <br>No es un gestor de paquetes, pero solucionó el problema de desarrollar varias aplicaciones
                         que requieren de diferentes versiones en Python. Por Ian Bicking.</li>
-                    <li class="fragment">2008 - <strong>Pip</strong>
+                    <li class="">2008 - <strong>Pip</strong>
                         <br>Vino a sustituir el <em>easy_install</em> de Python, introdujo el fichero
                         'requirements.txt' que sirve para listar las dependencias de una aplicación, también por Ian
                         Bicking.</li>
@@ -139,11 +144,11 @@
             <section>
                 <h2 class="mini">El fichero de 'lock'</h2>
                 <ul>
-                    <li class="fragment">2010 - <strong>Bundler</strong>
+                    <li class="">2010 - <strong>Bundler</strong>
                         <br>Yehuda Katz <a href="https://yehudakatz.com/2010/02/01/bundler-0-9-heading-toward-1-0/">introduce
                             el concepto de Gemfile.lock</a> en el
                         nuevo gestor de paquetes que está desarrollando para Ruby.</li>
-                    <li class="fragment">2012 - <strong>Composer</strong>
+                    <li class="">2012 - <strong>Composer</strong>
                         <br>Revolucionó la gestión de dependencias junto con Packagist en el mundo PHP. Incluye
                         lockfile y diferenciación entre dependencias de desarrollo y runtime. Por Nils Adermann and
                         Jordi Boggiano.</li>
@@ -186,56 +191,55 @@
 
             <section>
                 <div>
-                    <h2 class="mini">NPM ¡te elijo a ti!</h2>
-                    <img class="noborder" src="images/Npm-logo.svg">
-                    <div class="fragment">¿Cómo aplican estos conceptos a NPM?</div>
+                    <h2 class="mini"><span class="npm">NPM</span> <span class="yarn">Yarn</span> ¡te elijo a ti!</h2>
+                    <img class="noborder npm" style="max-width: 500px;max-height: 200px;" src="images/Npm-logo.svg">
+                    <img class="noborder yarn" style="max-width: 500px;max-height: 200px;" src="images/yarn.svg">
+                    <div class="fragment">¿Cómo aplican estos conceptos a <span class="npm">NPM</span> <span class="yarn">Yarn</span>?</div>
                 </div>
             </section>
 
             <section>
                 <h2 class="mini">Conceptos: Repositorio</h2>
                 <ul>
-                    <li class="fragment">El repositorio central y público 'oficial' es el <a href="https://www.npmjs.com/">
-                            Npm Registry</a>. A menos que configures otra cosa, será de aquí de donde tu herramienta de
-                        consola descargue las dependencias. Es gestionado por npm, inc. y da servicio gratuíto para
+                    <li class="">El repositorio central y público 'oficial' es el <a href="https://www.npmjs.com/">
+                            Npm Registry</a> (también usando Yarn). Es gestionado por npm, inc. y da servicio gratuíto para
                         paquetes públicos.</li>
-                    <li class="fragment">Puedes crear tu propio servidor para que actue como repositorio e incluso como
-                        repositorio proxy. También existen otras empresas que lo ofrecen como servicio para no tener
-                        que gestionarlo tu mismo.</li>
+                    <li class="">Puedes crear tu propio servidor para que actue como repositorio e incluso como
+                        repositorio proxy o contratarlo a un tercero.</li>
                 </ul>
             </section>
 
             <section>
                 <h2 class="mini">Conceptos: Paquete</h2>
                 <ul>
-                    <li class="fragment">Un paquete npm es uno o varios ficheros comprimidos en un .tgz entre los que
+                    <li class="">Un paquete npm es uno o varios ficheros comprimidos en un .tgz entre los que
                         se incluye un fichero package.json con la definición de dependencias y otros datos.</li>
-                    <li class="fragment">Un repositorio git o un directorio que incluya un fichero package.json también
+                    <li class="">Un repositorio git o un directorio que incluya un fichero package.json también
                         pueden ser considerados paquetes al poder ser referenciados como dependencias.</li>
-                    <li class="fragment">Un paquete de npm no tiene por qué contener ficheros javascript. Existen
+                    <li class="">Un paquete de npm no tiene por qué contener ficheros javascript. Existen
                         módulos que por ejemplo solo incluyen ficheros CSS.</li>
-                    <li class="fragment">Un paquete de npm es inmutable.</li>
+                    <li class="">Un paquete de npm es inmutable.</li>
                 </ul>
             </section>
 
             <section>
                 <h2 class="mini">Conceptos: Lista de dependencias</h2>
                 <ul>
-                    <li class="fragment">El fichero <strong>package.json</strong> es el standard para la declaración de
+                    <li class="">El fichero <strong>package.json</strong> es el standard para la declaración de
                         dependencias 'locales'.</li>
-                    <li class="fragment">Podemos definir diferentes tipos de dependencias: runtime, development, peer,
+                    <li class="">Podemos definir diferentes tipos de dependencias: runtime, development, peer,
                         optionals, bundled.</li>
-                    <li class="fragment">Podemos especificar versiones concretas o rangos.</li>
+                    <li class="">Podemos especificar versiones concretas o rangos.</li>
                 </ul>
             </section>
 
             <section>
                 <h2 class="mini">Conceptos: El fichero lock</h2>
                 <ul>
-                    <li class="fragment">El fichero <strong>package-lock.json </strong> (yarn.lock,...) aporta
+                    <li class="">El fichero <strong>package-lock.json </strong> (yarn.lock,...) aporta
                         estabilidad a los proyectos y delara las dependencias de forma determinista.</li>
-                    <li class="fragment">Se trata de un fichero autogenerado que no se debería editar manualmente.</li>
-                    <li class="fragment">Fue el gestor de paquetes yarn el primero que introdujo este concepto en el
+                    <li class="">Se trata de un fichero autogenerado que no se debería editar manualmente.</li>
+                    <li class="">Fue el gestor de paquetes yarn el primero que introdujo este concepto en el
                         mundo node.js.</li>
                 </ul>
             </section>
@@ -243,11 +247,10 @@
             <section>
                 <h2 class="mini">Conceptos: La interfaz de consola (CLI)</h2>
                 <ul>
-                    <li class="fragment"><strong>npm</strong> es el gestor de paquetes por defecto de node.js y viene
+                    <li class=""><strong>npm</strong> es el gestor de paquetes por defecto de node.js y viene
                         incluido en la instalación.</li>
-                    <li class="fragment">Existen otras herramientas de consola (yarn, pnpm, tink,...) pero todas ellas
+                    <li class="">Existen otras herramientas de consola (yarn, pnpm, tink,...) pero todas ellas
                         usan NPM Registry como repositorio por defecto.</li>
-                    <li class="fragment">A día de hoy se compone de 58 subcomandos.</li>
                 </ul>
             </section>
 
@@ -266,7 +269,7 @@
 
             <section>
                 <h2 class="mini">Clave 1: Utiliza <span class="em">scoped packages</span></h2>
-                <ul class="fragment">
+                <ul class="">
                     <li>Te permite usar nombres reconocibles</li>
                     <li>Nadie más puede publicar bajo ese nombre</li>
                     <li>Puedes asociar un scope con un registry diferente</li>
@@ -293,31 +296,40 @@
                         }
                     </code>
                 </pre>
-                <p class="mini">Puedes apuntar todo el scope a un registro propio (.npmrc)</p>
-                <pre>
-                    <code class="hljs" data-trim>
+                <p class="mini">Puedes apuntar todo el scope a un registro propio (<span class="npm">.npmrc</span> <span class="yarn">.yarnrc.yml</span>)</p>
+                <pre class="npm">
+                    <code class=" hljs" data-trim>
                         npm config set @acme:registry http://registry.acme.com
+                    </code>
+                </pre>
+                <pre class="yarn">
+
+                    <code class=" hljs" data-trim>
+                        yarn config set npmScopes.acme.npmRegistryServer "http://registry.acme.com"
                     </code>
                 </pre>
             </section>
 
             <section>
                 <h2 class="mini">Clave 2: Haz <span class="em">dependencias explícitas</span></h2>
-                <ul class="fragment">
+                <ul class="">
                     <li>Hay un 99% de probabilidades de que un paquete no deba ser instalado como global, si lo haces
                         deja de ser una dependencia explícita</li>
                     <li>No copies y pegues ciegamente de los README</li>
                     <li>Sí, las herramientas de desarrollo también deben ser dependencias explícitas.</li>
-                    <li>También se debería hacer explícita la compatibilidad con node o incluso npm:<br>
-                        <small>"engines" : { "node" : "&gt;=6 &lt;11" }</li></small>
                 </ul>
             </section>
 
             <section>
                 <p class="mini">Ejemplo de mal "Getting started": <a href="https://palantir.github.io/tslint/">tslint</a></p>
-                <pre>
+                <pre class="npm">
                     <code class="hljs" data-trim>
-                        npm install --global tslint typescript # yarn global add tslint typescript
+                        npm install --global tslint typescript
+                    </code>
+                </pre>
+                <pre class="yarn">
+                    <code class="hljs" data-trim>
+                        yarn global add tslint typescript
                     </code>
                 </pre>
                 <p class="mini">Simplifican para poder ejecutar tslint directamente en consola</p>
@@ -327,47 +339,79 @@
                         tslint -c tslint.json 'src/**/*.ts'
                     </code>
                 </pre>
-                <p class="mini">Pero esto es un problema por que dependiendo del momento de la instalación cada
+                <p class="mini">Pero esto es un problema porque dependiendo del momento de la instalación cada
                     desarrollador o nuestra máquina de CI podrá tener una versión diferente. </p>
             </section>
 
             <section>
                 <p class="mini">Deberíamos añadir esas dependencias como desarrollo. </p>
-                <pre>
+                <pre class="npm">
                     <code class="hljs" data-trim>
-                        npm install --save-dev tslint typescript # yarn add tslint typescript
+                        npm install --save-dev eslint typescript
+                    </code>
+                </pre>
+                <pre class="yarn">
+                    <code class="hljs" data-trim>
+                        yarn add -D eslint typescript
                     </code>
                 </pre>
                 <p class="mini">Y ejecutar la versión local</p>
                 <pre>
                     <code class="hljs" data-trim>
-                        ./node_modules/.bin/tslint --init
-                        ./node_modules/.bin/tslint -c tslint.json 'src/**/*.ts'
+                        ./node_modules/.bin/eslint ...
                     </code>
                 </pre>
                 <p class="mini">O también podemos añadirlo como script npm</p>
                 <pre>
                     <code class="hljs" data-trim>
                         "scripts": {
-                            "lint": "tslint -c tslint.json 'src/**/*.ts'"
+                            "lint": "eslint src"
                         }
                     </code>
-                    <code class="hljs" data-trim>
+                    <code class="hljs npm" data-trim>
                         npm run lint
+                    </code>
+                    <code class="hljs yarn" data-trim>
+                        yarn run lint
                     </code>
                 </pre>
             </section>
 
             <section>
-                <h2 class="mini">Clave 3: Elije bien el <span class="em">tipo de dependencia </span></h2>
-                <dl class="fragment">
+                <h2 class="mini">Clave 3: Haz <span class="em">explícita tu versión de node</span></h2>
+                <ul class="">
+                    <li>Se debería hacer explícita la compatibilidad con node</li>
+                    <li>Y si fuese necesario la versión de <span class="npm">npm</span> <span class="yarn">yarn</span></li>
+                    <li class="yarn">U otras deps de process.versions</li>
+                    <li>O un sistema operativo o arquitectura concreta</li>
+                </ul>
+                <pre>
+                    <code class="hljs npm" data-trim>
+                        "engines": {
+                            "node": "&gt;=10 &lt;14",
+                            "npm": "&gt;=7"
+                        }
+                    </code>
+                    <code class="hljs yarn" data-trim>
+                        "engines": {
+                            "node": "&gt;=10 &lt;14",
+                            "yarn": "^2.0.0",
+                            "zlib": "^1.2.8"
+                        }
+                    </code>
+                </pre>
+            </section>
+
+            <section>
+                <h2 class="mini">Clave 4: Elije bien el <span class="em">tipo de dependencia </span></h2>
+                <dl class="">
                     <dt>dependencies</dt>
                     <dd>Usadas en run time, se instalan siempre.</dd>
 
                     <dt>devDependencies</dt>
-                    <dd>Se instalan solo con 'npm install' .</dd>
-                    <dd>NO se instalan con 'npm install --production' .</dd>
-                    <dd>NO se instalan con 'npm install &lt;package&gt;' .</dd>
+                    <dd>Se instalan solo con <pre class="inline npm">npm install</pre> <pre class="inline yarn">yarn install</pre>.</dd>
+                    <dd>NO se instalan con <pre class="inline npm">npm install --production</pre> <pre class="inline yarn">yarn install --production</pre> .</dd>
+                    <dd>NO se instalan cuando te usan como dependencia.</dd>
 
                     <dt>peerDependencies</dt>
                     <dd>NO se instalan automáticamente.</dd>
@@ -376,10 +420,10 @@
             </section>
 
             <section>
-                <h2 class="mini">Clave 3: Elije bien el <span class="em">tipo de dependencia </span></h2>
-                <dl class="fragment">
+                <h2 class="mini">Clave 4: Elije bien el <span class="em">tipo de dependencia </span></h2>
+                <dl class="">
                     <dt>optionalDependencies</dt>
-                    <dd>Se instalan como una dependencia, pero no falla si no la encuentra</dd>
+                    <dd>Se instalan como una dependencia, pero no falla si no puede instalarla por requerimientos</dd>
                     <dd>El ejemplo más visto: 'fsevents'<br><small>SKIPPING OPTIONAL DEPENDENCY: Unsupported platform
                             for fsevents@1.0.14</small></dd>
 
@@ -389,8 +433,8 @@
             </section>
 
             <section>
-                <h2 class="mini">Clave 3: Elije bien el <span class="em">tipo de dependencia </span></h2>
-                <ul class="fragment">
+                <h2 class="mini">Clave 4: Elije bien el <span class="em">tipo de dependencia </span></h2>
+                <ul class="">
                     <li>Es SUPER IMPORTANTE cuando estás haciendo una librería</li>
                     <li>Es IMPORTANTE cuando estás haciendo una app Node.js</li>
                     <li>Puede ser IMPORTANTE cuando estás haciendo una web</li>
@@ -398,10 +442,10 @@
             </section>
 
             <section>
-                <h2 class="mini">Clave 4: Utiliza <span class="em">rangos de versiones</span></h2>
-                <ul class="fragment">
+                <h2 class="mini">Clave 5: Utiliza <span class="em">rangos de versiones</span></h2>
+                <ul class="">
                     <li>Hay un 99% de posibilidades de que no necesites una versión concreta de una dependencia</li>
-                    <li>Explicitar versiones concretas en el package.json NO definirá tus dependencias de manera
+                    <li>Explicitar versiones concretas en el package.json NO definirá todas tus dependencias de manera
                         determinista</li>
                     <li>Si haces una librería intenta referenciar desde la versión mínima sin vulnerabilidades que
                         soporte la API que usas</li>
@@ -409,13 +453,8 @@
             </section>
 
             <section>
-                <p class="mini">Por defecto npm usa carets (^) </p>
-                <pre>
-                    <code class="hljs" data-trim>
-                        npm install express
-                        // -> "express": "^4.16.4"
-                    </code>
-                </pre>
+                <p class="mini">Por defecto <span class="npm">npm</span> <span class="yarn">yarn</span> usa carets (^) </p>
+
                 <p class="mini">Formatos</p>
                 <pre class="mini">
 
@@ -437,8 +476,8 @@
 
 
             <section>
-                <h2 class="mini">Clave 5: Usa <span class="em">Semantic versioning</span></h2>
-                <div class="fragment">
+                <h2 class="mini">Clave 6: Usa <span class="em">Semantic versioning</span></h2>
+                <div class="">
                     <img src="images/semver.png" width="200px">
                     <ul class="">
                         <li>Hazlo siempre, siempre, siempre que hagas librerías</li>
@@ -451,60 +490,45 @@
             </section>
 
             <section>
-                <h2 class="mini">Clave 6: Versiona siempre tu <span class="em">lock file</span></h2>
-                <ul class="fragment">
+                <h2 class="mini">Clave 7: Versiona siempre tu <span class="em">lock file</span></h2>
+                <ul class="">
                     <li>Este fichero define todas tus dependencias de manera determinista</li>
-                    <li>Haz commit siempre de este fichero (las últimas versiones de npm hasta lo recomiendan cuando se
-                        genera).</li>
+                    <li>Haz commit siempre de este fichero.</li>
                     <li>No se edita el fichero a mano</li>
-                    <li>No se resuelven los conflictos a mano</li>
+                    <li>No se resuelven los conflictos a mano (npm-merge-driver)</li>
                 </ul>
             </section>
 
             <section>
-                <h2 class="mini">Clave 6: Versiona siempre tu <span class="em">lock file</span></h2>
+                <h2 class="mini">Clave 7: Versiona siempre tu <span class="em">lock file</span></h2>
                 <ul>
-                    <li>El lock file no se publica con 'npm publish' porque no se debe publicar</li>
+                    <li>El lock file no se publica con <pre class="inline npm">npm publish</pre> <pre class="inline yarn">yarn publish</pre> porque no se debe publicar</li>
                     <li>Solo tendría sentido publicar el lock file en una herramienta como una CLI. Para eso existe el
-                        fichero 'npm-shrinkwrap.json'. También con cualquier paquete cuya intención sea ser
+                        fichero <pre class="inline">npm-shrinkwrap.json</pre> (no soportado por yarn). También con cualquier paquete cuya intención sea ser
                         instalado de forma global.</li>
                 </ul>
             </section>
 
             <section>
-                <h2 class="mini">Clave 7: <span class="em">Actualiza</span> con criterio</h2>
-                <ul class="fragment">
-                    <li>Vigila las vulnerabilidades, las conocidas te las indica el propio npm al instalar (más info con 'npm audit').</li>
-                    <li>Con 'npm outdated' puedes obtener información</li>
-                    <li>¿De verdad necesitas esa nueva funcionalidad?</li>
-                    <li>Ojo con la falta de soporte, esto va muy rápido</li>
+                <h2 class="mini">Clave 8: <span class="em">Actualiza</span> con criterio</h2>
+                <ul class="">
+                    <li>Con <pre class="inline npm">npm outdated</pre> <pre class="inline yarn">yarn outdated</pre> puedes obtener información</li>
+                    <li>Vigila las vulnerabilidades (obtén info con <pre class="inline npm">npm audit</pre> <pre class="inline yarn">yarn npm audit</pre>).</li>
+                    <li><em>¿De verdad necesitas esa nueva funcionalidad?</em></li>
+                    <li><em>Ojo con la falta de soporte, esto va muy rápido</em></li>
                 </ul>
             </section>
 
             <section>
-                <h2 class="mini">Clave 7: <span class="em">Actualiza</span> con criterio</h2>
-                <div class="">
-                    <p>Como actualizar todas las dependencias:</p>
-                    <ol class="">
-                        <li>Identifica las dependencias desactualizadas 'npm outdated'</li>
-                        <li>Actualiza versiones en tu package.json si es necesario</li>
-                        <li>Ejecuta 'npm update'</li>
-                        <li>No olvides commitear el lock file.</li>
-                    </ol>
-                </div>
-
-            </section>
-
-            <section>
-                <h2 class="mini">Clave 7: <span class="em">Actualiza</span> con criterio</h2>
+                <h2 class="mini">Clave 8: <span class="em">Actualiza</span> con criterio</h2>
                 <div class="">
                     <p>Actualizar solo una dependencia:</p>
                     <ul class="">
-                        <li><strong>npm update &lt;paquete&gt;</strong>
+                        <li><strong><pre class="inline npm">npm update &lt;paquete&gt;</pre> <pre class="inline yarn">yarn upgrade &lt;paquete&gt;</pre></strong>
                             <br>
-                            Actualizará el paquete respetando el package.json
+                            Actualizará el paquete respetando el package.json (puedes modificarlo previamente)
                         </li>
-                        <li><strong>npm install &lt;paquete&gt;@latest</strong>
+                        <li><strong><pre class="inline npm">npm install &lt;paquete&gt;@latest</pre> <pre class="inline yarn">yarn upgrade &lt;paquete&gt; --latest</pre></strong>
                             <br>
                             Actualizará el paquete a la última version
                         </li>
@@ -514,76 +538,39 @@
             </section>
 
             <section>
-                <h2 class="mini">Clave 8: Usa <span class="em">npm ci</span></h2>
-                <ul class="fragment">
-                    <li>A diferencia de 'npm install' solo instala proyectos enteros, no dependencias</li>
-                    <li>Solo usa el package-lock.json. Se asegura de que está en control de versiones</li>
-                    <li>Da error si el package-lock.json no es coherente con el package.json</li>
-                    <li>Nunca actualiza los ficheros package.json o package-lock.json</li>
-                    <li>Borra el directorio node_modules si ya existe</li>
+                <h2 class="mini">Clave 8: <span class="em">Actualiza</span> con criterio</h2>
+                <div class="">
+                    <p>Como actualizar todas las dependencias:</p>
+                    <p class="fragment">No lo hagas. Actualiza con criterio ;)</p>
+                    <ol class="fragment">
+                        <li>Identifica las dependencias desactualizadas <pre class="inline npm">npm outdated</pre> <pre class="inline yarn">yarn outdated</pre></li>
+                        <li>Actualiza versiones en tu package.json si es necesario</li>
+                        <li>Ejecuta <pre class="inline npm">npm update</pre> <pre class="inline yarn">yarn upgrade</pre></li>
+                        <li>No olvides commitear el lock file.</li>
+                    </ol>
+                </div>
+
+            </section>
+
+            <section>
+                <h2 class="mini">Clave 9: Usa <span class="em npm">npm ci</span> <span class="em yarn">yarn --frozen-lockfile</span></h2>
+                <ul class="">
+                    <li class="npm">A diferencia de <span class="em ">npm install</span>  solo instala proyectos enteros, no dependencias</li>
+                    <li>Solo usa el <pre class="inline npm">package-lock.json</pre> <pre class="inline yarn">yarn.lock</pre>. <span class="npm">Se asegura de que está en control de versiones</span></li>
+                    <li>Da error si el <pre class="inline npm">package-lock.json</pre> <pre class="inline yarn">yarn.lock</pre> no es coherente con el <pre class="inline">package.json</pre></li>
+                    <li>Nunca actualiza los ficheros <pre class="inline">package.json</pre> o <pre class="inline npm">package-lock.json</pre> <pre class="inline yarn">yarn.lock</pre></li>
+                    <li class="npm">Borra el directorio <pre class="inline">node_modules</pre> si ya existe</li>
+                    <li>Imprescindible para CI</li>
                 </ul>
             </section>
 
             <section>
-                <h2 class="mini">Clave 9: <span class="em">No</span> uses <span class="em">Bower</span></h2>
-                <ul class="fragment">
-                    <li>Está obsoleto aunque mantenga el soporte</li>
-                    <li>Ellos mismos recomiendan migrar a yarn o npm</li>
-                    <li>Alternativas:
-                        <ul class="">
-                            <li>'Bundlelizar' dependencias mediante herramientas como webpack, rollup, parcel, browserify,...</li>
-                            <li>Copiar los ficheros a la carpeta 'dist' o equivalente</li>
-                            <li>Usar CDNs directamente desde el HTML</li>
-                        </ul>
-                    </li>
-                </ul>
-            </section>
-
-            <section>
-                <p class="mini">Una manera muy simple de sustituir bower si tienes:</p>
-                <pre>
-                    <code class="hljs" data-trim>
-                        // bower.json
-                        "dependencies": {
-                            "jquery": "^3.0.0"
-                        }
-                    </code>
-                    <code class="hljs" data-trim>
-                        &lt;!-- index.html --&gt;
-                        &lt;script src="bower_components/jquery/dist/jquery.min.js"&gt;&lt;/script&gt;
-                    </code>
-                </pre>
-            </section>
-            <section>
-                <p class="mini">Es cambiarlo por ejemplo por</p>
-                <pre>
-                    <code class="hljs" data-trim>
-                            // package.json
-                            "dependencies": {
-                                "jquery": "^3.0.0"
-                            },
-                            "scripts": {
-                                "copy:vendors": "cp node_modules/jquery/dist/jquery.min.js dist/vendor/jquery.min.js",
-                                "build": "whatever && npm run copy:vendors"
-                            }
-                    </code>
-                    <code class="hljs" data-trim>
-                        &lt;!-- index.html --&gt;
-                        &lt;script src="dist/vendor/jquery.min.js"&gt;&lt;/script&gt;
-                    </code>
-                    <code class="hljs" data-trim>
-                        npm build
-                    </code>
-                </pre>
-            </section>
-
-            <section>
-                <h2 class="mini">Clave 10: <span class="em">No</span> necesitas <span class="em2"><nobr>rm -rf node_modules && npm i</nobr></span></h2>
-                <ul class="fragment">
+                <h2 class="mini">Clave 10: <span class="em">No</span> necesitas <span class="em2"><nobr>rm -rf node_modules && <span class="npm">npm i</span> <span class="yarn">yarn</span></nobr></span></h2>
+                <ul class="">
                     <li>Era una operación habitual hasta que hubo lock file, por ejemplo se usaba para reproducir fallos que sucedían en CI o a compañeros recién llegados al proyecto.</li>
-                    <li> A día de hoy, si necesitas hacerlo puedes tomarlo como un 'smell'. Probablemnte hay algo que arreglar.</li>
-                    <li>'npm ci' debería ser suficiente y además haría comprobaciones.</li>
-                    <li>'npm rebuild' es otra alternativa si por ejemplo has actualizado la verión de Node.js</li>
+                    <li> A día de hoy, si necesitas hacerlo puedes tomarlo como un 'smell'. Probablemente hay algo que arreglar.</li>
+                    <li><pre class="inline npm">npm ci</pre> <pre class="inline yarn">yarn --frozen-lockfile --force</pre> debería ser suficiente y además haría comprobaciones.</li>
+                    <li><pre class="inline npm">npm rebuild</pre> <pre class="inline yarn">yarn rebuild</pre> es otra alternativa si por ejemplo has actualizado la verión de Node.js</li>
                 </ul>
             </section>
 
@@ -591,22 +578,21 @@
                 <h2 class="mini">Las claves</h2>
                 <ol class="">
                     <li>Utiliza <span class="em">scoped packages</span></li>
-                    <li>Haz <span class="em">dependencias explícitas</li>
+                    <li>Haz <span class="em">dependencias explícitas</span></li>
+                    <li>Haz <span class="em">explícita tu versión de node</span></li>
                     <li>Elije bien el <span class="em">tipo de dependencia </span></li>
                     <li>Utiliza <span class="em">rangos de versiones</span></li>
                     <li>Usa <span class="em">Semantic versioning</span></li>
                     <li>Versiona siempre tu <span class="em">lock file</span></li>
                     <li><span class="em">Actualiza</span> con criterio</li>
                     <li>Usa <span class="em">npm ci</span></li>
-                    <li><span class="em">No</span> uses <span class="em">Bower</span></li>
                     <li><span class="em">No</span> necesitas <span class="em">rm -rf node_modules && npm i</span></li>
                 </ol>
             </section>
 
             <section>
-                <h2 class="mini">Eskerrik asko!</h2>
                 <div>
-                    <img data-src="images/everythinkok.gif" alt="¡Gracias!">
+                    <img data-src="images/eskerrik-asko.png" alt="Eskerrik asko!">
                 </div>
                 <p>
                     <small>Slides:
@@ -649,6 +635,13 @@
 
             // More info https://github.com/hakimel/reveal.js#dependencies
             plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealZoom ]
+        });
+
+        document.addEventListener('keydown', function (e) {
+            if (e.code === 'KeyZ') {
+                document.documentElement.classList.toggle('yarn');
+                document.documentElement.classList.toggle('npm');
+            }
         });
     </script>
 
